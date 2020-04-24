@@ -36,7 +36,10 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "comma-dangle": "warn"
+      "comma-dangle": "off",
+      "linebreak-style": "off",
+      "no-trailing-spaces": "off",
+      "quotes": "off"
     }
   },
   "browserslist": [
