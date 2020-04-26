@@ -46,14 +46,16 @@ const ItemRarity = Object.freeze({
 });
 
 const Category = Object.freeze({
-  DAMAGE: Symbol("damage"),
-  AI_BLACKLIST: Symbol("aiBlacklist"),
-  UTILITY: Symbol("utility"),
-  HEALING: Symbol("healing"),
-  SPRINT_RELATED: Symbol("sprintRelated"),
-  ON_KILL_EFFECT: Symbol("onKillEffect"),
-  EQUIPMENT_RELATED: Symbol("equipmentRelated"),
-  WORLD_UNIQUE: Symbol("worldUnique"), // do we care about keeping this category?
+  DAMAGE: Symbol("Damage"),
+  AI_BLACKLIST: Symbol("AI Blacklist"),
+  UTILITY: Symbol("Utility"),
+  HEALING: Symbol("Healing"),
+  SPRINT_RELATED: Symbol("Sprint Related"),
+  ON_KILL_EFFECT: Symbol("On Kill Effect"),
+  EQUIPMENT_RELATED: Symbol("Equipment Related"),
+  WORLD_UNIQUE: Symbol("World Unique"), // do we care about keeping this category?
+  TRANSFORMATION: Symbol("Transformation"),
+  MISC: Symbol("Misc"),
 });
 
 module.exports = {
