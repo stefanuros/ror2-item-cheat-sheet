@@ -6,35 +6,7 @@ const StackType = Object.freeze({
   NONE: Symbol("none"),
 });
 
-const StatType = Object.freeze({
-  DAMAGE: Symbol("Damage"),
-  CHARGE: Symbol("Charge"),
-  RADIUS: Symbol("Radius"),
-  SPRINT_SPEED: Symbol("Sprint Speed"),
-  DURATION: Symbol("Duration"),
-  HEAL: Symbol("Heal"),
-  MOVEMENT_SPEED: Symbol('Movement Speed'),
-  SHIELD: Symbol('Shield'),
-  CHANCE: Symbol("Chance"),
-  ATTACK_SPEED: Symbol("Attack Speed"),
-  COOLDOWN: Symbol("Cooldown"),
-  EXTRA_JUMP: Symbol("Extra Jump"),
-  TOTAL_HEALTH: Symbol("Total Health"),
-  THRESHOLD: Symbol("Threshold"),
-  ATTACK_SPEED_CAP: Symbol("Attack Speed Cap"),
-  ARMOUR: Symbol("Armour"),
-  BOOST: Symbol("Boost"),
-  LUCK: Symbol("Luck"),
-  ALLY_HEALTH: Symbol("Ally Health"),
-  ALLY_DAMAGE: Symbol("Ally Damage"),
-  CRITICAL_STRIKE_CHANCE: Symbol("Critical Strike Chance"),
-  HEALTH_REGENERATION: Symbol("Health Regeneration"),
-  AMOUNT: Symbol("Amount"),
-  GOLD: Symbol("Gold"),
-  HEAL_RATE: Symbol("Heal Rate"),
-});
-
-const ItemRarity = Object.freeze({
+const ItemType = Object.freeze({
   COMMON: Symbol("common"),
   UNCOMMON: Symbol("uncommon"),
   LEGENDARY: Symbol("legendary"),
@@ -45,7 +17,7 @@ const ItemRarity = Object.freeze({
   ELITE_EQUIPMENT: Symbol("eliteEquipment"),
 });
 
-const Category = Object.freeze({
+const Tag = Object.freeze({
   DAMAGE: Symbol("Damage"),
   AI_BLACKLIST: Symbol("AI Blacklist"),
   UTILITY: Symbol("Utility"),
@@ -53,14 +25,34 @@ const Category = Object.freeze({
   SPRINT_RELATED: Symbol("Sprint Related"),
   ON_KILL_EFFECT: Symbol("On Kill Effect"),
   EQUIPMENT_RELATED: Symbol("Equipment Related"),
-  WORLD_UNIQUE: Symbol("World Unique"), // do we care about keeping this category?
+  WORLD_UNIQUE: Symbol("World Unique"),
   TRANSFORMATION: Symbol("Transformation"),
   MISC: Symbol("Misc"),
 });
 
+const Category = Object.freeze({
+  DAMAGE: Symbol("Damage"),
+  UTILITY: Symbol("Utility"),
+  HEALING: Symbol("Healing"),
+  ON_KILL_EFFECT: Symbol("On Kill Effect"),
+  ON_HIT_EFFECT: Symbol("On Hit Effect"),
+  EQUIPMENT_RELATED: Symbol("Equipment Related"),
+  TRANSFORMATION: Symbol("Transformation"),
+  MISC: Symbol("Misc"),
+  MOBILITY: Symbol('Mobility'),
+  SHIELD: Symbol('Shield'),
+  ATTACK_SPEED: Symbol("Attack Speed"),
+  COOLDOWN: Symbol("Cooldown"),
+  CRITICAL_STRIKE: Symbol("Critical Strike"),
+  SURVIVABILITY: Symbol("Survivability"),
+  AOE: Symbol("AOE"),
+  TRACKING_PROJECTILE: Symbol("Tracking Projectile"),
+  MINION: Symbol("Minion"),
+});
+
 module.exports = {
   StackType,
-  StatType,
-  ItemRarity,
+  ItemType,
+  Tag,
   Category,
 };
