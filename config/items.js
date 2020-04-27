@@ -336,7 +336,7 @@ const items = {
       constant.Tag.UTILITY,
       constant.Tag.ON_KILL_EFFECT,
     ],
-    category:[
+    category: [
       constant.Category.MINION,
       constant.Category.DAMAGE,
     ],
@@ -2688,7 +2688,7 @@ const equipment = {
   },
 };
 
-module.exports = {
+export default {
   items,
   equipment,
 };

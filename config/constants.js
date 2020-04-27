@@ -50,7 +50,7 @@ const Category = Object.freeze({
   MINION: Symbol("Minion"),
 });
 
-module.exports = {
+export default {
   StackType,
   ItemType,
   Tag,
