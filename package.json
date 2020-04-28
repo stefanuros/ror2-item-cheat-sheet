@@ -43,7 +43,9 @@
       "quotes": "off",
       "no-unused-vars": "warn",
       "no-plusplus": "off",
-      "arrow-parens": "off"
+      "arrow-parens": "off",
+      "object-curly-newline": "off",
+      "arrow-body-style": "off"
     }
   },
   "browserslist": [

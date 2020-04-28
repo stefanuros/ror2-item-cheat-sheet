@@ -1,6 +1,13 @@
-import * as constant from './constants';
+import { StackType, ItemType, Tag, Category } from './constants';
 
-const items = {
+const constant = {
+  StackType,
+  ItemType,
+  Tag,
+  Category,
+};
+
+export const items = Object.freeze({
   0: {
     wikiLink: "https://riskofrain2.gamepedia.com/Soldier%27s_Syringe",
     name: "Soldier's Syringe",
@@ -2294,9 +2301,9 @@ const items = {
       stackValue: "-50%", 
     }],
   },
-};
+});
 
-const equipment = {
+export const equipment = Object.freeze({
   0: {
     wikiLink: "https://riskofrain2.gamepedia.com/Disposable_Missile_Launcher",
     name: "Disposable Missile Launcher",
@@ -2686,9 +2693,4 @@ const equipment = {
     id: 34,
     cooldown: "45s",
   },
-};
-
-export default {
-  items,
-  equipment,
-};
+});

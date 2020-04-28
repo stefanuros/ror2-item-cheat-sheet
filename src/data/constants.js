@@ -1,4 +1,4 @@
-const StackType = Object.freeze({
+export const StackType = Object.freeze({
   LINEAR: Symbol("linear"),
   HYPERBOLIC: Symbol("hyperbolic"),
   EXPONENTIAL: Symbol("exponential"),
@@ -6,7 +6,7 @@ const StackType = Object.freeze({
   NONE: Symbol("none"),
 });
 
-const ItemType = Object.freeze({
+export const ItemType = Object.freeze({
   COMMON: Symbol("common"),
   UNCOMMON: Symbol("uncommon"),
   LEGENDARY: Symbol("legendary"),
@@ -17,7 +17,7 @@ const ItemType = Object.freeze({
   ELITE_EQUIPMENT: Symbol("eliteEquipment"),
 });
 
-const Tag = Object.freeze({
+export const Tag = Object.freeze({
   DAMAGE: Symbol("Damage"),
   AI_BLACKLIST: Symbol("AI Blacklist"),
   UTILITY: Symbol("Utility"),
@@ -30,7 +30,7 @@ const Tag = Object.freeze({
   MISC: Symbol("Misc"),
 });
 
-const Category = Object.freeze({
+export const Category = Object.freeze({
   DAMAGE: Symbol("Damage"),
   UTILITY: Symbol("Utility"),
   HEALING: Symbol("Healing"),
@@ -50,9 +50,9 @@ const Category = Object.freeze({
   MINION: Symbol("Minion"),
 });
 
-export default {
-  StackType,
-  ItemType,
-  Tag,
-  Category,
-};
+export const SelectionType = Object.freeze({
+  ITEM: Symbol("Item"),
+  EQUIPMENT: Symbol("Equipment"),
+  CHARACTER: Symbol("Character"),
+  ARTIFACT: Symbol("Artifact"),
+});
