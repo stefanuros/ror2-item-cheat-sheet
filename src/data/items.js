@@ -8,6 +8,12 @@ const constant = {
 };
 
 export const items = Object.freeze({
+  /** Get all non-hidden, item keys */
+  getItemIds() {
+    return Object.keys(this).filter(val => {
+      return typeof this[val] === "object" && !this[val].hidden;
+    });
+  },
   0: {
     wikiLink: "https://riskofrain2.gamepedia.com/Soldier%27s_Syringe",
     name: "Soldier's Syringe",
@@ -31,7 +37,7 @@ export const items = Object.freeze({
       stat: "Attack Speed",
       value: "15%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+15%", 
+      stackValue: "+15%",
     }],
   },
   1: {
@@ -57,7 +63,7 @@ export const items = Object.freeze({
       stat: "Block Chance",
       value: "15%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+15%", 
+      stackValue: "+15%",
     }],
   },
   2: {
@@ -80,7 +86,7 @@ export const items = Object.freeze({
       stat: "Explosion Radius",
       value: "4m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2.5m", 
+      stackValue: "+2.5m",
     }],
   },
   3: {
@@ -103,7 +109,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "300%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+300%", 
+      stackValue: "+300%",
     }],
   },
   4: {
@@ -127,13 +133,13 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "350%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+280%", 
+      stackValue: "+280%",
     },
     {
       stat: "Pillar Radius",
       value: "12m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2.4m", 
+      stackValue: "+2.4m",
     }],
   },
   5: {
@@ -157,7 +163,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "150%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+150%", 
+      stackValue: "+150%",
     }],
   },
   6: {
@@ -180,7 +186,7 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "8",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+8", 
+      stackValue: "+8",
     }],
   },
   7: {
@@ -204,7 +210,7 @@ export const items = Object.freeze({
       value: "10%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+10%",
-      effectiveMax: 10, 
+      effectiveMax: 10,
     }],
   },
   8: {
@@ -230,7 +236,7 @@ export const items = Object.freeze({
       stat: "Movement Speed",
       value: "14%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+14%", 
+      stackValue: "+14%",
     }],
   },
   9: {
@@ -252,7 +258,7 @@ export const items = Object.freeze({
       stat: "Extra Jump",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   11: {
@@ -276,13 +282,13 @@ export const items = Object.freeze({
       value: "3",
       stackType: constant.StackType.LINEAR,
       stackValue: "+2",
-      effectiveMax: 22, 
+      effectiveMax: 22,
     },
     {
       stat: "Radius",
       value: "20m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2m", 
+      stackValue: "+2m",
     }],
   },
   13: {
@@ -304,7 +310,7 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   14: {
@@ -328,7 +334,7 @@ export const items = Object.freeze({
       stat: "Ice Storm Radius",
       value: "6m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+6m", 
+      stackValue: "+6m",
     }],
   },
   15: {
@@ -352,7 +358,7 @@ export const items = Object.freeze({
       stat: "Ghost Duration",
       value: "30s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+30s", 
+      stackValue: "+30s",
     }],
   },
   16: {
@@ -376,13 +382,13 @@ export const items = Object.freeze({
       value: "4.5%/s",
       stackType: constant.StackType.LINEAR,
       stackValue: "+2.25%/s",
-      effectiveMax: 44, 
+      effectiveMax: 44,
     },
     {
       stat: "Radius",
       value: "3m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.5m", 
+      stackValue: "+1.5m",
     }],
   },
   17: {
@@ -409,7 +415,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "150%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+50%", 
+      stackValue: "+50%",
     }],
   },
   19: {
@@ -436,13 +442,13 @@ export const items = Object.freeze({
       stat: "Attack Speed Cap",
       value: "36%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+24%", 
+      stackValue: "+24%",
     },
     {
       stat: "Critical Strike Chance",
       value: "5%",
       stackType: constant.StackType.NONE,
-      stackValue: "+0%", 
+      stackValue: "+0%",
     }],
   },
   20: {
@@ -465,7 +471,7 @@ export const items = Object.freeze({
       value: "15%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+15%",
-      effectiveMax: 7, 
+      effectiveMax: 7,
     }],
   },
   21: {
@@ -486,7 +492,7 @@ export const items = Object.freeze({
       stat: "Movement Speed",
       value: "30%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+30%", 
+      stackValue: "+30%",
     }],
   },
   22: {
@@ -512,7 +518,7 @@ export const items = Object.freeze({
       value: "10s",
       stackType: constant.StackType.EXPONENTIAL,
       stackValue: "-50%",
-      effectiveMax: 7, 
+      effectiveMax: 7,
     }],
   },
   23: {
@@ -549,7 +555,7 @@ export const items = Object.freeze({
       stat: "Banner Radius",
       value: "16m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+8m", 
+      stackValue: "+8m",
     }],
   },
   25: {
@@ -571,7 +577,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "3s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.5s", 
+      stackValue: "+1.5s",
     }],
   },
   26: {
@@ -599,13 +605,13 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "8",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4", 
+      stackValue: "+4",
     },
     {
       stat: "Critical Strike Chance",
       value: "5%",
       stackType: constant.StackType.NONE,
-      stackValue: "+0%", 
+      stackValue: "+0%",
     }],
   },
   27: {
@@ -626,7 +632,7 @@ export const items = Object.freeze({
       stat: "Health Regeneration",
       value: "3hp/s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+3hp/s", 
+      stackValue: "+3hp/s",
     }],
   },
   29: {
@@ -648,7 +654,7 @@ export const items = Object.freeze({
       stat: "Shield",
       value: "8%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+8%", 
+      stackValue: "+8%",
     }],
   },
   30: {
@@ -678,13 +684,13 @@ export const items = Object.freeze({
       value: "1",
       stackType: constant.StackType.LINEAR,
       stackValue: "+1",
-      effectiveMax: 254, 
+      effectiveMax: 254,
     },
     {
       stat: "Cooldown",
       value: "15%",
       stackType: constant.StackType.EXPONENTIAL,
-      stackValue: "+15%", 
+      stackValue: "+15%",
       effectiveMax: 43,
     }],
   },
@@ -712,7 +718,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
   },
   32: {
@@ -739,7 +745,7 @@ export const items = Object.freeze({
       stat: "Targets",
       value: "3",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2", 
+      stackValue: "+2",
     }],
   },
   33: {
@@ -768,7 +774,7 @@ export const items = Object.freeze({
       stat: "Health Increase",
       value: "100",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100", 
+      stackValue: "+100",
     }],
   },
   35: {
@@ -794,7 +800,7 @@ export const items = Object.freeze({
       stat: "Luck",
       value: "1",
       stackType: constant.StackType.EXPONENTIAL,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   36: {
@@ -820,7 +826,7 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "10",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10", 
+      stackValue: "+10",
     }],
   },
   37: {
@@ -843,7 +849,7 @@ export const items = Object.freeze({
       stat: "Chance",
       value: "18%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     }],
   },
   38: {
@@ -871,13 +877,13 @@ export const items = Object.freeze({
       stat: "Chance",
       value: "20%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+20%", 
+      stackValue: "+20%",
     },
     {
       stat: "Targets",
       value: "10",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+5", 
+      stackValue: "+5",
     }],
   },
   39: {
@@ -901,13 +907,13 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "150%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+75%", 
+      stackValue: "+75%",
     },
     {
       stat: "Radius",
       value: "12m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4m", 
+      stackValue: "+4m",
     }],
   },
   41: {
@@ -930,7 +936,7 @@ export const items = Object.freeze({
       stat: "Chance",
       value: "5%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+5%", 
+      stackValue: "+5%",
     }],
   },
   42: {
@@ -958,7 +964,7 @@ export const items = Object.freeze({
       stat: "Fireworks",
       value: "8",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4", 
+      stackValue: "+4",
     }],
   },
   43: {
@@ -979,14 +985,14 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "100%",
       stackType: constant.StackType.EXPONENTIAL,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     },
     {
       stat: "Total Health",
       value: "-50%",
       stackType: constant.StackType.EXPONENTIAL,
       stackValue: "-50%",
-      effectiveMax: 127, 
+      effectiveMax: 127,
     }],
   },
   44: {
@@ -1007,13 +1013,13 @@ export const items = Object.freeze({
       stat: "Gold Gained",
       value: "2",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2", 
+      stackValue: "+2",
     },
     {
       stat: "Gold Lost",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
   },
   46: {
@@ -1043,7 +1049,7 @@ export const items = Object.freeze({
       stat: "Frenzy Duration",
       value: "6s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4s", 
+      stackValue: "+4s",
     }],
   },
   49: {
@@ -1065,7 +1071,7 @@ export const items = Object.freeze({
       stat: "Maximum Health",
       value: "50%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+25%", 
+      stackValue: "+25%",
     }],
   },
   50: {
@@ -1088,7 +1094,7 @@ export const items = Object.freeze({
       value: "25%",
       stackType: constant.StackType.EXPONENTIAL,
       stackValue: "+25%",
-      effectiveMax: 19, 
+      effectiveMax: 19,
     }],
   },
   51: {
@@ -1119,7 +1125,7 @@ export const items = Object.freeze({
       value: "4s",
       stackType: constant.StackType.LINEAR,
       stackValue: "+2s",
-      effectiveMax: 69, 
+      effectiveMax: 69,
     }],
   },
   52: {
@@ -1143,13 +1149,13 @@ export const items = Object.freeze({
       stat: "Maximum Health",
       value: "40",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+40", 
+      stackValue: "+40",
     },
     {
       stat: "Health Regeneration",
       value: "1.6",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.6", 
+      stackValue: "+1.6",
     }],
   },
   53: {
@@ -1172,7 +1178,7 @@ export const items = Object.freeze({
       stat: "Beetle Guard",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   57: {
@@ -1194,7 +1200,7 @@ export const items = Object.freeze({
       stat: "Sprint Speed",
       value: "30%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+20%", 
+      stackValue: "+20%",
     }],
   },
   58: {
@@ -1220,7 +1226,7 @@ export const items = Object.freeze({
       stat: "Charge",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   59: {
@@ -1243,7 +1249,7 @@ export const items = Object.freeze({
       value: "5%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+5%",
-      effectiveMax: 20, 
+      effectiveMax: 20,
     }],
   },
   60: {
@@ -1270,7 +1276,7 @@ export const items = Object.freeze({
       stat: "Chance",
       value: "",
       stackType: constant.StackType.SPECIAL,
-      stackValue: "", 
+      stackValue: "",
     }],
   },
   61: {
@@ -1297,7 +1303,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "20%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+20%", 
+      stackValue: "+20%",
     }],
   },
   62: {
@@ -1320,7 +1326,7 @@ export const items = Object.freeze({
       stat: "Armour",
       value: "30",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+30", 
+      stackValue: "+30",
     }],
   },
   63: {
@@ -1347,7 +1353,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "250%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+125%", 
+      stackValue: "+125%",
     }],
   },
   64: {
@@ -1374,7 +1380,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "500%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+250%", 
+      stackValue: "+250%",
     }],
   },
   65: {
@@ -1396,7 +1402,7 @@ export const items = Object.freeze({
       stat: "Slow Duration",
       value: "2s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2s", 
+      stackValue: "+2s",
     }],
   },
   66: {
@@ -1423,7 +1429,7 @@ export const items = Object.freeze({
       stat: "Uses",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   68: {
@@ -1445,7 +1451,7 @@ export const items = Object.freeze({
       stat: "Charges",
       value: "2",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2", 
+      stackValue: "+2",
     }],
   },
   69: {
@@ -1470,7 +1476,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "8s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+5s", 
+      stackValue: "+5s",
     }],
   },
   70: {
@@ -1499,7 +1505,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "4s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4s", 
+      stackValue: "+4s",
     }],
   },
   71: {
@@ -1520,13 +1526,13 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     },
     {
       stat: "Maximum Heal",
       value: "10%",
       stackType: constant.StackType.EXPONENTIAL,
-      stackValue: "-50%", 
+      stackValue: "-50%",
       effectiveMax: 7,
     }],
   },
@@ -1556,7 +1562,7 @@ export const items = Object.freeze({
       value: "-50%",
       stackType: constant.StackType.EXPONENTIAL,
       stackValue: "-15%",
-      effectiveMax: 40, 
+      effectiveMax: 40,
     }],
   },
   75: {
@@ -1582,7 +1588,7 @@ export const items = Object.freeze({
       stat: "Heal",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
   },
   76: {
@@ -1609,7 +1615,7 @@ export const items = Object.freeze({
       stat: "Boost",
       value: "10m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10m", 
+      stackValue: "+10m",
     }],
   },
   78: {
@@ -1637,7 +1643,7 @@ export const items = Object.freeze({
       stat: "Threshold",
       value: "20%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+20%", 
+      stackValue: "+20%",
     }],
   },
   79: {
@@ -1665,7 +1671,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "8s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+4s", 
+      stackValue: "+4s",
     }],
   },
   80: {
@@ -1687,7 +1693,7 @@ export const items = Object.freeze({
       stat: "Healing Converted",
       value: "50%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+50%", 
+      stackValue: "+50%",
     }],
   },
   82: {
@@ -1710,13 +1716,13 @@ export const items = Object.freeze({
       stat: "Health",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     },
     {
       stat: "Damage",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+50%", 
+      stackValue: "+50%",
     }],
   },
   83: {
@@ -1740,7 +1746,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
   },
   84: {
@@ -1764,7 +1770,7 @@ export const items = Object.freeze({
       stat: "Shield",
       value: "15",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+15", 
+      stackValue: "+15",
     }],
   },
   85: {
@@ -1785,7 +1791,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "8s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+8s", 
+      stackValue: "+8s",
     }],
   },
   86: {
@@ -1807,7 +1813,7 @@ export const items = Object.freeze({
       stat: "Healing Nova",
       value: "1",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1", 
+      stackValue: "+1",
     }],
   },
   87: {
@@ -1828,7 +1834,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "15%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+15%", 
+      stackValue: "+15%",
     }],
   },
   88: {
@@ -1856,13 +1862,13 @@ export const items = Object.freeze({
       value: "25%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+25%",
-      effectiveMax: 4, 
+      effectiveMax: 4,
     },
     {
       stat: "Duration",
       value: "3s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+3s", 
+      stackValue: "+3s",
     }],
   },
   90: {
@@ -1886,13 +1892,13 @@ export const items = Object.freeze({
       value: "5",
       stackType: constant.StackType.LINEAR,
       stackValue: "+2",
-      effectiveMax: 21, 
+      effectiveMax: 21,
     },
     {
       stat: "Radius",
       value: "25m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10m", 
+      stackValue: "+10m",
     }],
   },
   91: {
@@ -1915,7 +1921,7 @@ export const items = Object.freeze({
       stat: "Duration",
       value: "3s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+3s", 
+      stackValue: "+3s",
     }],
   },
   92: {
@@ -1938,7 +1944,7 @@ export const items = Object.freeze({
       stat: "Maximum Health",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     }],
   },
   93: {
@@ -1968,43 +1974,43 @@ export const items = Object.freeze({
       stat: "Maximum Health",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Health Regen",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Movement Speed",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Damage",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Attack Speed",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Critical Strike Chance",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     },
     {
       stat: "Armour",
       value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+10%", 
+      stackValue: "+10%",
     }],
   },
   94: {
@@ -2028,7 +2034,7 @@ export const items = Object.freeze({
       value: "4%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+4%",
-      effectiveMax: 25, 
+      effectiveMax: 25,
     }],
   },
   95: {
@@ -2051,13 +2057,13 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "300%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+300%", 
+      stackValue: "+300%",
     },
     {
       stat: "Explosion Damage",
       value: "1000%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1000%", 
+      stackValue: "+1000%",
     }],
   },
   96: {
@@ -2084,13 +2090,13 @@ export const items = Object.freeze({
       stat: "Charges",
       value: "12",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+12", 
+      stackValue: "+12",
     },
     {
       stat: "Reload",
       value: "2s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2s", 
+      stackValue: "+2s",
     }],
   },
   97: {
@@ -2114,7 +2120,7 @@ export const items = Object.freeze({
       value: "30s",
       stackType: constant.StackType.EXPONENTIAL,
       stackValue: "-50%",
-      effectiveMax: 11, 
+      effectiveMax: 11,
     }],
   },
   98: {
@@ -2167,7 +2173,7 @@ export const items = Object.freeze({
       stat: "Damage Reduction",
       value: "5",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+5", 
+      stackValue: "+5",
     }],
   },
   103: {
@@ -2194,7 +2200,7 @@ export const items = Object.freeze({
       stat: "Attack Speed",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
   },
   104: {
@@ -2215,7 +2221,7 @@ export const items = Object.freeze({
       stat: "Damage",
       value: "50%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+50%", 
+      stackValue: "+50%",
     }],
   },
   105: {
@@ -2237,7 +2243,7 @@ export const items = Object.freeze({
       stat: "Radius",
       value: "3m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.5m", 
+      stackValue: "+1.5m",
     }],
   },
   106: {
@@ -2258,13 +2264,13 @@ export const items = Object.freeze({
       stat: "Chance",
       value: "7%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1%", 
+      stackValue: "+1%",
     },
     {
       stat: "Parent Health",
       value: "100%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%", 
+      stackValue: "+100%",
     }],
     hidden: true,
   },
@@ -2292,18 +2298,24 @@ export const items = Object.freeze({
       stat: "Charge Speed",
       value: "30%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+30%", 
+      stackValue: "+30%",
     },
     {
       stat: "Teleporter Zone",
       value: "50%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "-50%", 
+      stackValue: "-50%",
     }],
   },
 });
 
 export const equipment = Object.freeze({
+  /** Get all non-hidden, item keys */
+  getItemIds() {
+    return Object.keys(this).filter(val => {
+      return typeof this[val] === "object" && !this[val].hidden;
+    });
+  },
   0: {
     wikiLink: "https://riskofrain2.gamepedia.com/Disposable_Missile_Launcher",
     name: "Disposable Missile Launcher",

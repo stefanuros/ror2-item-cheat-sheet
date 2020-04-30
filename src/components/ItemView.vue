@@ -17,7 +17,7 @@ export default {
   },
   data: () => {
     return {
-      itemIdList: Object.keys(items),
+      itemIdList: items.getItemIds(),
     };
   },
 };
