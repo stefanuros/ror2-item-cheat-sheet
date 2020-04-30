@@ -50,6 +50,13 @@ export default {
   --border-pixel: 2px;
 }
 
+/* Setting colours for different rarities */
+.item-colour-common { --border-colour: #C7CCCE; }
+.item-colour-uncommon { --border-colour: #71BC39; }
+.item-colour-legendary { --border-colour: #DF4D39; }
+.item-colour-boss { --border-colour: #AEBA23; }
+.item-colour-lunar { --border-colour: #36B8E0; }
+
 .item-card {
   display: flex;
   flex-direction: row;
@@ -61,6 +68,7 @@ export default {
 .item-icon {
   height: var(--item-card-height);
   border-right: var(--border-pixel) solid var(--border-colour);
+  background: radial-gradient(var(--border-colour), #222222);
 }
 
 .item-details {
@@ -72,38 +80,18 @@ export default {
 .item-name {
   font-size: 95%;
   margin: 5px 10px 2px 10px;
-  text-align: start;
+  /* text-align: start; */
 }
 
 .item-short-description {
   font-size: 85%;
   font-style: italic;
   margin: 2px 10px 5px 10px;
-  text-align: start;
+  /* text-align: start; */
 
   /* Align vertically */
   display: flex;
   align-items: center;
   flex-grow: 1;
-}
-
-.item-colour-common {
-  --border-colour: grey;
-}
-
-.item-colour-uncommon {
-  --border-colour: green;
-}
-
-.item-colour-legendary {
-  --border-colour: red;
-}
-
-.item-colour-boss {
-  --border-colour: yellow;
-}
-
-.item-colour-lunar {
-  --border-colour: blue;
 }
 </style>
