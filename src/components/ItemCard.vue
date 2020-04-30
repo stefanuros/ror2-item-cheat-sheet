@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .item-card {
   --item-card-height: 60px;
-  --item-card-width: 350px;
+  --item-card-width: 400px;
 
   --border-pixel: 2px;
 }
