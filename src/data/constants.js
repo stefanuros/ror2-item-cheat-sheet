@@ -6,7 +6,7 @@ export const StackType = Object.freeze({
   NONE: Symbol("none"),
 });
 
-export const ItemType = Object.freeze({
+export const ItemRarity = Object.freeze({
   COMMON: Symbol("common"),
   UNCOMMON: Symbol("uncommon"),
   LEGENDARY: Symbol("legendary"),
