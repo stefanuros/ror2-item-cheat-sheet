@@ -2,21 +2,24 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- <ItemCard></ItemCard>
     <ItemCard></ItemCard>
-    <ItemCard></ItemCard>
-    <ItemCard></ItemCard>
+    <ItemCard></ItemCard> -->
+    <ItemView/>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
-import ItemCard from './components/ItemCard.vue';
+// import ItemCard from './components/ItemCard.vue';
+import ItemView from './components/ItemView.vue';
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    ItemCard,
+    // ItemCard,
+    ItemView,
   },
 };
 </script>

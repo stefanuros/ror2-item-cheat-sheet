@@ -2,7 +2,7 @@
   <div class="item-card" v-bind:class="this.getRarityClass()">
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
-      <h4 class="item-name">{{ itemData.name }}</h4>
+      <h4 class="item-name">{{ itemData.name }} - {{ itemId }}</h4>
       <p class="item-short-description">{{ itemData.shortDescription }}</p>
     </div>
   </div>
@@ -14,9 +14,10 @@ import { ItemRarity } from '../data/constants';
 
 export default {
   name: "ItemCard",
-  data: () => {
+  props: ["itemId"],
+  data() {
     return {
-      itemData: items[0],
+      itemData: items[this.itemId],
     };
   },
   methods: {
