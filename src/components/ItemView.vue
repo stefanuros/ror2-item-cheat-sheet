@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div v-for="itemId in itemIdList" v-bind:key="itemId">
-      <ItemCard v-bind:itemId="itemId"/>
-    </div>
+  <div class="item-view">
+    <ItemCard 
+      v-for="itemId in itemIdList"
+      v-bind:key="itemId"
+      v-bind:itemId="itemId"
+    />
   </div>
 </template>
 
@@ -24,5 +26,8 @@ export default {
 </script>
 
 <style>
-
+.item-view {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

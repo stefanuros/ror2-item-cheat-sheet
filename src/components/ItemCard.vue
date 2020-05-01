@@ -109,6 +109,8 @@ export default {
   width: var(--item-card-width);
   border: var(--border-thickness) solid var(--item-card-colour);
   font-family:Arial, Helvetica, sans-serif;
+
+  margin: 5px;
 }
 
 .item-icon {
