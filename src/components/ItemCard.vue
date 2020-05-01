@@ -1,5 +1,5 @@
 <template>
-  <div class="item-card" v-bind:class="this.getRarityClass()">
+  <div class="item-card small-view" v-bind:class="this.getRarityClass()">
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
       <h4 class="item-name">
@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style scoped>
-.item-card {
+.small-view {
   --item-card-height: 60px;
   --item-card-width: 350px;
 
@@ -78,6 +78,10 @@ export default {
 
   --sub-text-colour: darkSlateGrey;
   --background-opacity: 0.25;
+
+  --sub-text-size: 70%;
+  --item-name-text-size: 95%;
+  --description-text-size: 75%;
 }
 
 /* Setting colours for different rarities */
@@ -127,7 +131,7 @@ export default {
 }
 
 .item-name {
-  font-size: 90%;
+  font-size: var(--item-name-text-size);
   margin: 3px 5px 1px 10px;
 
   position: relative;
@@ -138,14 +142,14 @@ export default {
   top: 0;
   right: 0;
 
-  font-size: 70%;
+  font-size: var(--sub-text-size);
   color: var(--sub-text-colour);
   /* float: right; */
 }
 
 .item-short-description {
   font-style: normal;
-  font-size: 75%;
+  font-size: var(--description-text-size);
   margin: 1px 5px 3px 10px;
 
   /* Align vertically */
@@ -157,7 +161,7 @@ export default {
 }
 
 .item-id {
-  font-size: 70%;
+  font-size: var(--sub-text-size);
   font-style: italic;
   font-weight: lighter;
   color: var(--sub-text-colour);
