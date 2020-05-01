@@ -3,7 +3,8 @@
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
       <h4 class="item-name">
-        {{ itemId }} - {{ itemData.name }}
+        {{ itemData.name }}
+        <span class="item-id">#{{ itemId }}</span>
         <span 
           class="item-effective-max"
           v-if="getEffectiveMax()"
@@ -68,7 +69,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .item-card {
   --item-card-height: 60px;
@@ -128,29 +128,38 @@ export default {
 
 .item-name {
   font-size: 90%;
-  margin: 3px 10px 1px 10px;
-  /* text-align: start; */
+  margin: 3px 5px 1px 10px;
+
+  position: relative;
 }
 
 .item-effective-max {
+  position: absolute;
+  top: 0;
+  right: 0;
+
   font-size: 70%;
   color: var(--sub-text-colour);
-  font-style: italic;
-  float: right;
+  /* float: right; */
 }
 
 .item-short-description {
   font-style: normal;
   font-size: 75%;
-  /* font-style: italic; */
-  margin: 1px 10px 3px 10px;
-  /* text-align: start; */
+  margin: 1px 5px 3px 10px;
 
   /* Align vertically */
   display: flex;
   align-items: center;
   flex-grow: 1;
 
+  color: var(--sub-text-colour);
+}
+
+.item-id {
+  font-size: 70%;
+  font-style: italic;
+  font-weight: lighter;
   color: var(--sub-text-colour);
 }
 </style>
