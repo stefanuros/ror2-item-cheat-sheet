@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getRarityClass() {
-      switch (this.itemData.itemType) {
+      switch (this.itemData.itemRarity) {
         case ItemRarity.COMMON:
           return "item-colour-common";
         case ItemRarity.UNCOMMON:

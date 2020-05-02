@@ -9,18 +9,45 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 import { items } from "../data/items";
+import { SortType, ItemRaritySortValue as rarityValues } from '../data/constants';
 
 export default {
   name: "ItemView",
   components: {
     ItemCard,
   },
-  data: () => {
-    return {
-      itemIdList: items.getItemIds(),
-    };
+  // data: () => {
+  //   return {
+  //     itemIdList: items.getItemIds(),
+  //   };
+  // },
+  computed: {
+    ...mapState([
+      'sortBy',
+    ]),
+    itemIdList() {
+      // Sort the item ids based on the sortBy state value
+      return items.getItemIds().sort((a, b) => {
+        // Sort by rarity
+        if (this.sortBy === SortType.RARITY) {
+          const aRarity = items[a].itemRarity;
+          const bRarity = items[b].itemRarity;
+          // If theyre the same rarity, sort by ID
+          if (aRarity !== bRarity) {
+            return rarityValues[aRarity] - rarityValues[bRarity];
+          }
+        }
+        // Sort by Name
+        if (this.sortBy === SortType.NAME) {
+          return (items[a].name < items[b].name ? -1 : 1);
+        }
+        // Sort by ID (default)
+        return a - b;
+      });
+    },
   },
 };
 </script>

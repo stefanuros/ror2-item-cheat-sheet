@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { SelectionType } from './data/constants';
+import { SortType } from './data/constants';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    count: 0,
-    selectedId: 0,
-    selectedType: SelectionType.EQ,
+    sortBy: SortType.RARITY,
   },
   mutations: {
-    increment: state => { state.count++; },
+    setSortBy: (state, { sortKey }) => {
+      state.sortBy = SortType[sortKey.toUpperCase()];
+    },
   },
 });
