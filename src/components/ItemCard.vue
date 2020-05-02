@@ -71,17 +71,17 @@ export default {
 
 <style scoped>
 .small-view {
-  --item-card-height: 60px;
-  --item-card-width: 350px;
+  --item-card-height: 50px;
+  --item-card-width: 310px;
 
   --border-thickness: 2px;
 
   --sub-text-colour: darkSlateGrey;
   --background-opacity: 0.25;
 
-  --sub-text-size: 70%;
-  --item-name-text-size: 95%;
-  --description-text-size: 75%;
+  --sub-text-size: 65%;
+  --item-name-text-size: 90%;
+  --description-text-size: 70%;
 }
 
 /* Setting colours for different rarities */
@@ -114,7 +114,7 @@ export default {
   border: var(--border-thickness) solid var(--item-card-colour);
   font-family:Arial, Helvetica, sans-serif;
 
-  margin: 5px;
+  margin: 2px;
 }
 
 .item-icon {
