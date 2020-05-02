@@ -65,14 +65,37 @@ export const filterOperation = (itemIds, filterBy) => {
   return itemIds.filter(id => {
     // Check if a category matches if it has some filter values
     const categoryMatches = (category.length === 0)
-    || items[id].category.some(val => {
-      return category.includes(val);
-    });
+      || items[id].category.some(val => {
+        return category.includes(val);
+      });
 
     // Check if the rarity is one to show
     const rarityMatches = (rarity.length === 0) 
-    || rarity.includes(items[id].itemRarity);
+      || rarity.includes(items[id].itemRarity);
 
     return categoryMatches && rarityMatches;
+  });
+};
+
+/**
+ * Filters out any items that do not match the search term. Search looks through
+ * the item name, description, and short description
+ * 
+ * @param {[int]} itemIds - the list of itemIds
+ * @param {String} searchTerm - The term with search for
+ */
+export const searchOperation = (itemIds, searchTerm) => {
+  if (searchTerm == null || searchTerm.length === 0) {
+    return itemIds;
+  }
+
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+  // Check if the search term is included in the name, or 2 description values
+  return itemIds.filter(id => {
+    const item = items[id];
+    return item.name.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1
+      || item.description.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1
+      || item.shortDescription.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1;
   });
 };
