@@ -49,6 +49,11 @@ export default {
     },
     getEffectiveMax() {
       let effectiveMax = 0;
+
+      if (this.itemData.stats == null) {
+        return false;
+      }
+
       // Go through all the stats and get the biggest effective max 
       for (let i = 0; i < this.itemData.stats.length; i++) {
         const currentStat = this.itemData.stats[i];
