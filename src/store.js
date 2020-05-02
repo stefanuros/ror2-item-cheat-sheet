@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     sortBy: SortType.RARITY,
+    filterBy: { category: [], rarity: [] },
   },
   mutations: {
     setSortBy: (state, { sortKey }) => {

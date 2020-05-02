@@ -34,5 +34,32 @@ export const sortOperation = (itemIds, sortBy) => {
   });
 };
 
-// Temp variable to get around export default
-export const filterOperation = 5;
+export const filterOperation = (itemIds, filterBy) => {
+  if (filterBy == null) {
+    return itemIds;
+  }
+
+  let { category, rarity } = filterBy;
+
+  if (category == null) {
+    category = [];
+  }
+  
+  if (rarity == null) {
+    rarity = [];
+  }
+
+  return itemIds.filter(id => {
+    // Check if a category matches if it has some filter values
+    const categoryMatches = (category.length === 0)
+    || items[id].category.some(val => {
+      return category.includes(val);
+    });
+
+    // Check if the rarity is one to show
+    const rarityMatches = (rarity.length === 0) 
+    || rarity.includes(items[id].itemRarity);
+
+    return categoryMatches && rarityMatches;
+  });
+};
