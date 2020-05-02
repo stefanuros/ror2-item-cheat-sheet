@@ -48,6 +48,21 @@ export default {
         return a - b;
       });
     },
+    itemIdList_v2() {
+      // Set a list of operations that will be done to the item id list
+      // * Note: Order matters in this list
+      const itemIdOperations = [
+        // (itemIds) => filterFunction(itemIds, this.filterBy),
+        // (itemIds) => searchFunction(itemIds, this.searchTerm),
+        // (itemIds) => sortFunction(itemIds, this.sortBy),
+      ];
+
+      // Go through the operations and apply each operation to the output of the
+      // previous operation
+      return itemIdOperations.reduce((itemIds, operation) => {
+        return operation(itemIds);
+      }, items.getItemIds());
+    },
   },
 };
 </script>
