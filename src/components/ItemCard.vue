@@ -84,6 +84,20 @@ export default {
   --description-text-size: 70%;
 }
 
+.large-view {
+  --item-card-height: 75px;
+  --item-card-width: 400px;
+
+  --border-thickness: 2px;
+
+  --sub-text-colour: darkSlateGrey;
+  --background-opacity: 0.25;
+
+  --sub-text-size: 75%;
+  --item-name-text-size: 95%;
+  --description-text-size: 80%;
+}
+
 /* Setting colours for different rarities */
 .item-colour-common { 
   --item-card-colour: #96A6A6;
