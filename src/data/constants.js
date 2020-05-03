@@ -34,7 +34,7 @@ export const ItemRarityClass = Object.freeze({
   [ItemRarity.COMMON]: "item-colour-common",
   [ItemRarity.UNCOMMON]: "item-colour-uncommon",
   [ItemRarity.LEGENDARY]: "item-colour-legendary",
-  [ItemRarity.BOSS]: "item-colour-legendary",
+  [ItemRarity.BOSS]: "item-colour-boss",
   [ItemRarity.LUNAR]: "item-colour-lunar",
   [ItemRarity.EQUIPMENT]: "equipment-colour-normal",
   [ItemRarity.ELITE_EQUIPMENT]: "equipment-colour-elite",
