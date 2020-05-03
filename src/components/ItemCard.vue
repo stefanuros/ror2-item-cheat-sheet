@@ -1,5 +1,5 @@
 <template>
-  <div class="item-card small-view" v-bind:class="this.rarityClass">
+  <div class="item-card" v-bind:class="[this.rarityClass, this.cardSize]">
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
       <h4 class="item-name">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 import { items } from "../data/items";
 import { ItemRarity } from '../data/constants';
 
@@ -30,6 +32,9 @@ export default {
     };
   },
   computed: {
+    ...mapState([
+      'cardSize',
+    ]),
     effectiveMax() {
       return (this.itemData.stats || []).reduce((tot, val) => {
         return Math.max(tot, val.effectiveMax || 0);

@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { SortType } from './data/constants';
+import { SortType, Theme } from './data/constants';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    cardSize: Theme.SMALL,
+    pageTheme: Theme.DARK,
     showHidden: false,
     sortBy: SortType.RARITY,
     filterBy: { category: [], rarity: [] },

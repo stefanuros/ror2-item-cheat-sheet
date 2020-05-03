@@ -74,3 +74,10 @@ export const SortType = Object.freeze({
   NAME: Symbol("Name"),
   RARITY: Symbol("Rarity"),
 });
+
+export const Theme = Object.freeze({
+  SMALL: "small-view",
+  LARGE: "large-view",
+  LIGHT: "light-theme",
+  DARK: "dark-theme",
+});
