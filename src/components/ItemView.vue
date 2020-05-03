@@ -13,7 +13,7 @@ import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 
 import { items } from "../data/items";
-import { sortOperation, filterOperation, searchOperation } from '../helpers/ItemIdUtils';
+import ItemIdUtils from '../helpers/ItemIdUtils';
 
 export default {
   name: "ItemView",
@@ -22,6 +22,7 @@ export default {
   },
   computed: {
     ...mapState([
+      'showHidden',
       'sortBy',
       'filterBy',
       'searchTerm',
@@ -30,9 +31,10 @@ export default {
       // Set a list of operations that will be done to the item id list
       // * Note: Order matters in this list
       const itemIdOperations = [
-        (itemIds) => filterOperation(itemIds, this.filterBy),
-        (itemIds) => searchOperation(itemIds, this.searchTerm),
-        (itemIds) => sortOperation(itemIds, this.sortBy),
+        (itemIds) => ItemIdUtils.showHiddenOperation(itemIds, this.showHidden),
+        (itemIds) => ItemIdUtils.filterOperation(itemIds, this.filterBy),
+        (itemIds) => ItemIdUtils.searchOperation(itemIds, this.searchTerm),
+        (itemIds) => ItemIdUtils.sortOperation(itemIds, this.sortBy),
       ];
 
       // Go through the operations and apply each operation to the output of the

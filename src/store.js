@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    showHidden: false,
     sortBy: SortType.RARITY,
     filterBy: { category: [], rarity: [] },
     searchTerm: "",

@@ -12,37 +12,10 @@ export const items = Object.freeze({
    * Get all non-hidden, item keys
    * @param getHidden - Optional, false by default. If true, will return hidden values too
   */
-  getItemIds(getHidden = false) {
+  getItemIds() {
     return Object.keys(this).filter(key => {
-      return (typeof this[key] === "object") && (!this[key].hidden || getHidden);
+      return typeof this[key] === "object";
     });
-  },
-  /**
-   * Get a group of sorted item ids in the form of a list
-   * 
-   * @param sortBy - String specifying what to sort by. Can be 'id' or 'name'
-   * @param groupBy - An object thaty specifies which group to compare and what value
-   *                  to compare to. I.E. {group: 'itemRarity', value: constant.ItemRarity.COMMON}
-   *                  or {group: 'category', value: constant.Categopry.DAMAGE}
-   * @param getHidden - Optional, false by default. If true, will return hidden values too
-   */
-  getSortedIdGroup(sortBy, groupBy, getHidden = false) {
-    let idGroup = this.getItemIds(getHidden);
-
-    idGroup = idGroup.filter(val => {
-      return this[val][groupBy.group] === groupBy.value;
-    }).sort((a, b) => {
-      if (sortBy === "id") {
-        return a - b;
-      }
-      if (sortBy === "name") {
-        return (a < b ? -1 : 1);
-      }
-
-      return 0;
-    });
-
-    return idGroup;
   },
   0: {
     wikiLink: "https://riskofrain2.gamepedia.com/Soldier%27s_Syringe",

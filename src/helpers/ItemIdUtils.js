@@ -7,7 +7,7 @@ import { SortType, ItemRaritySortValue as rarityValues } from '../data/constants
  * @param {[int]} itemIds - A list of item Ids
  * @param {Enum} sortBy - An enum specifying the type of sort to be done
  */
-export const sortOperation = (itemIds, sortBy) => {
+const sortOperation = (itemIds, sortBy) => {
   if (sortBy == null) {
     return itemIds;
   }
@@ -47,7 +47,7 @@ export const sortOperation = (itemIds, sortBy) => {
  * @param {Object} filterBy  - An object with 2 keys, category and rarity. The 
  *                             values of the keys should be lists of filter values
  */
-export const filterOperation = (itemIds, filterBy) => {
+const filterOperation = (itemIds, filterBy) => {
   if (filterBy == null) {
     return itemIds;
   }
@@ -84,7 +84,7 @@ export const filterOperation = (itemIds, filterBy) => {
  * @param {[int]} itemIds - the list of itemIds
  * @param {String} searchTerm - The term with search for
  */
-export const searchOperation = (itemIds, searchTerm) => {
+const searchOperation = (itemIds, searchTerm) => {
   if (searchTerm == null || searchTerm.length === 0) {
     return itemIds;
   }
@@ -98,4 +98,21 @@ export const searchOperation = (itemIds, searchTerm) => {
       || item.description.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1
       || item.shortDescription.toLowerCase().indexOf(lowerCaseSearchTerm) !== -1;
   });
+};
+
+const showHiddenOperation = (itemIds, showHidden) => {
+  if (showHidden) {
+    return itemIds;
+  }
+
+  return itemIds.filter(id => {
+    return !items[id].hidden;
+  });
+};
+
+export default {
+  sortOperation,
+  filterOperation,
+  searchOperation,
+  showHiddenOperation,
 };
