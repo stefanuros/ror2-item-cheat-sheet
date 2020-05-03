@@ -1,16 +1,19 @@
 <template>
   <div class="home-page">
-    <ItemView/>
+    <TopBar/>
+    <ItemList/>
   </div>
 </template>
 
 <script>
-import ItemView from './ItemView.vue';
+import ItemList from './ItemList.vue';
+import TopBar from './TopBar.vue';
 
 export default {
   name: 'HomePage',
   components: {
-    ItemView,
+    ItemList,
+    TopBar,
   },
 };
 </script>

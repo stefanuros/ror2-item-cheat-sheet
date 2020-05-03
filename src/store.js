@@ -14,8 +14,8 @@ export default new Vuex.Store({
     searchTerm: "",
   },
   mutations: {
-    setSortBy: (state, { sortKey }) => {
-      state.sortBy = SortType[sortKey.toUpperCase()];
+    updateSearchTermState: (state, searchTerm) => {
+      state.searchTerm = (searchTerm == null ? "" : searchTerm);
     },
   },
 });

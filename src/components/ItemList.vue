@@ -16,7 +16,7 @@ import { items } from "../data/items";
 import ItemIdUtils from '../helpers/ItemIdUtils';
 
 export default {
-  name: "ItemView",
+  name: "ItemList",
   components: {
     ItemCard,
   },
