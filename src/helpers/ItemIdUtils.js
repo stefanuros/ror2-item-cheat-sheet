@@ -100,6 +100,13 @@ const searchOperation = (itemIds, searchTerm) => {
   });
 };
 
+/**
+ * Filters out hidden items
+ * 
+ * @param {*} itemIds - The list of ids
+ * @param {*} showHidden - Boolean stating whether hidden items should be shown
+ *                         or not
+ */
 const showHiddenOperation = (itemIds, showHidden) => {
   if (showHidden) {
     return itemIds;
