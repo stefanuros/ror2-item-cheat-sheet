@@ -1,5 +1,5 @@
 <template>
-  <div class="item-card small-view" v-bind:class="this.getRarityClass()">
+  <div class="item-card small-view" v-bind:class="this.rarityClass">
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
       <h4 class="item-name">
@@ -7,7 +7,7 @@
         <span class="item-id">#{{ itemId }}</span>
         <span 
           class="item-effective-max"
-          v-if="getEffectiveMax()"
+          v-if="effectiveMax > 0"
         >
           Max: {{ effectiveMax }}
         </span>
@@ -27,11 +27,15 @@ export default {
   data() {
     return {
       itemData: items[this.itemId],
-      effectiveMax: null,
     };
   },
-  methods: {
-    getRarityClass() {
+  computed: {
+    effectiveMax() {
+      return (this.itemData.stats || []).reduce((tot, val) => {
+        return Math.max(tot, val.effectiveMax || 0);
+      }, 0);
+    },
+    rarityClass() {
       switch (this.itemData.itemRarity) {
         case ItemRarity.COMMON:
           return "item-colour-common";
@@ -47,29 +51,8 @@ export default {
           return "item-colour-common";
       }
     },
-    getEffectiveMax() {
-      let effectiveMax = 0;
-
-      if (this.itemData.stats == null) {
-        return false;
-      }
-
-      // Go through all the stats and get the biggest effective max 
-      for (let i = 0; i < this.itemData.stats.length; i++) {
-        const currentStat = this.itemData.stats[i];
-        effectiveMax = Math.max(currentStat.effectiveMax || 0, effectiveMax);
-      }
-
-      // If there were no effective maxes, return false
-      if (effectiveMax <= 0) {
-        effectiveMax = false;
-      }
-
-      // Set the effective max value in the prop
-      this.effectiveMax = effectiveMax;
-
-      return effectiveMax;
-    },
+  },
+  methods: {
   },
 };
 </script>
