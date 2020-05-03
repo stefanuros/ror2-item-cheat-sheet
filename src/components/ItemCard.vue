@@ -21,7 +21,7 @@
 import { mapState } from 'vuex';
 
 import { items } from "../data/items";
-import { ItemRarity } from '../data/constants';
+import { ItemRarityClass } from '../data/constants';
 
 export default {
   name: "ItemCard",
@@ -41,20 +41,7 @@ export default {
       }, 0);
     },
     rarityClass() {
-      switch (this.itemData.itemRarity) {
-        case ItemRarity.COMMON:
-          return "item-colour-common";
-        case ItemRarity.UNCOMMON:
-          return "item-colour-uncommon";
-        case ItemRarity.LEGENDARY:
-          return "item-colour-legendary";
-        case ItemRarity.BOSS:
-          return "item-colour-boss";
-        case ItemRarity.LUNAR:
-          return "item-colour-lunar";
-        default:
-          return "item-colour-common";
-      }
+      return ItemRarityClass[this.itemData.itemRarity];
     },
   },
   methods: {

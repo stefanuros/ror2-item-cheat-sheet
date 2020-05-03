@@ -29,6 +29,18 @@ export const ItemRaritySortValue = Object.freeze({
   [ItemRarity.LUNAR_EQUIPMENT]: 2,
 });
 
+// Set the symbols from itemRarity to be the keys for their css class value
+export const ItemRarityClass = Object.freeze({
+  [ItemRarity.COMMON]: "item-colour-common",
+  [ItemRarity.UNCOMMON]: "item-colour-uncommon",
+  [ItemRarity.LEGENDARY]: "item-colour-legendary",
+  [ItemRarity.BOSS]: "item-colour-legendary",
+  [ItemRarity.LUNAR]: "item-colour-lunar",
+  [ItemRarity.EQUIPMENT]: "equipment-colour-normal",
+  [ItemRarity.ELITE_EQUIPMENT]: "equipment-colour-elite",
+  [ItemRarity.LUNAR_EQUIPMENT]: "equipment-colour-lunar",
+});
+
 export const Tag = Object.freeze({
   DAMAGE: Symbol("Damage"),
   AI_BLACKLIST: Symbol("AI Blacklist"),
