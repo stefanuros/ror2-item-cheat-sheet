@@ -1,6 +1,5 @@
 <template>
   <div class="sort-by">
-    <!-- <font-awesome-icon class="sort-by-icon" icon="sort" /> -->
     <p class="sort-by-label">Sort By</p>
     <select 
       name="sort-by-select" 
