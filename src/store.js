@@ -17,7 +17,7 @@ export default new Vuex.Store({
     updateSortByState(state, sortBy) {
       state.sortBy = sortBy || SortType.RARITY;
     },
-    filterBy(state, filterBy) {
+    updateFilterByState(state, filterBy) {
       state.filterBy = filterBy || { category: [], rarity: [] };
     },
     updateSearchTermState(state, searchTerm) {

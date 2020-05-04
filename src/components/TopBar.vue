@@ -2,17 +2,20 @@
   <div class="top-bar">
     <div class="nav-bar">
       <SearchBar />
+      <SortBySelector />
     </div>
   </div>
 </template>
 
 <script>
 import SearchBar from './NavBar/SearchBar.vue';
+import SortBySelector from './NavBar/SortBySelector.vue';
 
 export default {
   name: 'TopBar',
   components: {
     SearchBar,
+    SortBySelector,
   },
 };
 </script>
@@ -32,5 +35,6 @@ export default {
 
 .nav-bar {
   margin: auto;
+  display: flex;
 }
 </style>
