@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .search-bar {
   --search-bar-height: 40px;
-  --search-bar-width: 300px;
+  --search-bar-width: 400px;
   --search-bar-text-size: 130%;
   --search-bar-icon-size: calc( var(--search-bar-height) - 15px );
 }
@@ -62,8 +62,6 @@ export default {
 
 .search-bar-icon {
   display: inline;
-  height: var(--search-bar-icon-size);
-  width: var(--search-bar-icon-size);
   padding-left: 10px;
   font-size: 85%;
   color: darkGrey;
