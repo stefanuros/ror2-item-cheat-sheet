@@ -1,9 +1,9 @@
 <template>
-  <div class="sort-by-selector">
+  <div class="sort-by">
     <select 
-      name="sort-by" 
-      id="sort-by" 
-      class="sort-by"
+      name="sort-by-select" 
+      id="sort-by-select" 
+      class="sort-by-select"
       v-model="sortBy"
     >
       <option value="RARITY">Rarity</option>
@@ -38,5 +38,27 @@ export default {
 </script>
 
 <style scoped>
+.sort-by-select {
+  --sort-by-select-height: 40px;
+  --sort-by-select-width: 350px;
+  --sort-by-select-text-size: 100%;
+}
 
+.sort-by-select {
+  height: var(--sort-by-select-height);
+
+  font-size: var(--sort-by-select-text-size);
+  color: #757575;
+
+  border-radius: 10px;
+  border: none;
+
+  margin-left: 20px;
+}
+
+.sort-by-select:focus {
+  border: none;
+  box-shadow: none;
+  outline: 0;
+}
 </style>

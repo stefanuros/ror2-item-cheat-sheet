@@ -43,10 +43,6 @@ export default {
   --search-bar-icon-size: calc( var(--search-bar-height) - 15px );
 }
 
-.nav-bar {
-  margin: auto;
-}
-
 .search-bar {
   height: var(--search-bar-height);
   width: var(--search-bar-width);
@@ -76,6 +72,7 @@ export default {
   padding-left: 10px;
 
   flex-grow: 1;
+  color: #757575;
 }
 
 .search-bar-input:focus {
