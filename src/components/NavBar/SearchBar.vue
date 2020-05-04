@@ -69,7 +69,7 @@ export default {
 
   border: none;
   font-size: var(--search-bar-text-size);
-  padding-left: 10px;
+  padding-left: 5px;
 
   flex-grow: 1;
   color: #757575;

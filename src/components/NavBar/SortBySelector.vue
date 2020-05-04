@@ -1,5 +1,7 @@
 <template>
   <div class="sort-by">
+    <!-- <font-awesome-icon class="sort-by-icon" icon="sort" /> -->
+    <p class="sort-by-label">Sort By</p>
     <select 
       name="sort-by-select" 
       id="sort-by-select" 
@@ -40,8 +42,36 @@ export default {
 <style scoped>
 .sort-by-select {
   --sort-by-select-height: 40px;
-  --sort-by-select-width: 350px;
   --sort-by-select-text-size: 100%;
+  --sort-by-icon-size: 110%;
+}
+
+.sort-by {
+  margin-left: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: flex;
+}
+
+.sort-by-icon {
+  display: inline;
+  padding-left: 10px;
+  font-size: var(--sort-by-icon-size);
+  color: darkGrey;
+  margin: auto;
+}
+
+.sort-by-label {
+  display: inline;
+  padding-left: 10px;
+  font-size: var(--sort-by-icon-size);
+  color: darkGrey;
+  margin: auto;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #757575;
 }
 
 .sort-by-select {
@@ -54,7 +84,7 @@ export default {
   border-radius: 10px;
   border: none;
 
-  margin-left: 20px;
+  /* padding-left: 5px; */
 }
 
 .sort-by-select:focus {
