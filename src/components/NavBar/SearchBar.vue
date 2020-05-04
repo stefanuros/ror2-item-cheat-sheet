@@ -80,4 +80,9 @@ export default {
   box-shadow: none;
   outline: 0;
 }
+
+.search-bar-input::placeholder {
+  font-size: 80%;
+  transform:translate3d(0,-2px,0);
+}
 </style>
