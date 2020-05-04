@@ -46,6 +46,7 @@ export default {
 
 .sort-by-select {
   height: var(--sort-by-select-height);
+  background: white;
 
   font-size: var(--sort-by-select-text-size);
   color: #757575;

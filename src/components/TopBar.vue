@@ -26,15 +26,16 @@ export default {
 }
 
 .top-bar {
-  height: var(--top-bar-height);
+  min-height: var(--top-bar-height);
   background: #444444;
   margin: 0px;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 
 .nav-bar {
   margin: auto;
   display: flex;
+  flex-flow: row wrap;
 }
 </style>
