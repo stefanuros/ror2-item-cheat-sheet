@@ -1,6 +1,6 @@
 <template>
   <div class="sort-by">
-    <p class="sort-by-label">Sort By</p>
+    <p class="sort-by-label" unselectable="on">Sort By</p>
     <select 
       name="sort-by-select" 
       id="sort-by-select" 
@@ -42,7 +42,7 @@ export default {
 .sort-by-select {
   --sort-by-select-height: 40px;
   --sort-by-select-text-size: 100%;
-  --sort-by-icon-size: 110%;
+  --sort-by-label-size: 110%;
 }
 
 .sort-by {
@@ -54,23 +54,20 @@ export default {
   display: flex;
 }
 
-.sort-by-icon {
-  display: inline;
-  padding-left: 10px;
-  font-size: var(--sort-by-icon-size);
-  color: darkGrey;
-  margin: auto;
-}
-
 .sort-by-label {
   display: inline;
   padding-left: 10px;
-  font-size: var(--sort-by-icon-size);
+  font-size: var(--sort-by-label-size);
   color: darkGrey;
   margin: auto;
 
   font-family: Arial, Helvetica, sans-serif;
   color: #757575;
+
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 
 .sort-by-select {

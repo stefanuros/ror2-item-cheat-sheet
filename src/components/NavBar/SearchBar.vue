@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .search-bar {
   --search-bar-height: 40px;
-  --search-bar-width: 350px;
+  --search-bar-width: 300px;
   --search-bar-text-size: 130%;
   --search-bar-icon-size: calc( var(--search-bar-height) - 15px );
 }
@@ -84,5 +84,10 @@ export default {
 .search-bar-input::placeholder {
   font-size: 80%;
   transform:translate3d(0,-2px,0);
+
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 </style>

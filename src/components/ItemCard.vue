@@ -4,10 +4,11 @@
     <div class="item-details">
       <h4 class="item-name">
         {{ itemData.name }}
-        <span class="item-id">#{{ itemId }}</span>
+        <span class="item-id" unselectable="on">#{{ itemId }}</span>
         <span 
           class="item-effective-max"
           v-if="effectiveMax > 0"
+          unselectable="on"
         >
           Max: {{ effectiveMax }}
         </span>
@@ -139,6 +140,11 @@ export default {
   font-size: var(--sub-text-size);
   color: var(--sub-text-colour);
   /* float: right; */
+
+    user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 
 .item-short-description {
@@ -159,5 +165,10 @@ export default {
   font-style: italic;
   font-weight: lighter;
   color: var(--sub-text-colour);
+
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 </style>

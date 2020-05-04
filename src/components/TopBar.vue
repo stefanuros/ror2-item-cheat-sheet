@@ -3,6 +3,8 @@
     <div class="nav-bar">
       <SearchBar />
       <SortBySelector />
+      <CategoryFilter />
+      <RarityFilter />
     </div>
   </div>
 </template>
@@ -10,12 +12,16 @@
 <script>
 import SearchBar from './NavBar/SearchBar.vue';
 import SortBySelector from './NavBar/SortBySelector.vue';
+import CategoryFilter from './NavBar/CategoryFilter.vue';
+import RarityFilter from './NavBar/RarityFilter.vue';
 
 export default {
   name: 'TopBar',
   components: {
     SearchBar,
     SortBySelector,
+    CategoryFilter,
+    RarityFilter,
   },
 };
 </script>
