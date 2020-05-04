@@ -1,45 +1,25 @@
 <template>
   <div class="top-bar">
-    <input 
-      type="text" 
-      class="search-bar" 
-      name="search-bar" 
-      id="search-bar"
-      placeholder="Type Here to Search"
-      v-model="searchTerm"
-    >
+    <div class="nav-bar">
+      <SearchBar />
+    </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import SearchBar from './NavBar/SearchBar.vue';
 
 export default {
   name: 'TopBar',
-  data() {
-    return {
-      searchTerm: "",
-    };
+  components: {
+    SearchBar,
   },
-  methods: {
-    ...mapMutations([
-      'updateSearchTermState',
-    ]),
-  },
-  watch: {
-    searchTerm(newVal) {
-      this.updateSearchTermState(newVal);
-    },
-  }
 };
 </script>
 
 <style scoped>
 .top-bar {
   --top-bar-height: 60px;
-  --search-bar-height: 40px;
-  --search-bar-width: 400px;
-  --search-bar-text-size: 130%;
 }
 
 .top-bar {
@@ -47,22 +27,10 @@ export default {
   background: #444444;
   margin: 0px;
   display: flex;
+  flex-flow: row;
 }
 
-.search-bar {
-  height: var(--search-bar-height);
-  width: var(--search-bar-width);
+.nav-bar {
   margin: auto;
-
-  border-radius: 10px;
-  border: none;
-  padding-left: 10px;
-  font-size: var(--search-bar-text-size);
-}
-
-.search-bar:focus {
-  border:none;
-  box-shadow: none;
-  outline: 0;
 }
 </style>

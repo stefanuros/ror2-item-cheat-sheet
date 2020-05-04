@@ -14,7 +14,13 @@ export default new Vuex.Store({
     searchTerm: "",
   },
   mutations: {
-    updateSearchTermState: (state, searchTerm) => {
+    updateSortByState(state, sortBy) {
+      state.sortBy = sortBy || SortType.RARITY;
+    },
+    filterBy(state, filterBy) {
+      state.filterBy = filterBy || { category: [], rarity: [] };
+    },
+    updateSearchTermState(state, searchTerm) {
       state.searchTerm = (searchTerm == null ? "" : searchTerm);
     },
   },
