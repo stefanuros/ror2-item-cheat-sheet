@@ -131,6 +131,8 @@ export default {
   border: var(--border-thickness) solid var(--item-card-colour);
   font-family:Arial, Helvetica, sans-serif;
 
+  cursor: pointer;
+
   margin: 2px;
 }
 
