@@ -136,6 +136,14 @@ export default {
   margin: 2px;
 }
 
+.item-card:hover:not(.selected-item) {
+    margin-bottom: 4px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 4px;
+    box-shadow: -2px 2px 5px #999999;
+}
+
 .item-icon {
   height: var(--item-card-height);
   border-right: var(--border-thickness) solid var(--item-card-colour);
