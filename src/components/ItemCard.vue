@@ -1,7 +1,7 @@
 <template>
   <div 
     class="item-card" 
-    v-bind:class="[this.rarityClass, this.cardSize, this.itemCardSelected]"
+    v-bind:class="[this.rarityClass, this.cardSize]"
     v-on:mousedown="itemCardClick()"
   >
     <img class="item-icon" v-bind:src="itemData.image" />
@@ -40,7 +40,6 @@ export default {
   computed: {
     ...mapState([
       'cardSize',
-      'selectedItem',
     ]),
     effectiveMax() {
       return (this.itemData.stats || []).reduce((tot, val) => {
@@ -49,14 +48,6 @@ export default {
     },
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
-    },
-    itemCardSelected() {
-      if (this.selectedItem == null) {
-        return "";
-      }
-
-      const { id, type } = this.selectedItem;
-      return this.itemId === id && this.itemType === type ? "selected-item" : "";
     },
   },
   methods: {
@@ -83,6 +74,8 @@ export default {
   --sub-text-size: 65%;
   --item-name-text-size: 90%;
   --description-text-size: 70%;
+
+  --item-card-margin: 2px;
 }
 
 .large-view {
@@ -95,6 +88,8 @@ export default {
   --sub-text-size: 75%;
   --item-name-text-size: 95%;
   --description-text-size: 80%;
+
+  --item-card-margin: 2px;
 }
 
 /* Setting colours for different rarities */
@@ -128,15 +123,20 @@ export default {
 
   cursor: pointer;
 
-  margin: 2px;
+  margin: var(--item-card-margin);
 }
 
-.item-card:hover:not(.selected-item) {
-  margin-bottom: 4px;
+.item-card:hover {
+  margin-bottom: calc( 2 * var(--item-card-margin));
   margin-top: 0px;
   margin-right: 0px;
-  margin-left: 4px;
-  box-shadow: -2px 2px 5px #999999;
+  margin-left: calc( 2 * var(--item-card-margin));
+  box-shadow: calc( -1 * var(--item-card-margin) ) var(--item-card-margin) 5px #999999;
+}
+
+.item-card:active {
+  box-shadow: none;
+  margin: var(--item-card-margin);
 }
 
 .item-icon {
@@ -197,10 +197,5 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
-}
-
-.selected-item {
-  border: calc( var(--border-thickness) + 2px ) black dotted;
-  margin: 0px;
 }
 </style>
