@@ -75,8 +75,6 @@ export default {
 <style scoped>
 .small-view {
   --item-card-height: 50px;
-  --item-card-width: 310px;
-
   --border-thickness: 2px;
 
   --sub-text-colour: darkSlateGrey;
@@ -89,8 +87,6 @@ export default {
 
 .large-view {
   --item-card-height: 75px;
-  --item-card-width: 400px;
-
   --border-thickness: 2px;
 
   --sub-text-colour: darkSlateGrey;
@@ -127,7 +123,6 @@ export default {
   display: flex;
   flex-direction: row;
   height: var(--item-card-height);
-  width: var(--item-card-width);
   border: var(--border-thickness) solid var(--item-card-colour);
   font-family:Arial, Helvetica, sans-serif;
 
@@ -137,11 +132,11 @@ export default {
 }
 
 .item-card:hover:not(.selected-item) {
-    margin-bottom: 4px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 4px;
-    box-shadow: -2px 2px 5px #999999;
+  margin-bottom: 4px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 4px;
+  box-shadow: -2px 2px 5px #999999;
 }
 
 .item-icon {

@@ -1,5 +1,5 @@
 <template>
-  <div class="item-view">
+  <div class="item-view" v-bind:class="[this.cardSize]">
     <ItemCard 
       v-for="itemId in itemIdList"
       v-bind:key="itemId"
@@ -26,6 +26,7 @@ export default {
       'sortBy',
       'filterBy',
       'searchTerm',
+      'cardSize',
     ]),
     itemIdList() {
       // Set a list of operations that will be done to the item id list
@@ -48,8 +49,16 @@ export default {
 </script>
 
 <style>
+.small-view {
+  --item-card-width: 310px;
+}
+
+.large-view {
+  --item-card-width: 400px;
+}
+
 .item-view {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--item-card-width), 1fr));
 }
 </style>
