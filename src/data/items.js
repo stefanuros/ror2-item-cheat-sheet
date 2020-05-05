@@ -1,4 +1,4 @@
-import { StackType, ItemRarity, Tag, Category } from './constants';
+import { StackType, ItemRarity, Tag, Category, SelectionType } from './constants';
 
 const constant = {
   StackType,
@@ -2708,4 +2708,14 @@ export const equipment = Object.freeze({
     id: 34,
     cooldown: "45s",
   },
+});
+
+/**
+ * This maps the selection types to the appropriate lists
+ */
+export const SelectionTypeMapping = Object.freeze({
+  [SelectionType.ITEM]: items,
+  [SelectionType.EQUIPMENT]: equipment,
+  // [SelectionType.ARTIFACT]: equipment,
+  // [SelectionType.CHARACTER]: equipment,
 });
