@@ -29,11 +29,12 @@ export default {
 <style scoped>
 .top-bar {
   --top-bar-height: 60px;
+  --top-bar-background-colour: #333333;
 }
 
 .top-bar {
   min-height: var(--top-bar-height);
-  background: #444444;
+  background: var(--top-bar-background-colour);
   margin: 0px;
   display: flex;
   flex-flow: row wrap;
