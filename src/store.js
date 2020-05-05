@@ -12,6 +12,7 @@ export default new Vuex.Store({
     sortBy: SortType.RARITY,
     filterBy: { category: [], rarity: [] },
     searchTerm: "",
+    selectedItem: null,
   },
   mutations: {
     updateSortByState(state, sortBy) {
@@ -22,6 +23,16 @@ export default new Vuex.Store({
     },
     updateSearchTermState(state, searchTerm) {
       state.searchTerm = (searchTerm == null ? "" : searchTerm);
+    },
+    setSelectedItem(state, selectedItem) {
+      // This if statement would unselect items
+      if (state.selectedItem != null 
+        && selectedItem.id === state.selectedItem.id 
+        && selectedItem.type === state.selectedItem.type) {
+        state.selectedItem = null;
+        return;
+      }
+      state.selectedItem = selectedItem;
     },
   },
 });

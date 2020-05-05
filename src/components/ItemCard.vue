@@ -1,5 +1,9 @@
 <template>
-  <div class="item-card" v-bind:class="[this.rarityClass, this.cardSize]">
+  <div 
+    class="item-card" 
+    v-bind:class="[this.rarityClass, this.cardSize, this.itemCardSelected]"
+    v-on:mousedown="itemCardClick()"
+  >
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">
       <h4 class="item-name">
@@ -19,10 +23,10 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 import { items } from "../data/items";
-import { ItemRarityClass } from '../data/constants';
+import { ItemRarityClass, SelectionType } from '../data/constants';
 
 export default {
   name: "ItemCard",
@@ -30,11 +34,13 @@ export default {
   data() {
     return {
       itemData: items[this.itemId],
+      itemType: SelectionType.ITEM,
     };
   },
   computed: {
     ...mapState([
       'cardSize',
+      'selectedItem',
     ]),
     effectiveMax() {
       return (this.itemData.stats || []).reduce((tot, val) => {
@@ -44,8 +50,24 @@ export default {
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
     },
+    itemCardSelected() {
+      if (this.selectedItem == null) {
+        return "";
+      }
+
+      const { id, type } = this.selectedItem;
+      return this.itemId === id && this.itemType === type ? "selected-item" : "";
+    },
   },
   methods: {
+    ...mapMutations([
+      'setSelectedItem',
+    ]),
+    itemCardClick() {
+      // In future, when itemType is passed as prop, update this function to take
+      // that into account
+      this.setSelectedItem({ id: this.itemId, type: this.itemType });
+    },
   },
 };
 </script>
@@ -170,5 +192,10 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
+}
+
+.selected-item {
+  border: calc( var(--border-thickness) + 2px ) black dotted;
+  margin: 0px;
 }
 </style>
