@@ -66,6 +66,10 @@ export default {
   transition: background-color 0.25s ease;
 }
 
+.close-side-bar-button:active {
+  background: rgba(190, 190, 190, 0.75);
+}
+
 .close-side-bar-icon {
   height: inherit;
   width: inherit;
