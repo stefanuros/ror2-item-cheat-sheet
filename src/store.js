@@ -27,6 +27,7 @@ export default new Vuex.Store({
     setSelectedItem(state, selectedItem) {
       // This if statement would unselect items
       if (state.selectedItem != null 
+        && selectedItem != null
         && selectedItem.id === state.selectedItem.id 
         && selectedItem.type === state.selectedItem.type) {
         state.selectedItem = null;
