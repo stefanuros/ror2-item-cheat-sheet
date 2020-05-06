@@ -14,7 +14,7 @@
 
 <script>
 import { mapMutations } from 'vuex';
-import SearchIcon from './SearchIcon.vue';
+import SearchIcon from '../Icons/SearchIcon.vue';
 
 export default {
   name: 'SearchBar',

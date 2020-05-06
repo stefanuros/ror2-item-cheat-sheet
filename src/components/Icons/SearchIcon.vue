@@ -3,7 +3,6 @@
     <circle cx="10" cy="10" r="7" class="glass" />
     <path d="m16 16 l5 5 z" class="handle" />
     <circle cx="22" cy="22" r="1" class="handle-end" />
-    Sorry, your browser does not support inline SVG.  
   </svg> 
 </template>
 
