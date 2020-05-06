@@ -1,6 +1,6 @@
 <template>
   <div class="search-bar">
-    <font-awesome-icon class="search-bar-icon" icon="search" />
+    <SearchIcon />
     <input 
       type="text" 
       class="search-bar-input" 
@@ -14,9 +14,13 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import SearchIcon from './SearchIcon.vue';
 
 export default {
   name: 'SearchBar',
+  components: {
+    SearchIcon,
+  },
   data() {
     return {
       searchTerm: "",
@@ -40,6 +44,7 @@ export default {
   --search-bar-height: 40px;
   --search-bar-width: 300px;
   --search-bar-text-size: 130%;
+  --search-bar-icon-size: calc( var(--search-bar-height) - 15px );
 }
 
 .search-bar {
@@ -53,14 +58,6 @@ export default {
 
   display: flex;
   flex-flow: row;
-}
-
-.search-bar-icon {
-  display: inline;
-  padding-left: 10px;
-  font-size: 120%;
-  color: darkGrey;
-  margin: auto;
 }
 
 .search-bar-input {
