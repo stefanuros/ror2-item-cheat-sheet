@@ -24,6 +24,14 @@ export default {
 </script>
 
 <style scoped>
+.home-page {
+  --font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-page {
+  font-family: var(--font-family);
+}
+
 .info-section {
   display: flex;
   flex-flow: row;

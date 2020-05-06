@@ -40,7 +40,6 @@ export default {
   --search-bar-height: 40px;
   --search-bar-width: 300px;
   --search-bar-text-size: 130%;
-  --search-bar-icon-size: calc( var(--search-bar-height) - 15px );
 }
 
 .search-bar {
@@ -59,7 +58,7 @@ export default {
 .search-bar-icon {
   display: inline;
   padding-left: 10px;
-  font-size: 85%;
+  font-size: 120%;
   color: darkGrey;
   margin: auto;
 }

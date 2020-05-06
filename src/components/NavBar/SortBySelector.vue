@@ -61,7 +61,6 @@ export default {
   color: darkGrey;
   margin: auto;
 
-  font-family: Arial, Helvetica, sans-serif;
   color: #757575;
 
   user-select: none;

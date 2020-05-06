@@ -117,7 +117,6 @@ export default {
   flex-direction: row;
   height: var(--item-card-height);
   border: var(--border-thickness) solid var(--item-card-colour);
-  font-family:Arial, Helvetica, sans-serif;
 
   cursor: pointer;
 
@@ -152,7 +151,7 @@ export default {
 
 .item-name {
   font-size: var(--item-name-text-size);
-  margin: 3px 5px 1px 10px;
+  margin: 3px 3px 1px 5px;
 
   position: relative;
 }
@@ -175,7 +174,7 @@ export default {
 .item-short-description {
   font-style: normal;
   font-size: var(--description-text-size);
-  margin: 1px 5px 3px 10px;
+  margin: 1px 3px 3px 5px;
 
   /* Align vertically */
   display: flex;
