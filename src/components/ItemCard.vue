@@ -2,7 +2,7 @@
   <div 
     class="item-card" 
     v-bind:class="[this.rarityClass, this.cardSize]"
-    v-on:mousedown="itemCardClick()"
+    v-on:mouseup="itemCardClick()"
   >
     <img class="item-icon" v-bind:src="itemData.image" />
     <div class="item-details">

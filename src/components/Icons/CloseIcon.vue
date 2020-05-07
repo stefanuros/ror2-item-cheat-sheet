@@ -15,12 +15,8 @@ export default {
 
 <style scoped>
 .close-side-bar-button {
-  position: relative;
   height: 40px;
   width: 40px;
-  margin-right: 5px;
-  margin-top: 5px;
-  float: right;
 
   transition: background-color 0.5s ease;
   border-radius: 20px;

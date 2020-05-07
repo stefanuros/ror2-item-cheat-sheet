@@ -1,20 +1,20 @@
 export const StackType = Object.freeze({
-  LINEAR: Symbol("linear"),
-  HYPERBOLIC: Symbol("hyperbolic"),
-  EXPONENTIAL: Symbol("exponential"),
-  SPECIAL: Symbol("special"),
-  NONE: Symbol("none"),
+  LINEAR: Symbol("Linear"),
+  HYPERBOLIC: Symbol("Hyperbolic"),
+  EXPONENTIAL: Symbol("Exponential"),
+  SPECIAL: Symbol("Special"),
+  NONE: Symbol("None"),
 });
 
 export const ItemRarity = Object.freeze({
-  COMMON: Symbol("common"),
-  UNCOMMON: Symbol("uncommon"),
-  LEGENDARY: Symbol("legendary"),
-  BOSS: Symbol("boss"),
-  LUNAR: Symbol("lunar"),
-  EQUIPMENT: Symbol("equipment"),
-  ELITE_EQUIPMENT: Symbol("eliteEquipment"),
-  LUNAR_EQUIPMENT: Symbol("lunarEquipment"),
+  COMMON: Symbol("Common"),
+  UNCOMMON: Symbol("Uncommon"),
+  LEGENDARY: Symbol("Legendary"),
+  BOSS: Symbol("Boss"),
+  LUNAR: Symbol("Lunar"),
+  EQUIPMENT: Symbol("Equipment"),
+  ELITE_EQUIPMENT: Symbol("Elite Equipment"),
+  LUNAR_EQUIPMENT: Symbol("Lunar Equipment"),
 });
 
 // Set the symbols from itemRarity to be the keys for their sort value
