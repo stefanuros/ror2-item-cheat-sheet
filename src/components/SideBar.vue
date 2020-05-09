@@ -45,7 +45,7 @@
       <div class="item-category-list">
         <p 
           class="item-category"
-          v-for="category in this.itemData.category"
+          v-for="category in itemData.category"
           v-bind:key="category"
           v-on:mouseup="clickCategoryPill(category)"
           >
@@ -54,8 +54,26 @@
       </div>
     </div>
 
-    <div class="item-stats-section" v-if="itemData.stats">
-
+    <div class="item-stats-section">
+      <h4 class="item-stats-label">Item Stacking</h4>
+      <table class="item-stats-table" v-if="itemData.stats">
+        <tr class="item-stats-labels">
+          <th class="stat-name-label">Stat</th>
+          <th class="stat-value-label">Value</th>
+          <th class="stat-stack-label">Stack</th>
+          <th class="stat-add-label">Add</th>
+        </tr>
+        <tr 
+          class="item-stat"
+          v-for="stat in itemData.stats"
+          v-bind:key="stat.stat"
+          >
+            <td class="stat-name">{{ stat.stat }}</td>
+            <td class="stat-value">{{ stat.value }}</td>
+            <td class="stat-stack">{{ stat.stackType.description }}</td>
+            <td class="stat-add">{{ stat.stackValue }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -327,5 +345,36 @@ hr {
 
 .item-category:active {
   background: rgba(190, 190, 190, 0.75);
+}
+
+.item-stats-section {
+  justify-content: center;
+  padding-left: var(--margin-left);
+  padding-right: var(--margin-left);
+  text-align: center;
+}
+
+.item-stats-table {
+  border: 1px var(--sub-text-colour) solid;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.item-stats-label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.item-stats-table, td, th {
+  border: 1px var(--sub-text-colour) solid;
+}
+
+.stat-name-label, .stat-value-label, .stat-stack-label, .stat-add-label {
+  padding: 3px 5px;
+}
+
+.stat-name, .stat-value, .stat-stack, .stat-add {
+  font-size: var(--main-text-size);
+  padding: 3px 5px;
 }
 </style>
