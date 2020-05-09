@@ -3,8 +3,8 @@
     <div class="nav-bar">
       <SearchBar />
       <SortBySelector />
-      <CategoryFilter />
-      <RarityFilter />
+      <CategoryFilter v-if="false" />
+      <RarityFilter v-if="false" />
     </div>
   </div>
 </template>
