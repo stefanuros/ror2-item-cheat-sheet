@@ -1,5 +1,7 @@
 # ror2-item-cheat-sheet
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3090a9d-f0f9-422e-adc0-63e3df90c77d/deploy-status)](https://app.netlify.com/sites/ror2-item-cheat-sheet/deploys)
+
 ## Project setup
 ```
 npm install
