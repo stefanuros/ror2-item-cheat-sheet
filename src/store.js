@@ -19,7 +19,17 @@ export default new Vuex.Store({
       state.sortBy = sortBy || SortType.RARITY;
     },
     updateFilterByState(state, filterBy) {
-      state.filterBy = filterBy || { category: [], rarity: [] };
+      const { category, rarity } = state.filterBy;
+      state.filterBy.category = filterBy.category || category;
+      state.filterBy.rarity = filterBy.rarity || rarity;
+    },
+    setFilterByState(state, filterToAdd) {
+      const { category, rarity } = filterToAdd;
+      if (category) {
+        state.filterBy = { category, rarity: [] };
+      } else {
+        state.filterBy = { category: [], rarity };
+      }
     },
     updateSearchTermState(state, searchTerm) {
       state.searchTerm = (searchTerm == null ? "" : searchTerm);

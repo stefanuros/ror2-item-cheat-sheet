@@ -34,16 +34,28 @@
     </div>
 
     <div class="item-category-section">
-      <p class="item-rarity-label">Rarity</p>
-      <p class="item-rarity">{{ itemRarity }}</p>
-      <p class="item-category-label">Category</p>
-      <div 
-        class="item-category-list"
-        v-for="category in this.itemCategories"
-        v-bind:key="category"
+      <h4 class="item-rarity-label">Rarity</h4>
+      <p 
+        class="item-rarity"
+        v-on:mouseup="clickRarityPill(itemData.itemRarity)"
         >
-        <p class="item-category">{{ category }}</p>
+        {{ itemData.itemRarity.description }}
+      </p>
+      <h4 class="item-category-label">Category</h4>
+      <div class="item-category-list">
+        <p 
+          class="item-category"
+          v-for="category in this.itemData.category"
+          v-bind:key="category"
+          v-on:mouseup="clickCategoryPill(category)"
+          >
+          {{ category.description }}
+        </p>
       </div>
+    </div>
+
+    <div class="item-stats-section" v-if="itemData.stats">
+
     </div>
   </div>
 </template>
@@ -76,21 +88,20 @@ export default {
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
     },
-    itemRarity() {
-      return this.itemData.itemRarity.description;
-    },
-    itemCategories() {
-      return this.itemData.category.map(val => {
-        return val.description;
-      });
-    },
   },
   methods: {
     ...mapMutations([
       'setSelectedItem',
+      'setFilterByState',
     ]),
     clickCloseButton() {
       this.setSelectedItem(null);
+    },
+    clickRarityPill(rarity) {
+      this.setFilterByState({ rarity: [rarity] });
+    },
+    clickCategoryPill(category) {
+      this.setFilterByState({ category: [category] });
     },
   },
 };
@@ -101,13 +112,15 @@ export default {
   --side-bar-width: 300px;
   --side-bar-background-colour: #444444;
 
-  --item-icon-size: 200px;
+  --item-icon-size: 150px;
 
   --margin-left: 20px;
   --margin-top: var(--margin-left);
 
   --main-text-colour: #FFF;
+  --main-text-size: 90%;
   --sub-text-colour: #999;
+  --sub-text-size: 80%;
 }
 
 /* Setting colours for different rarities */
@@ -209,8 +222,8 @@ hr {
 .item-short-description {
   color: var(--sub-text-colour);
   margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 80%;
+  margin-bottom: 0px;
+  font-size: var(--sub-text-size);
   font-style: italic;
   text-align: center;
 }
@@ -224,7 +237,7 @@ hr {
 
 .unlock-info-section {
   justify-content: center;
-  /* display: grid; */
+  display: grid;
   padding-left: var(--margin-left);
   padding-right: var(--margin-left);
   text-align: center;
@@ -235,7 +248,7 @@ hr {
 }
 
 .unlock-description {
-  font-size: 90%;
+  font-size: var(--main-text-size);
   margin-top: 10px;
   margin-bottom: 5px;
 }
@@ -243,7 +256,76 @@ hr {
 .unlock-link {
   color: var(--sub-text-colour);
   text-decoration: none;
-  font-size: 80%;
+  font-size: var(--sub-text-size);
   font-style: italic;
+}
+
+.item-category-section {
+  justify-content: center;
+  display: grid;
+  padding-left: var(--margin-left);
+  padding-right: var(--margin-left);
+  text-align: center;
+}
+
+.item-category-section > * {
+  margin: 0px;
+}
+
+.item-rarity {
+  font-size: var(--main-text-size);
+  margin: 5px auto;
+  padding: 3px 8px;
+
+  display: inline-block;
+  color: var(--item-card-colour);
+  border: 2px var(--item-card-colour) solid;
+  /* Large border radius to make it pill shape */
+  border-radius: 100px;
+
+  cursor: pointer;
+}
+
+.item-rarity:hover {
+  background: rgba(190, 190, 190, 0.25);
+  transition: background-color 0.25s ease;
+}
+
+.item-rarity:active {
+  background: rgba(190, 190, 190, 0.75);
+}
+
+.item-category-label {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.item-category-list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.item-category {
+  font-size: var(--main-text-size);
+  margin: 2px 3px;
+  padding: 3px 8px;
+
+  color: var(--sub-text-colour);
+  border: 2px var(--sub-text-colour) solid;
+  /* Large border radius to make it pill shape */
+  border-radius: 100px;
+
+  cursor: pointer;
+}
+
+.item-category:hover {
+  background: rgba(190, 190, 190, 0.25);
+  transition: background-color 0.25s ease;
+}
+
+.item-category:active {
+  background: rgba(190, 190, 190, 0.75);
 }
 </style>
