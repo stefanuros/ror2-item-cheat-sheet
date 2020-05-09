@@ -6,7 +6,7 @@
   >
     <div class="top-section">
       <a class="wiki-link" v-bind:href="itemData.wikiLink" target="_blank">
-        <font-awesome-icon class="fa-icon" icon="external-link-alt" />
+        <font-awesome-icon class="item-link-icon" icon="external-link-alt" />
       </a>
       <p class="item-id">#{{ this.itemData.id }}</p>
       <CloseIcon v-bind:clickCloseButton="this.clickCloseButton" class="close-icon" />
@@ -23,10 +23,20 @@
       <hr>
     </div>
 
+    <div class="unlock-info-section" v-if="itemData.unlock">
+      <h4 class="unlock-name">Complete "{{ itemData.unlock.name }}" to Unlock</h4>
+      <p class="unlock-description">{{ itemData.unlock.description }}</p>
+      <a v-bind:href="itemData.unlock.link" target="_blank" class="unlock-link">
+        <font-awesome-icon class="fa-icon" icon="external-link-alt" />
+        More Info
+      </a>
+      <hr>
+    </div>
+
     <div class="item-category-section">
       <p class="item-rarity-label">Rarity</p>
-      <p class="item-rarity">{{ this.itemRarity }}</p>
-      <p class="item-category-label">Categories</p>
+      <p class="item-rarity">{{ itemRarity }}</p>
+      <p class="item-category-label">Category</p>
       <div 
         class="item-category-list"
         v-for="category in this.itemCategories"
@@ -73,7 +83,7 @@ export default {
       return this.itemData.category.map(val => {
         return val.description;
       });
-    }
+    },
   },
   methods: {
     ...mapMutations([
@@ -126,6 +136,8 @@ export default {
   width: var(--side-bar-width);
   background: var(--side-bar-background-colour);
   position: relative;
+
+  color: var(--main-text-colour);
 }
 
 .top-section {
@@ -149,7 +161,7 @@ export default {
   color: inherit;
 }
 
-.fa-icon {
+.item-link-icon {
   color: var(--sub-text-colour);
   font-size: 120%;
 }
@@ -182,7 +194,6 @@ hr {
 }
 
 .item-name {
-  color: var(--main-text-colour);
   margin: 0px;
   font-size: 120%;
   text-align: center;
@@ -198,6 +209,7 @@ hr {
 .item-short-description {
   color: var(--sub-text-colour);
   margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 80%;
   font-style: italic;
   text-align: center;
@@ -205,9 +217,33 @@ hr {
 
 .item-description {
   margin-top: 0px;
-  color: var(--main-text-colour);
   text-align: center;
   font-size: 90%;
   margin-bottom: 0px;
+}
+
+.unlock-info-section {
+  justify-content: center;
+  /* display: grid; */
+  padding-left: var(--margin-left);
+  padding-right: var(--margin-left);
+  text-align: center;
+}
+
+.unlock-name {
+  margin: 0px;
+}
+
+.unlock-description {
+  font-size: 90%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.unlock-link {
+  color: var(--sub-text-colour);
+  text-decoration: none;
+  font-size: 80%;
+  font-style: italic;
 }
 </style>
