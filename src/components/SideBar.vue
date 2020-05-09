@@ -369,6 +369,10 @@ hr {
   border: 1px var(--sub-text-colour) solid;
 }
 
+tr:nth-child(even) {
+  background-color: #555;
+}
+
 .stat-name-label, .stat-value-label, .stat-stack-label, .stat-add-label {
   padding: 3px 5px;
 }
