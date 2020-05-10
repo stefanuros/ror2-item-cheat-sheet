@@ -67,7 +67,7 @@ export default {
   --border-thickness: 2px;
 
   --sub-text-colour: darkSlateGrey;
-  --background-opacity: 0.25;
+  --background-opacity: 0.45;
 
   --sub-text-size: 65%;
   --item-name-text-size: 90%;
