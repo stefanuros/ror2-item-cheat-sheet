@@ -143,6 +143,7 @@ export default {
 
 .item-icon {
   height: var(--item-card-height);
+  width: var(--item-card-height);
   border-right: var(--border-thickness) solid var(--item-card-colour);
   background: radial-gradient(var(--item-card-colour), #222222);
 }
