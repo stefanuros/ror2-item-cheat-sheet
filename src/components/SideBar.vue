@@ -170,12 +170,9 @@ export default {
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
 }
 
-.side-bar-wrapper {
-  height: 100vh;
-  margin-top: var(--top-bar-height);
-}
-
 .side-bar-margin {
+  margin-top: var(--top-bar-height);
+  height: 100vh;
   margin-right: var(--side-bar-width);
 }
 

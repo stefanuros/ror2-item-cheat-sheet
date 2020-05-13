@@ -1,5 +1,5 @@
 <template>
-  <div class="item-view" v-bind:class="[this.cardSize]">
+  <div class="item-list" v-bind:class="[this.cardSize]">
     <ItemCard 
       v-for="itemId in itemIdList"
       v-bind:key="itemId"
@@ -57,7 +57,7 @@ export default {
   --item-card-width: 400px;
 }
 
-.item-view {
+.item-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--item-card-width), 1fr));
 }
