@@ -1,79 +1,84 @@
 <template>
   <div 
-    class="side-bar" 
-    v-if="selectedItem != null"
-    v-bind:class="[this.rarityClass]"
+    class="side-bar-wrapper"
+    v-bind:class="{ 'side-bar-margin': selectedItem != null }"
   >
-    <div class="top-section">
-      <a class="wiki-link" v-bind:href="itemData.wikiLink" target="_blank">
-        <font-awesome-icon class="item-link-icon" icon="external-link-alt" />
-      </a>
-      <p class="item-id">#{{ this.itemData.id }}</p>
-      <CloseIcon v-bind:clickCloseButton="this.clickCloseButton" class="close-icon" />
-    </div>
-
-    <div class="item-info-section">
-      <hr style="margin-top: 0px;">
-      <h3 class="item-name">{{ itemData.name }}</h3>
-      <hr>
-      <img class="item-icon" v-bind:src="itemData.image" />
-      <p class="item-short-description">{{ itemData.shortDescription }}</p>
-      <hr>
-      <p class="item-description">{{ itemData.description }}</p>
-      <hr>
-    </div>
-
-    <div class="unlock-info-section" v-if="itemData.unlock">
-      <h4 class="unlock-name">Complete "{{ itemData.unlock.name }}" to Unlock</h4>
-      <p class="unlock-description">{{ itemData.unlock.description }}</p>
-      <a v-bind:href="itemData.unlock.link" target="_blank" class="unlock-link">
-        <font-awesome-icon class="fa-icon" icon="external-link-alt" />
-        More Info
-      </a>
-      <hr>
-    </div>
-
-    <div class="item-category-section">
-      <h4 class="item-rarity-label">Rarity</h4>
-      <p 
-        class="item-rarity"
-        v-on:mouseup="clickRarityPill(itemData.itemRarity)"
-        >
-        {{ itemData.itemRarity.description }}
-      </p>
-      <h4 class="item-category-label">Category</h4>
-      <div class="item-category-list">
-        <p 
-          class="item-category"
-          v-for="category in itemData.category"
-          v-bind:key="category"
-          v-on:mouseup="clickCategoryPill(category)"
-          >
-          {{ category.description }}
-        </p>
+    <div 
+      class="side-bar" 
+      v-if="selectedItem != null"
+      v-bind:class="[this.rarityClass]"
+    >
+      <div class="top-section">
+        <a class="wiki-link" v-bind:href="itemData.wikiLink" target="_blank">
+          <font-awesome-icon class="item-link-icon" icon="external-link-alt" />
+        </a>
+        <p class="item-id">#{{ this.itemData.id }}</p>
+        <CloseIcon v-bind:clickCloseButton="this.clickCloseButton" class="close-icon" />
       </div>
-    </div>
 
-    <div class="item-stats-section">
-      <h4 class="item-stats-label">Item Stacking</h4>
-      <table class="item-stats-table" v-if="itemData.stats">
-        <tr class="item-stats-labels">
-          <th class="stat-name-label">Stat</th>
-          <th class="stat-value-label">Value</th>
-          <th class="stat-stack-label">Stack</th>
-          <th class="stat-add-label">Add</th>
-        </tr>
-        <tr 
-          class="item-stat"
-          v-for="stat in itemData.stats"
-          v-bind:key="stat.stat"
+      <div class="item-info-section">
+        <hr style="margin-top: 0px;">
+        <h3 class="item-name">{{ itemData.name }}</h3>
+        <hr>
+        <img class="item-icon" v-bind:src="itemData.image" />
+        <p class="item-short-description">{{ itemData.shortDescription }}</p>
+        <hr>
+        <p class="item-description">{{ itemData.description }}</p>
+        <hr>
+      </div>
+
+      <div class="unlock-info-section" v-if="itemData.unlock">
+        <h4 class="unlock-name">Complete "{{ itemData.unlock.name }}" to Unlock</h4>
+        <p class="unlock-description">{{ itemData.unlock.description }}</p>
+        <a v-bind:href="itemData.unlock.link" target="_blank" class="unlock-link">
+          <font-awesome-icon class="fa-icon" icon="external-link-alt" />
+          More Info
+        </a>
+        <hr>
+      </div>
+
+      <div class="item-category-section">
+        <h4 class="item-rarity-label">Rarity</h4>
+        <p 
+          class="item-rarity"
+          v-on:mouseup="clickRarityPill(itemData.itemRarity)"
           >
-            <td class="stat-name">{{ stat.stat }}</td>
-            <td class="stat-value">{{ stat.value }}</td>
-            <td class="stat-stack">{{ stat.stackType.description }}</td>
-            <td class="stat-add">{{ stat.stackValue }}</td>
-        </tr>
-      </table>
+          {{ itemData.itemRarity.description }}
+        </p>
+        <h4 class="item-category-label">Category</h4>
+        <div class="item-category-list">
+          <p 
+            class="item-category"
+            v-for="category in itemData.category"
+            v-bind:key="category"
+            v-on:mouseup="clickCategoryPill(category)"
+            >
+            {{ category.description }}
+          </p>
+        </div>
+      </div>
+
+      <div class="item-stats-section">
+        <h4 class="item-stats-label">Item Stacking</h4>
+        <table class="item-stats-table" v-if="itemData.stats">
+          <tr class="item-stats-labels">
+            <th class="stat-name-label">Stat</th>
+            <th class="stat-value-label">Value</th>
+            <th class="stat-stack-label">Stack</th>
+            <th class="stat-add-label">Add</th>
+          </tr>
+          <tr 
+            class="item-stat"
+            v-for="stat in itemData.stats"
+            v-bind:key="stat.stat"
+            >
+              <td class="stat-name">{{ stat.stat }}</td>
+              <td class="stat-value">{{ stat.value }}</td>
+              <td class="stat-stack">{{ stat.stackType.description }}</td>
+              <td class="stat-add">{{ stat.stackValue }}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -126,7 +131,7 @@ export default {
 </script>
 
 <style scoped>
-.side-bar {
+.side-bar-wrapper {
   --side-bar-width: 300px;
   --side-bar-background-colour: #444444;
 
@@ -139,6 +144,8 @@ export default {
   --main-text-size: 90%;
   --sub-text-colour: #999;
   --sub-text-size: 80%;
+
+  --top-bar-height: 60px;
 }
 
 /* Setting colours for different rarities */
@@ -163,10 +170,22 @@ export default {
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
 }
 
+.side-bar-wrapper {
+  height: 100vh;
+  margin-top: var(--top-bar-height);
+}
+
+.side-bar-margin {
+  margin-right: var(--side-bar-width);
+}
+
 .side-bar {
+  height: inherit;
   width: var(--side-bar-width);
   background: var(--side-bar-background-colour);
-  position: relative;
+  position: fixed;
+  top: var(--top-bar-height);
+  right: 0px;
 
   color: var(--main-text-colour);
 }
@@ -232,6 +251,7 @@ hr {
 
 .item-icon {
   height: var(--item-icon-size);
+  width: var(--item-icon-size);
   margin: auto;
   border: 5px var(--item-card-colour) solid;
   background: radial-gradient(var(--item-card-colour), #222222);
