@@ -1,10 +1,19 @@
 <template>
-  <div class="item-list" v-bind:class="[this.cardSize]">
-    <ItemCard 
-      v-for="itemId in itemIdList"
-      v-bind:key="itemId"
-      v-bind:itemId="itemId"
-    />
+  <div class="item-list-wrapper">
+    <div class="item-list" v-bind:class="[this.cardSize]">
+      <ItemCard 
+        v-show="!isItemIdListEmpty"
+        v-for="itemId in itemIdList"
+        v-bind:key="itemId"
+        v-bind:itemId="itemId"
+      />
+    </div>
+    <div
+      class="no-items-message"
+      v-show="isItemIdListEmpty"
+    >
+      No Matching Items Found
+    </div>
   </div>
 </template>
 
@@ -44,6 +53,9 @@ export default {
         return operation(itemIds);
       }, items.getItemIds());
     },
+    isItemIdListEmpty() {
+      return this.itemIdList.length <= 0;
+    },
   },
 };
 </script>
@@ -57,9 +69,22 @@ export default {
   --item-card-width: 400px;
 }
 
+.item-list-wrapper {
+  --no-items-message-colour: #999;
+  --no-items-message-size: 150%;
+}
+
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--item-card-width), 1fr));
   height: fit-content;
 }
+
+.no-items-message {
+  text-align: center;
+  margin: 20px;
+  color: var(--no-items-message-colour);
+  font-size: var(--no-items-message-size);
+}
+
 </style>
