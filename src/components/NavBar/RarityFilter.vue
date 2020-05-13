@@ -69,8 +69,7 @@ export default {
 .rarity-filter-label {
   display: inline;
   padding-left: 10px;
-  font-size: var(--rarity-filter-label-size);
-  color: darkGrey;
+
   margin: auto;
 
   color: #757575;
@@ -84,7 +83,7 @@ export default {
   margin-right: 10px;
   color: #fff;
   line-height: 1;
-  background: #41b883;
+  background: #777;
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -100,19 +99,40 @@ export default {
 
 .multiselect__element: {
   padding: 10px;
+  margin-top: 10px;
 }
 
-
 .multiselect__option {
+  color: darkGrey;
   cursor: pointer;
   background: #fff;
+
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   transition: 0.4s;
+
+  padding: 4px 26px 4px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 10px;
+  
+}
+
+.multiselect__option:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+  background: #aaa;
+  border-radius: 4px;
+  transition: 0.4s;
+  padding: 4px 26px 4px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .multiselect__option--selected {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
   border-radius: 8px;
+  background: #777;
+  color: #fff;
 }
+
 </style>
