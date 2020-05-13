@@ -60,5 +60,6 @@ export default {
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--item-card-width), 1fr));
+  height: fit-content;
 }
 </style>

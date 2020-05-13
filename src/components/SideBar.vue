@@ -171,8 +171,8 @@ export default {
 }
 
 .side-bar-margin {
-  margin-top: var(--top-bar-height);
-  height: 100vh;
+  height: calc( 100vh - 60px );
+  height: fill;
   margin-right: var(--side-bar-width);
 }
 
