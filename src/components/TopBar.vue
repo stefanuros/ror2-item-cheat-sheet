@@ -1,10 +1,12 @@
 <template>
-  <div class="top-bar">
-    <div class="nav-bar">
-      <SearchBar />
-      <SortBySelector />
-      <CategoryFilter v-if="false" />
-      <RarityFilter v-if="false" />
+  <div class="top-bar-wrapper">
+    <div class="top-bar">
+      <div class="nav-bar">
+        <SearchBar />
+        <SortBySelector />
+        <CategoryFilter v-if="false" />
+        <RarityFilter v-if="false" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.top-bar {
+.top-bar-wrapper {
   --top-bar-height: 60px;
   --top-bar-background-colour: #333333;
 }
@@ -38,6 +40,16 @@ export default {
   margin: 0px;
   display: flex;
   flex-flow: row wrap;
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+
+.top-bar-wrapper {
+  margin-top: var(--top-bar-height);
 }
 
 .nav-bar {
