@@ -84,7 +84,7 @@ export default {
 }
 
 
-.multiselect {
+.category-filter .multiselect {
   margin-top: 10px;
   width: var(--category-filter-width);
   font-size: var(--category-filter-text-size);
@@ -96,23 +96,24 @@ export default {
   overflow: scroll;
 }
 
-.multiselect::-webkit-scrollbar {
+.category-filter .multiselect::-webkit-scrollbar {
   display: none;
 }
 
-.multiselect__input {
+.category-filter .multiselect__input {
   font-size: var(--category-filter-text-size);
   outline: none;
   border: none;
+  position: relative;
 }
 
-.multiselect__input:focus::-webkit-input-placeholder {
+.category-filter .multiselect__input:focus::-webkit-input-placeholder {
   transition: text-indent 0.5s 0.5s ease; 
   text-indent: 0%;
   opacity: 1;
 }
 
-.multiselect__tag {
+.category-filter .multiselect__tag {
   position: relative;
   display: inline-block;
   padding: 5px;
@@ -126,26 +127,32 @@ export default {
   text-overflow: ellipsis;
 
   font-size: var(--category-pill-text-size);
+  position: relative;
 }
 
-.multiselect__content {
+.category-filter .multiselect--active .multiselect__tags-wrap {
+  display: none;
+}
+
+.category-filter .multiselect__content {
   margin-top: 15px;
   position: absolute;
   list-style: none;
   padding-inline-start: 0px;
 }
 
-.multiselect__element {
+.category-filter .multiselect__element {
   display: flex;
   flex-grow: -1;
 }
 
-.multiselect__option {
+.category-filter .multiselect__option {
   color: #555;
   cursor: pointer;
   background: #fff;
   width: calc(var(--category-filter-width) - 25px);
   margin-left: -10px;
+  position: relative;
 
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
@@ -156,7 +163,7 @@ export default {
   margin-bottom: 5px;
 }
 
-.multiselect__option:hover {
+.category-filter .multiselect__option:hover {
   background:  rgba(170, 170, 170, 0.9);;
   
   border-radius: 4px;
@@ -164,7 +171,7 @@ export default {
   transition: 0.4s;
 }
 
-.multiselect__option--selected {
+.category-filter .multiselect__option--selected {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   border-radius: 8px;
   background: #777;
