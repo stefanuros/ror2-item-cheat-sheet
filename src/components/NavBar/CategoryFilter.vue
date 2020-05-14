@@ -91,7 +91,6 @@ export default {
   color: #757575;
   display: inline;
   margin-left: 10px;
-  border-radius: 10px;
   height: var(--category-filter-height);
   overflow: scroll;
 }

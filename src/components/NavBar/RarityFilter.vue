@@ -1,7 +1,7 @@
 <template>
   <div class="rarity-filter">
     <multiselect class="filter-select"
-      placeholder="Filter By Rarity"
+      placeholder="Filter By Rarity Type"
       v-model="filterByRarity"
       :options="rarityOptions"
       :searchable="true"
@@ -95,7 +95,6 @@ export default {
 
   margin-top: 10px;
   margin-left: 10px;
-  border-radius: 10px;
 }
 
 .rarity-filter .multiselect::-webkit-scrollbar {
