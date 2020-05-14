@@ -1,7 +1,7 @@
 <template>
   <div class="rarity-filter">
     <multiselect class="filter-select"
-      placeholder="Filter By Rarity"
+      placeholder="Filter By Rarity Type"
       v-model="filterByRarity"
       :options="rarityOptions"
       :searchable="true"
