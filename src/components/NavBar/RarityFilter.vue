@@ -66,7 +66,7 @@ export default {
 
 <style>
 .rarity-filter {
-  --rarity-filter-height: 30px;
+  --rarity-filter-height: 20px;
   --rarity-filter-select-text-size: 100%;
   --rarity-filter-label-size: 100%;
   --rarity-filter-width: 150px;
@@ -85,17 +85,19 @@ export default {
 
 
 .rarity-filter .multiselect {
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-top: 1px;
+
+  display: inline;
+  overflow: scroll;
+
   width: var(--rarity-filter-width);
   height: var(--rarity-filter-height);
   font-size: var(--rarity-filter-text-size);
   color: #757575;
-  
-  display: inline;
-  overflow: scroll;
-
-  margin-top: 10px;
-  margin-left: 10px;
-  border-radius: 10px;
 }
 
 .rarity-filter .multiselect::-webkit-scrollbar {
@@ -103,11 +105,12 @@ export default {
 }
 
 .rarity-filter .multiselect__input {
+  position: relative;
+  display: block;
+
   font-size: var(--rarity-filter-text-size);
   outline: none;
   border: none;
-  position: relative;
-  display: block;
 }
 
 .rarity-filter .multiselect--active .multiselect__tags-wrap {
@@ -117,22 +120,23 @@ export default {
 .rarity-filter .multiselect__tag {
   position: relative;
   display: inline-block;
-  padding: 5px;
-  border-radius: 5px;
+
+  max-width: 100%;
   margin-left: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+
+  border-radius: 5px;
   color: #fff;
   line-height: 1;
   background: #777;
-  margin-bottom: 5px;
-  max-width: 100%;
   text-overflow: ellipsis;
-
   font-size: var(--rarity-pill-text-size);
 }
 
 .rarity-filter .multiselect__content {
-  margin-top: 15px;
   position: absolute;
+  margin-top: 15px;
   list-style: none;
   padding-inline-start: 0px;
 }
@@ -143,9 +147,9 @@ export default {
 }
 
 .rarity-filter .multiselect__tags-wrap {
+  position: relative;
   width: var(--rarity-filter-width);
   height: 0px;
-  position: relative;
 }
 
 .rarity-filter .multiselect__option {
@@ -175,6 +179,7 @@ export default {
 .rarity-filter .multiselect__option--selected {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   border-radius: 8px;
+
   background: #777;
   color: #fff;
 }

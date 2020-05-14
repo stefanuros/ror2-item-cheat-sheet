@@ -66,7 +66,7 @@ export default {
 
 <style>
 .category-filter {
-  --category-filter-height: 30px;
+  --category-filter-height: 20px;
   --category-filter-select-text-size: 100%;
   --category-filter-label-size: 100%;
   --category-filter-width: 150px;
@@ -76,23 +76,28 @@ export default {
 
 .category-filter {
   margin-left: 20px;
-  background: white;
   border-radius: 10px;
-  overflow: hidden;
 
+  background: white;
+  overflow: hidden;
   display: grid;
 }
 
 
 .category-filter .multiselect {
   margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 5px;
+  padding-top: 1px;
+  border-radius: 10px;
+
   width: var(--category-filter-width);
+  height: var(--category-filter-height);
+
   font-size: var(--category-filter-text-size);
   color: #757575;
+
   display: inline;
-  margin-left: 10px;
-  border-radius: 10px;
-  height: var(--category-filter-height);
   overflow: scroll;
 }
 
@@ -101,10 +106,10 @@ export default {
 }
 
 .category-filter .multiselect__input {
-  font-size: var(--category-filter-text-size);
+  position: relative;
   outline: none;
   border: none;
-  position: relative;
+  font-size: var(--category-filter-text-size);
 }
 
 .category-filter .multiselect__input:focus::-webkit-input-placeholder {
@@ -116,18 +121,18 @@ export default {
 .category-filter .multiselect__tag {
   position: relative;
   display: inline-block;
+  
   padding: 5px;
   border-radius: 5px;
   margin-left: 5px;
-  color: #fff;
-  line-height: 1;
-  background: #777;
   margin-bottom: 5px;
   max-width: 100%;
+  
+  color: #fff;
+  background: #777;
+  line-height: 1;
   text-overflow: ellipsis;
-
   font-size: var(--category-pill-text-size);
-  position: relative;
 }
 
 .category-filter .multiselect--active .multiselect__tags-wrap {
@@ -135,8 +140,8 @@ export default {
 }
 
 .category-filter .multiselect__content {
-  margin-top: 15px;
   position: absolute;
+  margin-top: 15px;
   list-style: none;
   padding-inline-start: 0px;
 }
@@ -147,20 +152,20 @@ export default {
 }
 
 .category-filter .multiselect__option {
+  position: relative;
+
   color: #555;
   cursor: pointer;
   background: #fff;
-  width: calc(var(--category-filter-width) - 25px);
-  margin-left: -10px;
-  position: relative;
 
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   transition: 0.4s;
 
-  padding: 4px 26px 4px 10px;
-  border-radius: 5px;
+  width: calc(var(--category-filter-width) - 25px);
+  margin-left: -10px;
   margin-bottom: 5px;
+  padding: 4px 26px 4px 10px;
 }
 
 .category-filter .multiselect__option:hover {
@@ -174,6 +179,7 @@ export default {
 .category-filter .multiselect__option--selected {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   border-radius: 8px;
+
   background: #777;
   color: #fff;
 }
