@@ -9,6 +9,7 @@
       :close-on-select="false"
       :preserve-search="false"
       :preselect-first="false"
+      :showNoResults="false"
       label="name"
       track-by="code">
     </multiselect>
@@ -20,19 +21,24 @@ import { mapMutations } from 'vuex';
 import { Multiselect } from 'vue-multiselect';
 import { ItemRarity } from '../../data/constants';
 
-const rarities = Object.values(ItemRarity).map((rarity) => {
+const clear = {
+  name: "Clear All",
+  code: Symbol("Clear All"),
+};
+const rarities = [clear].concat(Object.values(ItemRarity).map((rarity) => {
   return {
     name: rarity.description,
-    code: rarity
+    code: rarity,
   };
-});
+}));
+
 
 export default {
   name: "RarityFilter",
   components: { Multiselect },
   data() {
     return {
-      filterByRarity: '',
+      filterByRarity: null,
       rarityOptions: rarities,
     };
   }, 
@@ -40,11 +46,19 @@ export default {
     ...mapMutations([
       'setFilterByState',
     ]),
+    clearAll() {
+      this.filterByRarity = null;
+      this.setFilterByState({ rarity: [] });
+    },
   },
   watch: {
     filterByRarity(selected) {
-      const filter = selected.map(item => item.code);
-      this.setFilterByState({ rarity: filter });
+      if (!selected || selected.includes(clear)) {
+        this.clearAll();
+      } else {
+        const filter = selected.map(item => item.code);
+        this.setFilterByState({ rarity: filter });
+      }
     },
   },
 };
@@ -52,9 +66,12 @@ export default {
 
 <style>
 .rarity-filter {
-  --rarity-filter-select-height: 40px;
+  --rarity-filter-height: 30px;
   --rarity-filter-select-text-size: 100%;
   --rarity-filter-label-size: 100%;
+  --rarity-filter-width: 150px;
+  --rarity-pill-width: 70%;
+  --rarity-pill-text-size: 70%;
 }
 
 .rarity-filter {
@@ -63,73 +80,92 @@ export default {
   border-radius: 10px;
   overflow: hidden;
 
-  display: flex;
+  display: grid;
 }
 
-.rarity-filter-label {
-  display: inline;
-  padding-left: 10px;
 
-  margin: auto;
-
+.multiselect {
+  margin-top: 10px;
+  width: var(--rarity-filter-width);
+  font-size: var(--rarity-filter-text-size);
   color: #757575;
+  display: inline;
+  margin-left: 10px;
+  border-radius: 10px;
+  height: var(--rarity-filter-height);
+  overflow: scroll;
+}
+
+.multiselect::-webkit-scrollbar {
+  display: none;
+}
+
+.multiselect__input {
+  font-size: var(--rarity-filter-text-size);
+  outline: none;
+  border: none;
+}
+
+.multiselect__input:focus::-webkit-input-placeholder {
+  transition: text-indent 0.5s 0.5s ease; 
+  text-indent: 0%;
+  opacity: 1;
 }
 
 .multiselect__tag {
   position: relative;
   display: inline-block;
-  padding: 4px 26px 4px 10px;
+  padding: 5px;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-left: 5px;
   color: #fff;
   line-height: 1;
   background: #777;
   margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
   max-width: 100%;
   text-overflow: ellipsis;
+
+  font-size: var(--rarity-pill-text-size);
 }
 
 .multiselect__content {
+  margin-top: 15px;
   position: absolute;
   list-style: none;
-  padding: 10px;
+  padding-inline-start: 0px;
 }
 
-.multiselect__element: {
-  padding: 10px;
-  margin-top: 10px;
+.multiselect__element {
+  display: flex;
+  flex-grow: -1;
 }
 
 .multiselect__option {
-  color: darkGrey;
+  color: #555;
   cursor: pointer;
   background: #fff;
+  width: calc(var(--rarity-filter-width) - 25px);
+  margin-left: -10px;
 
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   transition: 0.4s;
 
   padding: 4px 26px 4px 10px;
   border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 10px;
-  
+  margin-bottom: 5px;
 }
 
 .multiselect__option:hover {
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
-  background: #aaa;
+  background:  rgba(170, 170, 170, 0.9);;
+  
   border-radius: 4px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   transition: 0.4s;
-  padding: 4px 26px 4px 10px;
-  border-radius: 5px;
-  margin-right: 10px;
 }
 
 .multiselect__option--selected {
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   border-radius: 8px;
   background: #777;
   color: #fff;

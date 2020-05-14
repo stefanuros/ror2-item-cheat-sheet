@@ -4,7 +4,7 @@
       <div class="nav-bar">
         <SearchBar />
         <SortBySelector />
-        <CategoryFilter v-if="false" />
+        <CategoryFilter />
         <RarityFilter />
       </div>
     </div>
@@ -57,4 +57,5 @@ export default {
   display: flex;
   flex-flow: row wrap;
 }
+
 </style>
