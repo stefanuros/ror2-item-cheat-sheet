@@ -20,6 +20,7 @@
 import { mapMutations } from 'vuex';
 import { Multiselect } from 'vue-multiselect';
 import { Category } from '../../data/constants';
+import { bus } from '../../main';
 
 const clear = {
   name: "Clear All",
@@ -41,7 +42,15 @@ export default {
       filterByCategory: null,
       categoryOptions: rarities,
     };
-  }, 
+  },  
+  created() {
+    bus.$on('filterCategory', (filter) => {
+      this.filterByCategory = [{
+        name: filter.description,
+        code: filter,
+      }];
+    });
+  },
   methods: {
     ...mapMutations([
       'setFilterByState',

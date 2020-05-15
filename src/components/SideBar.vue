@@ -85,6 +85,7 @@ import CloseIcon from './Icons/CloseIcon.vue';
 
 import { SelectionTypeMapping } from '../data/items';
 import { ItemRarityClass } from '../data/constants';
+import { bus } from '../main';
 
 export default {
   name: "SideBar",
@@ -116,9 +117,11 @@ export default {
       this.setSelectedItem(null);
     },
     clickRarityPill(rarity) {
+      bus.$emit('filterRarity', rarity);
       this.setFilterByState({ rarity: [rarity] });
     },
     clickCategoryPill(category) {
+      bus.$emit('filterCategory', category);
       this.setFilterByState({ category: [category] });
     },
   },

@@ -20,6 +20,7 @@
 import { mapMutations } from 'vuex';
 import { Multiselect } from 'vue-multiselect';
 import { ItemRarity } from '../../data/constants';
+import { bus } from '../../main';
 
 const clear = {
   name: "Clear All",
@@ -42,6 +43,14 @@ export default {
       rarityOptions: rarities,
     };
   }, 
+  created() {
+    bus.$on('filterRarity', (filter) => {
+      this.filterByRarity = [{
+        name: filter.description,
+        code: filter,
+      }];
+    });
+  },
   methods: {
     ...mapMutations([
       'setFilterByState',
@@ -56,6 +65,7 @@ export default {
       if (!selected || selected.includes(clear)) {
         this.clearAll();
       } else {
+        console.log(typeof selected);
         const filter = selected.map(item => item.code);
         this.setFilterByState({ rarity: filter });
       }
