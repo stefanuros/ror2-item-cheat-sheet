@@ -4,8 +4,8 @@
       <div class="nav-bar">
         <SearchBar />
         <SortBySelector />
-        <CategoryFilter v-if="false" />
-        <RarityFilter v-if="false" />
+        <CategoryFilter />
+        <RarityFilter />
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .top-bar-wrapper {
   --top-bar-height: 60px;
   --top-bar-background-colour: #333333;
@@ -57,4 +57,5 @@ export default {
   display: flex;
   flex-flow: row wrap;
 }
+
 </style>

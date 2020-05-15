@@ -25,10 +25,12 @@ export default new Vuex.Store({
     },
     setFilterByState(state, filterToAdd) {
       const { category, rarity } = filterToAdd;
-      if (category) {
-        state.filterBy = { category, rarity: [] };
+      if (!category && rarity) {
+        state.filterBy = { category: state.filterBy.category, rarity };
+      } else if (!rarity && category) {
+        state.filterBy = { category, rarity: state.filterBy.rarity };
       } else {
-        state.filterBy = { category: [], rarity };
+        state.filterBy = { category, rarity };
       }
     },
     updateSearchTermState(state, searchTerm) {
