@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c3090a9d-f0f9-422e-adc0-63e3df90c77d/deploy-status)](https://app.netlify.com/sites/ror2-item-cheat-sheet/deploys)
 
+[Click here for the Risk of Rain 2 Item Cheat Sheet](https://ror2-item-cheat-sheet.netlify.app/)
+
 This website is an item cheat sheet for the game Risk of Rain 2 (RoR2). In RoR2, progressing through levels gives the player the ability to gain many items. Each item has a different stat it boosts and a different ability. With nearly unique 100 items in the game, it can get difficult to determine if you want to pick up each item. This website gives an easy way to see what items do at a glance. Clicking on an item gives a more in depth view of the item, along with links to the relevant wiki page. 
 
 The technology used for this project was Vue and Vuex. 
