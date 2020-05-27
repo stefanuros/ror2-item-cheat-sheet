@@ -25,18 +25,12 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 
-import { items } from "../data/items";
+import { items, equipment } from "../data/items";
 import { ItemRarityClass, SelectionType } from '../data/constants';
 
 export default {
   name: "ItemCard",
-  props: ["itemId"],
-  data() {
-    return {
-      itemData: items[this.itemId],
-      itemType: SelectionType.ITEM,
-    };
-  },
+  props: ["itemId", "itemType"],
   computed: {
     ...mapState([
       'cardSize',
@@ -48,6 +42,16 @@ export default {
     },
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
+    },
+    itemData() {
+      if (this.itemType === SelectionType.ITEM) {
+        return items[this.itemId];
+      }
+      if (this.itemType === SelectionType.EQUIPMENT) {
+        return equipment[this.itemId];
+      }
+
+      return [];
     },
   },
   methods: {

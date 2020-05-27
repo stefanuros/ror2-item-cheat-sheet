@@ -2,7 +2,10 @@
   <div class="home-page">
     <TopBar/>
     <div class="info-section">
-      <ItemList style="flex: 1;" />
+      <div class="item-list-section">
+        <ItemList style="flex: 1;" :itemListType="SelectionType.ITEM" />
+        <ItemList style="flex: 1;" :itemListType="SelectionType.EQUIPMENT" />
+      </div>
       <SideBar/>
     </div>
   </div>
@@ -12,6 +15,7 @@
 import ItemList from './ItemList.vue';
 import TopBar from './TopBar.vue';
 import SideBar from './SideBar.vue';
+import { SelectionType } from '../data/constants';
 
 export default {
   name: 'HomePage',
@@ -19,6 +23,11 @@ export default {
     ItemList,
     TopBar,
     SideBar,
+  },
+  data() {
+    return {
+      SelectionType,
+    };
   },
 };
 </script>
@@ -36,5 +45,9 @@ export default {
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
+}
+
+.item-list-section {
+  flex: 1;
 }
 </style>

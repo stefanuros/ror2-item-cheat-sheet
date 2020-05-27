@@ -2315,8 +2315,8 @@ export const items = Object.freeze({
 export const equipment = Object.freeze({
   /** Get all non-hidden, item keys */
   getItemIds() {
-    return Object.keys(this).filter(val => {
-      return typeof this[val] === "object" && !this[val].hidden;
+    return Object.keys(this).filter(key => {
+      return typeof this[key] === "object";
     });
   },
   0: {

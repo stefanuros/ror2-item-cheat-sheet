@@ -6,13 +6,14 @@
         v-for="itemId in itemIdList"
         v-bind:key="itemId"
         v-bind:itemId="itemId"
+        :itemType="itemListType"
       />
     </div>
     <div
       class="no-items-message"
       v-show="isItemIdListEmpty"
     >
-      No Matching Items Found
+      No Matching {{ itemListType }} Found
     </div>
   </div>
 </template>
@@ -21,11 +22,15 @@
 import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 
-import { items } from "../data/items";
+import { items, equipment } from "../data/items";
+import { SelectionType } from "../data/constants";
 import ItemIdUtils from '../helpers/ItemIdUtils';
 
 export default {
   name: "ItemList",
+  props: [
+    'itemListType',
+  ],
   components: {
     ItemCard,
   },
@@ -41,17 +46,25 @@ export default {
       // Set a list of operations that will be done to the item id list
       // * Note: Order matters in this list
       const itemIdOperations = [
-        (itemIds) => ItemIdUtils.showHiddenOperation(itemIds, this.showHidden),
-        (itemIds) => ItemIdUtils.filterOperation(itemIds, this.filterBy),
-        (itemIds) => ItemIdUtils.searchOperation(itemIds, this.searchTerm),
-        (itemIds) => ItemIdUtils.sortOperation(itemIds, this.sortBy),
+        (itemIds, itemList) => ItemIdUtils.showHiddenOperation(itemIds, itemList, this.showHidden),
+        (itemIds, itemList) => ItemIdUtils.filterOperation(itemIds, itemList, this.filterBy),
+        (itemIds, itemList) => ItemIdUtils.searchOperation(itemIds, itemList, this.searchTerm),
+        (itemIds, itemList) => ItemIdUtils.sortOperation(itemIds, itemList, this.sortBy),
       ];
+
+      let itemList;
+
+      if (this.itemListType === SelectionType.ITEM) {
+        itemList = items;
+      } else if (this.itemListType === SelectionType.EQUIPMENT) {
+        itemList = equipment;
+      }
 
       // Go through the operations and apply each operation to the output of the
       // previous operation
       return itemIdOperations.reduce((itemIds, operation) => {
-        return operation(itemIds);
-      }, items.getItemIds());
+        return operation(itemIds, itemList);
+      }, itemList.getItemIds());
     },
     isItemIdListEmpty() {
       return this.itemIdList.length <= 0;

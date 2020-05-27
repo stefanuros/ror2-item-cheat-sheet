@@ -65,7 +65,6 @@ export default {
       if (!selected || selected.includes(clear)) {
         this.clearAll();
       } else {
-        console.log(typeof selected);
         const filter = selected.map(item => item.code);
         this.setFilterByState({ rarity: filter });
       }
