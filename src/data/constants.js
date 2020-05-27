@@ -81,6 +81,13 @@ export const SelectionType = Object.freeze({
   ARTIFACT: Symbol("Artifact"),
 });
 
+export const SelectionTypePluralization = Object.freeze({
+  [SelectionType.ITEM]: `${SelectionType.ITEM.description}s`,
+  [SelectionType.EQUIPMENT]: `${SelectionType.EQUIPMENT.description}`,
+  [SelectionType.CHARACTER]: `${SelectionType.CHARACTER.description}s`,
+  [SelectionType.ARTIFACT]: `${SelectionType.ARTIFACT.description}s`,
+});
+
 export const SortType = Object.freeze({
   ID: Symbol("Id"),
   NAME: Symbol("Name"),

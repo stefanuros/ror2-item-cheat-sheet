@@ -15,6 +15,8 @@
     >
       No Matching {{ itemListType.description }} Found
     </div>
+    <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
+    <hr>
   </div>
 </template>
 
@@ -23,7 +25,7 @@ import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 
 import { items, equipment } from "../data/items";
-import { SelectionType } from "../data/constants";
+import { SelectionType, SelectionTypePluralization } from "../data/constants";
 import ItemIdUtils from '../helpers/ItemIdUtils';
 
 export default {
@@ -31,6 +33,11 @@ export default {
   props: [
     'itemListType',
   ],
+  data() {
+    return {
+      SelectionTypePluralization,
+    };
+  },
   components: {
     ItemCard,
   },
@@ -98,6 +105,19 @@ export default {
   margin: 20px;
   color: var(--no-items-message-colour);
   font-size: var(--no-items-message-size);
+}
+
+.item-list-header {
+  text-align-last: right;
+  margin: 0px;
+  margin-top: 5px;
+  margin-right: 25px;
+  color: var(--no-items-message-colour);
+}
+
+hr {
+  margin: 0px 25px 10px;
+  border: 1px solid var(--no-items-message-colour);
 }
 
 </style>
