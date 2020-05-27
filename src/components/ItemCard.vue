@@ -111,9 +111,13 @@ export default {
   --item-card-colour: #AEBA23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
 }
-.item-colour-lunar { 
+.item-colour-lunar, .equipment-colour-lunar { 
   --item-card-colour: #36B8E0;
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
+}
+.equipment-colour-normal, .equipment-colour-elite {
+  --item-card-colour: #C78536;
+  --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
 .item-card {

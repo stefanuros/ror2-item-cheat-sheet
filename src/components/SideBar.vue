@@ -24,6 +24,11 @@
         <p class="item-short-description">{{ itemData.shortDescription }}</p>
         <hr>
         <p class="item-description">{{ itemData.description }}</p>
+        <p 
+          class="equipment-cooldown"
+          v-if="this.isEquipment"
+          >
+          Cooldown: <b>{{ itemData.cooldown }}</b></p>
         <hr>
       </div>
 
@@ -58,7 +63,7 @@
         </div>
       </div>
 
-      <div class="item-stats-section">
+      <div class="item-stats-section" v-if="!this.isEquipment">
         <h4 class="item-stats-label">Item Stacking</h4>
         <table class="item-stats-table" v-if="itemData.stats">
           <tr class="item-stats-labels">
@@ -89,7 +94,7 @@ import { mapState, mapMutations } from 'vuex';
 import CloseIcon from './Icons/CloseIcon.vue';
 
 import { SelectionTypeMapping } from '../data/items';
-import { ItemRarityClass } from '../data/constants';
+import { ItemRarityClass, SelectionType } from '../data/constants';
 import { bus } from '../main';
 
 export default {
@@ -111,6 +116,9 @@ export default {
     },
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
+    },
+    isEquipment() {
+      return this.selectedItem.type === SelectionType.EQUIPMENT;
     },
   },
   methods: {
@@ -168,9 +176,13 @@ export default {
   --item-card-colour: #AEBA23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
 }
-.item-colour-lunar { 
+.item-colour-lunar, .equipment-colour-lunar { 
   --item-card-colour: #36B8E0;
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
+}
+.equipment-colour-normal, .equipment-colour-elite {
+  --item-card-colour: #C78536;
+  --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
 .side-bar-margin {
@@ -267,6 +279,14 @@ hr {
 }
 
 .item-description {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 90%;
+  margin-bottom: 0px;
+}
+
+.equipment-cooldown {
+  padding-top: 10px;
   margin-top: 0px;
   text-align: center;
   font-size: 90%;
