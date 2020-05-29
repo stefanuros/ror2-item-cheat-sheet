@@ -25,18 +25,12 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 
-import { items } from "../data/items";
+import { items, equipment } from "../data/items";
 import { ItemRarityClass, SelectionType } from '../data/constants';
 
 export default {
   name: "ItemCard",
-  props: ["itemId"],
-  data() {
-    return {
-      itemData: items[this.itemId],
-      itemType: SelectionType.ITEM,
-    };
-  },
+  props: ["itemId", "itemType"],
   computed: {
     ...mapState([
       'cardSize',
@@ -48,6 +42,16 @@ export default {
     },
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
+    },
+    itemData() {
+      if (this.itemType === SelectionType.ITEM) {
+        return items[this.itemId];
+      }
+      if (this.itemType === SelectionType.EQUIPMENT) {
+        return equipment[this.itemId];
+      }
+
+      return [];
     },
   },
   methods: {
@@ -107,9 +111,13 @@ export default {
   --item-card-colour: #AEBA23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
 }
-.item-colour-lunar { 
+.item-colour-lunar, .equipment-colour-lunar { 
   --item-card-colour: #36B8E0;
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
+}
+.equipment-colour-normal, .equipment-colour-elite {
+  --item-card-colour: #C78536;
+  --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
 .item-card {

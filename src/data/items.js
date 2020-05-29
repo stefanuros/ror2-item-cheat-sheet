@@ -2315,8 +2315,8 @@ export const items = Object.freeze({
 export const equipment = Object.freeze({
   /** Get all non-hidden, item keys */
   getItemIds() {
-    return Object.keys(this).filter(val => {
-      return typeof this[val] === "object" && !this[val].hidden;
+    return Object.keys(this).filter(key => {
+      return typeof this[key] === "object";
     });
   },
   0: {
@@ -2328,6 +2328,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.TRACKING_PROJECTILE,
     ],
     id: 0,
     cooldown: "45s",
@@ -2342,6 +2346,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.HEALING,
     ],
+    category: [
+      constant.Category.HEALING,
+      constant.Category.SURVIVABILITY,
+    ],
     id: 1,
     cooldown: "45s",
   },
@@ -2354,6 +2362,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.LUNAR_EQUIPMENT,
     tag: [
       constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.AOE,
     ],
     unlock: {
       name: "Moon Worshipper",
@@ -2374,6 +2386,12 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.TRANSFORMATION,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.MISC,
+      constant.Category.TRANSFORMATION,
+    ],
+    cooldown: "N/A",
     id: 4,
   },
   5: {
@@ -2387,6 +2405,14 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.TRANSFORMATION,
     ],
+    category: [
+      constant.Category.SHIELD,
+      constant.Category.SURVIVABILITY,
+      constant.Category.DAMAGE,
+      constant.Category.TRANSFORMATION,
+      constant.Category.MISC,
+    ],
+    cooldown: "N/A",
     id: 5,
   },
   8: {
@@ -2400,6 +2426,13 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.TRANSFORMATION,
     ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.TRANSFORMATION,
+      constant.Category.MISC,
+      constant.Category.AOE,
+    ],
+    cooldown: "N/A",
     id: 8,
   },
   9: {
@@ -2413,6 +2446,13 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.TRANSFORMATION,
     ],
+    category: [
+      constant.Category.TRANSFORMATION,
+      constant.Category.MISC,
+      constant.Category.DAMAGE,
+      constant.Category.MINION,
+    ],
+    cooldown: "N/A",
     id: 9,
   },
   10: {
@@ -2424,6 +2464,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.AOE,
     ],
     id: 10,
     cooldown: "60s",
@@ -2438,6 +2482,11 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.DAMAGE,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.CRITICAL_STRIKE,
+      constant.Category.ON_HIT_EFFECT,
+    ],
     id: 12,
     cooldown: "60s",
   },
@@ -2450,6 +2499,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.MINION,
     ],
     unlock: {
       name: "Mechanic",
@@ -2469,6 +2522,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.DAMAGE,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.AOE,
+    ],
     unlock: {
       name: "[REDACTED]",
       description: "Open the Timed Security Chest on Rallypoint Delta.",
@@ -2487,6 +2544,11 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.UTILITY,
     ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.MOBILITY,
+      constant.Category.TRANSFORMATION,
+    ],
     id: 17,
     cooldown: "60s",
   },
@@ -2499,6 +2561,11 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.TRACKING_PROJECTILE,
+      constant.Category.AOE,
     ],
     unlock: {
       name: "Ascendant",
@@ -2518,6 +2585,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.DAMAGE,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.MISC,
+    ],
     unlock: {
       name: "Funded!",
       description: "Collect $30,480 total gold.",
@@ -2534,6 +2605,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.HEALING,
+    ],
+    category: [
+      constant.Category.HEALING,
+      constant.Category.SURVIVABILITY,
     ],
     unlock: {
       name: "One with the Woods",
@@ -2553,6 +2628,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.DAMAGE,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.AOE,
+    ],
     id: 22,
     cooldown: "45s",
   },
@@ -2565,6 +2644,9 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
     ],
     unlock: {
       name: "Bookworm",
@@ -2584,6 +2666,12 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.UTILITY,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.UTILITY,
+      constant.Category.MISC,
+    ],
+    cooldown: "N/A",
     id: 25,
   },
   26: {
@@ -2595,6 +2683,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.MOBILITY,
     ],
     id: 26,
     cooldown: "45s",
@@ -2610,6 +2702,13 @@ export const equipment = Object.freeze({
       constant.Tag.DAMAGE,
       constant.Tag.HEALING,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.ATTACK_SPEED,
+      constant.Category.SURVIVABILITY,
+      constant.Category.HEALING,
+      constant.Category.MOBILITY,
+    ],
     id: 27,
     cooldown: "60s",
   },
@@ -2623,6 +2722,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.MISC,
     ],
+    category: [
+      constant.Category.MISC,
+    ],
+    cooldown: "N/A",
     id: 28,
   },
   29: {
@@ -2634,6 +2737,10 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.SURVIVABILITY,
     ],
     id: 29,
     cooldown: "20s",
@@ -2647,6 +2754,12 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.MOBILITY,
+      constant.Category.UTILITY,
+      constant.Category.TRANSFORMATION,
     ],
     id: 30,
     cooldown: "30s",
@@ -2662,6 +2775,12 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.TRANSFORMATION,
     ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.TRANSFORMATION,
+      constant.Category.MISC,
+    ],
+    cooldown: "N/A",
     id: 31,
   },
   32: {
@@ -2673,6 +2792,9 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.SURVIVABILITY,
     ],
     id: 32,
     cooldown: "45s",
@@ -2687,6 +2809,10 @@ export const equipment = Object.freeze({
     tag: [
       constant.Tag.DAMAGE,
     ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.AOE,
+    ],
     id: 33,
     cooldown: "45s",
   },
@@ -2699,6 +2825,9 @@ export const equipment = Object.freeze({
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
     ],
     unlock: {
       name: "Cleanup Duty",
