@@ -16,7 +16,7 @@
       No Matching {{ itemListType.description }} Found
     </div>
     <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
-    <hr>
+    <hr class="item-list-divisor">
   </div>
 </template>
 
@@ -115,7 +115,7 @@ export default {
   color: var(--no-items-message-colour);
 }
 
-hr {
+hr.item-list-divisor {
   margin: 0px 25px 10px;
   border: 1px solid var(--no-items-message-colour);
 }
