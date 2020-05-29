@@ -6,14 +6,17 @@
         v-for="itemId in itemIdList"
         v-bind:key="itemId"
         v-bind:itemId="itemId"
+        :itemType="itemListType"
       />
     </div>
     <div
       class="no-items-message"
       v-show="isItemIdListEmpty"
     >
-      No Matching Items Found
+      No Matching {{ itemListType.description }} Found
     </div>
+    <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
+    <hr>
   </div>
 </template>
 
@@ -21,11 +24,20 @@
 import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 
-import { items } from "../data/items";
+import { items, equipment } from "../data/items";
+import { SelectionType, SelectionTypePluralization } from "../data/constants";
 import ItemIdUtils from '../helpers/ItemIdUtils';
 
 export default {
   name: "ItemList",
+  props: [
+    'itemListType',
+  ],
+  data() {
+    return {
+      SelectionTypePluralization,
+    };
+  },
   components: {
     ItemCard,
   },
@@ -41,17 +53,25 @@ export default {
       // Set a list of operations that will be done to the item id list
       // * Note: Order matters in this list
       const itemIdOperations = [
-        (itemIds) => ItemIdUtils.showHiddenOperation(itemIds, this.showHidden),
-        (itemIds) => ItemIdUtils.filterOperation(itemIds, this.filterBy),
-        (itemIds) => ItemIdUtils.searchOperation(itemIds, this.searchTerm),
-        (itemIds) => ItemIdUtils.sortOperation(itemIds, this.sortBy),
+        (itemIds, itemList) => ItemIdUtils.showHiddenOperation(itemIds, itemList, this.showHidden),
+        (itemIds, itemList) => ItemIdUtils.filterOperation(itemIds, itemList, this.filterBy),
+        (itemIds, itemList) => ItemIdUtils.searchOperation(itemIds, itemList, this.searchTerm),
+        (itemIds, itemList) => ItemIdUtils.sortOperation(itemIds, itemList, this.sortBy),
       ];
+
+      let itemList;
+
+      if (this.itemListType === SelectionType.ITEM) {
+        itemList = items;
+      } else if (this.itemListType === SelectionType.EQUIPMENT) {
+        itemList = equipment;
+      }
 
       // Go through the operations and apply each operation to the output of the
       // previous operation
       return itemIdOperations.reduce((itemIds, operation) => {
-        return operation(itemIds);
-      }, items.getItemIds());
+        return operation(itemIds, itemList);
+      }, itemList.getItemIds());
     },
     isItemIdListEmpty() {
       return this.itemIdList.length <= 0;
@@ -85,6 +105,19 @@ export default {
   margin: 20px;
   color: var(--no-items-message-colour);
   font-size: var(--no-items-message-size);
+}
+
+.item-list-header {
+  text-align-last: right;
+  margin: 0px;
+  margin-top: 5px;
+  margin-right: 25px;
+  color: var(--no-items-message-colour);
+}
+
+hr {
+  margin: 0px 25px 10px;
+  border: 1px solid var(--no-items-message-colour);
 }
 
 </style>
