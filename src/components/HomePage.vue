@@ -1,6 +1,7 @@
 <template>
   <div class="home-page">
-    <TopBar/>
+    <TopBar :fixed="true" />
+    <TopBar :fixed="false" />
     <div class="info-section">
       <div class="item-list-section">
         <ItemList style="flex: 1;" :itemListType="SelectionType.ITEM" />

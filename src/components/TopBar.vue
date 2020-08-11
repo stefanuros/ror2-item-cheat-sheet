@@ -1,6 +1,6 @@
 <template>
   <div class="top-bar-wrapper">
-    <div class="top-bar">
+    <div class="top-bar" :class="{ 'top-bar-fixed': fixed }">
       <div class="nav-bar">
         <SearchBar />
         <SortBySelector />
@@ -19,6 +19,7 @@ import RarityFilter from './NavBar/RarityFilter.vue';
 
 export default {
   name: 'TopBar',
+  props: ['fixed'],
   components: {
     SearchBar,
     SortBySelector,
@@ -41,15 +42,18 @@ export default {
   display: flex;
   flex-flow: row wrap;
 
-  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 200;
 }
 
-.top-bar-wrapper {
-  margin-top: var(--top-bar-height);
+.top-bar-wrapper .top-bar-fixed {
+  position: fixed;
+}
+
+.top-bar-wrapper > :not(.top-bar-fixed) {
+  visibility: hidden;
 }
 
 .nav-bar {
