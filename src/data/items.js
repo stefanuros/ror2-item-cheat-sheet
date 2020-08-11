@@ -551,7 +551,7 @@ export const items = Object.freeze({
     name: "Warbanner",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/f0/Warbanner.png",
     shortDescription: "Drop a Warbanner on leveling up, giving you great strength.",
-    description: "On level up drop a banner that strengthens all allies within 16m (+8m per stack). Raise attack and movement speed by 30%.",
+    description: "On level up or starting the Teleporter event, drop a banner that strengthens all allies within 16m (+8m per stack). Raise attack and movement speed by 30%.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.UTILITY,
