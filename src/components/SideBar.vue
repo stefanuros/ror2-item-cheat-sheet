@@ -196,7 +196,6 @@ export default {
   width: var(--side-bar-width);
   background: var(--side-bar-background-colour);
   position: fixed;
-  top: var(--top-bar-height);
   right: 0px;
 
   color: var(--main-text-colour);
