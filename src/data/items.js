@@ -1353,7 +1353,7 @@ export const items = Object.freeze({
     name: "Runald's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/05/Runald%27s_Band.png",
     shortDescription: "Chance on hit to strike an enemy with a runic ice blast.",
-    description: "8% chance on hit to strike an enemy with a runic ice blast, slowing them by 80% and dealing 250% (+125% per stack) TOTAL damage.",
+    description: "Hits that deal more than 400% damage also blasts enemies with a runic ice blast, slowing them by 80% for 3s (+3s per stack) and dealing 250% (+250% per stack) TOTAL damage. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1368,12 +1368,20 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Death_Do_Us_Part",
     },
     id: 63,
-    stats: [{
-      stat: "Damage",
-      value: "250%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+125%",
-    }],
+    stats: [
+      {
+        stat: "Duration",
+        value: "3s",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+3s",
+      },
+      {
+        stat: "Damage",
+        value: "250%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+250%",
+      }
+    ],
   },
   64: {
     wikiLink: "https://riskofrain2.gamepedia.com/Kjaro%27s_Band",
