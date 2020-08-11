@@ -2227,7 +2227,7 @@ export const items = Object.freeze({
     name: "Death Mark",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/34/Death_Mark.png",
     shortDescription: "Enemies with 4 or more debuffs are marked for death, taking bonus damage.",
-    description: "Enemies with 4 or more debuffs are marked for death, increasing damage taken by 50% (+50% per stack) from all sources for 7 seconds.",
+    description: "Enemies with 4 or more debuffs are marked for death, increasing damage taken by 50% from all sources for 7 (+7 per stack) seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -2236,12 +2236,20 @@ export const items = Object.freeze({
       constant.Category.DAMAGE,
     ],
     id: 104,
-    stats: [{
-      stat: "Damage",
-      value: "50%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+50%",
-    }],
+    stats: [
+      {
+        stat: "Damage",
+        value: "50%",
+        stackType: constant.StackType.NONE,
+        stackValue: "+0%",
+      },
+      {
+        stat: "Duration",
+        value: "7s",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+7s",
+      }
+    ],
   },
   105: {
     wikiLink: "https://riskofrain2.gamepedia.com/Interstellar_Desk_Plant",
