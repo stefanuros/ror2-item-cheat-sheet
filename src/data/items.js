@@ -1038,7 +1038,7 @@ export const items = Object.freeze({
     ],
     category: [
       constant.Category.DAMAGE,
-      constant.Category.MOVEMENT_SPEED,
+      constant.Category.MOBILITY,
       constant.Category.ATTACK_SPEED,
       constant.Category.ON_KILL_EFFECT,
     ],
