@@ -174,7 +174,7 @@ export const items = Object.freeze({
     name: "Monster Tooth",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/3b/Monster_Tooth.png",
     shortDescription: "Drop a healing orb on kill.",
-    description: "Killing an enemy spawns a healing orb that heals for 8 (+8 per stack) health.",
+    description: "Killing an enemy spawns a healing orb that heals for 8 plus an additional 2% (+2% per stack) of maximum health.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -185,12 +185,20 @@ export const items = Object.freeze({
       constant.Category.ON_KILL_EFFECT,
     ],
     id: 6,
-    stats: [{
-      stat: "Heal",
-      value: "8",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+8",
-    }],
+    stats: [
+      {
+        stat: "Heal",
+        value: "8",
+        stackType: constant.StackType.NONE,
+        stackValue: "+0",
+      },
+      {
+        stat: "Heal",
+        value: "2%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+2%",
+      },
+    ],
   },
   7: {
     wikiLink: "https://riskofrain2.gamepedia.com/Lens-Maker%27s_Glasses",
