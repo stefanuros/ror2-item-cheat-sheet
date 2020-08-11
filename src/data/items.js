@@ -1388,7 +1388,7 @@ export const items = Object.freeze({
     name: "Kjaro's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/eb/Kjaro%27s_Band.png",
     shortDescription: "Chance on hit to strike an enemy with a runic flame tornado.",
-    description: "8% chance on hit to strike an enemy with a runic flame tornado, dealing 500% (+250% per stack) TOTAL damage.",
+    description: "Hits that deal more than 400% damage also blasts enemies with a runic flame tornado, dealing 300% (+300% per stack) TOTAL damage over time. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1403,12 +1403,14 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Death_Do_Us_Part",
     },
     id: 64,
-    stats: [{
-      stat: "Damage",
-      value: "500%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+250%",
-    }],
+    stats: [
+      {
+        stat: "Damage",
+        value: "300%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+300%",
+      }
+    ],
   },
   65: {
     wikiLink: "https://riskofrain2.gamepedia.com/Chronobauble",
