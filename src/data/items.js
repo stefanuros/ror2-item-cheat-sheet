@@ -819,7 +819,7 @@ export const items = Object.freeze({
     name: "Medkit",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/0f/Medkit.png",
     shortDescription: "Receive a delayed heal after taking damage.",
-    description: "Heal for 10 (+10 per stack) health 1.1 seconds after getting hurt.",
+    description: "2 seconds after getting hurt, heal for 20 plus an additional 5% (+5% per stack) of maximum health.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -833,12 +833,20 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Elite_Slayer",
     },
     id: 36,
-    stats: [{
-      stat: "Heal",
-      value: "10",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+10",
-    }],
+    stats: [
+      {
+        stat: "Heal",
+        value: "10",
+        stackType: constant.StackType.NONE,
+        stackValue: "+0",
+      },
+      {
+        stat: "Heal",
+        value: "5%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+5%",
+      }
+    ],
   },
   37: {
     wikiLink: "https://riskofrain2.gamepedia.com/Bandolier",
