@@ -1642,7 +1642,7 @@ export const items = Object.freeze({
     name: "Old Guillotine",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/8/8d/Old_Guillotine.png",
     shortDescription: "Instantly kill low health Elite monsters.",
-    description: "Instantly kill Elite monsters below 20% (+20% per stack) health.",
+    description: "Instantly kill Elite monsters below 13% (+13% per stack) health.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1660,9 +1660,9 @@ export const items = Object.freeze({
     id: 78,
     stats: [{
       stat: "Threshold",
-      value: "20%",
+      value: "13%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+20%",
+      stackValue: "+13%",
     }],
   },
   79: {
