@@ -174,7 +174,7 @@ export const items = Object.freeze({
     name: "Monster Tooth",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/3b/Monster_Tooth.png",
     shortDescription: "Drop a healing orb on kill.",
-    description: "Killing an enemy spawns a healing orb that heals for 8 (+8 per stack) health.",
+    description: "Killing an enemy spawns a healing orb that heals for 8 plus an additional 2% (+2% per stack) of maximum health.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -185,12 +185,14 @@ export const items = Object.freeze({
       constant.Category.ON_KILL_EFFECT,
     ],
     id: 6,
-    stats: [{
-      stat: "Heal",
-      value: "8",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+8",
-    }],
+    stats: [
+      {
+        stat: "Heal",
+        value: "2%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+2%",
+      },
+    ],
   },
   7: {
     wikiLink: "https://riskofrain2.gamepedia.com/Lens-Maker%27s_Glasses",
@@ -502,8 +504,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/H3AD-5T_v2",
     name: "H3AD-5T v2",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/36/H3AD-5T_v2.png",
-    shortDescription: "Increase jump height. Hold 'Use' to slam down to the ground.",
-    description: "Increase jump height. Creates a 10m radius kinetic explosion on hitting the ground, dealing 2300% base damage that scales up with speed. Recharges in 10 (-50% per stack) seconds.",
+    shortDescription: "Increase jump height. Hold 'Interact' to slam down to the ground.",
+    description: "Increase jump height. Creates a 5m-100m radius kinetic explosion on hitting the ground, dealing 1000%-10000% base damage that scales up with speed. Recharges in 10 (-50% per stack) seconds.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.DAMAGE,
@@ -542,8 +544,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Warbanner",
     name: "Warbanner",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/f0/Warbanner.png",
-    shortDescription: "Drop a Warbanner on leveling up, giving you great strength.",
-    description: "On level up drop a banner that strengthens all allies within 16m (+8m per stack). Raise attack and movement speed by 30%.",
+    shortDescription: "Drop a Warbanner on level up or starting the Teleporter event. Grants allies attack and movement speed.",
+    description: "On level up or starting the Teleporter event, drop a banner that strengthens all allies within 16m (+8m per stack). Raise attack and movement speed by 30%.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.UTILITY,
@@ -811,7 +813,7 @@ export const items = Object.freeze({
     name: "Medkit",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/0f/Medkit.png",
     shortDescription: "Receive a delayed heal after taking damage.",
-    description: "Heal for 10 (+10 per stack) health 1.1 seconds after getting hurt.",
+    description: "2 seconds after getting hurt, heal for 20 plus an additional 5% (+5% per stack) of maximum health.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -825,12 +827,14 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Elite_Slayer",
     },
     id: 36,
-    stats: [{
-      stat: "Heal",
-      value: "10",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+10",
-    }],
+    stats: [
+      {
+        stat: "Heal",
+        value: "5%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+5%",
+      }
+    ],
   },
   37: {
     wikiLink: "https://riskofrain2.gamepedia.com/Bandolier",
@@ -1336,8 +1340,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Runald%27s_Band",
     name: "Runald's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/05/Runald%27s_Band.png",
-    shortDescription: "Chance on hit to strike an enemy with a runic ice blast.",
-    description: "8% chance on hit to strike an enemy with a runic ice blast, slowing them by 80% and dealing 250% (+125% per stack) TOTAL damage.",
+    shortDescription: "High damage hits also blasts enemies with runic ice. Recharges over time.",
+    description: "Hits that deal more than 400% damage also blasts enemies with a runic ice blast, slowing them by 80% for 3s (+3s per stack) and dealing 250% (+250% per stack) TOTAL damage. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1352,19 +1356,27 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Death_Do_Us_Part",
     },
     id: 63,
-    stats: [{
-      stat: "Damage",
-      value: "250%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+125%",
-    }],
+    stats: [
+      {
+        stat: "Duration",
+        value: "3s",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+3s",
+      },
+      {
+        stat: "Damage",
+        value: "250%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+250%",
+      }
+    ],
   },
   64: {
     wikiLink: "https://riskofrain2.gamepedia.com/Kjaro%27s_Band",
     name: "Kjaro's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/eb/Kjaro%27s_Band.png",
-    shortDescription: "Chance on hit to strike an enemy with a runic flame tornado.",
-    description: "8% chance on hit to strike an enemy with a runic flame tornado, dealing 500% (+250% per stack) TOTAL damage.",
+    shortDescription: "High damage hits also blasts enemies with a runic flame tornado. Recharges over time.",
+    description: "Hits that deal more than 400% damage also blasts enemies with a runic flame tornado, dealing 300% (+300% per stack) TOTAL damage over time. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1379,12 +1391,14 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Death_Do_Us_Part",
     },
     id: 64,
-    stats: [{
-      stat: "Damage",
-      value: "500%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+250%",
-    }],
+    stats: [
+      {
+        stat: "Damage",
+        value: "300%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+300%",
+      }
+    ],
   },
   65: {
     wikiLink: "https://riskofrain2.gamepedia.com/Chronobauble",
@@ -1626,7 +1640,7 @@ export const items = Object.freeze({
     name: "Old Guillotine",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/8/8d/Old_Guillotine.png",
     shortDescription: "Instantly kill low health Elite monsters.",
-    description: "Instantly kill Elite monsters below 20% (+20% per stack) health.",
+    description: "Instantly kill Elite monsters below 13% (+13% per stack) health.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1644,9 +1658,9 @@ export const items = Object.freeze({
     id: 78,
     stats: [{
       stat: "Threshold",
-      value: "20%",
+      value: "13%",
       stackType: constant.StackType.HYPERBOLIC,
-      stackValue: "+20%",
+      stackValue: "+13%",
     }],
   },
   79: {
@@ -1733,7 +1747,7 @@ export const items = Object.freeze({
     name: "Little Disciple",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/08/Little_Disciple.png",
     shortDescription: "Fire tracking wisps while sprinting.",
-    description: "Fire a tracking wisp for 100% (+100% per stack) damage. Fires every 0.5 seconds while sprinting.",
+    description: "Fire a tracking wisp for 300% (+300% per stack) damage. Fires every 1.6 seconds while sprinting. Fire rate increases with movement speed.",
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: "Grovetender",
     tag: [
@@ -1747,9 +1761,9 @@ export const items = Object.freeze({
     id: 83,
     stats: [{
       stat: "Damage",
-      value: "100%",
+      value: "300%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%",
+      stackValue: "+300%",
     }],
   },
   84: {
@@ -2211,7 +2225,7 @@ export const items = Object.freeze({
     name: "Death Mark",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/34/Death_Mark.png",
     shortDescription: "Enemies with 4 or more debuffs are marked for death, taking bonus damage.",
-    description: "Enemies with 4 or more debuffs are marked for death, increasing damage taken by 50% (+50% per stack) from all sources for 7 seconds.",
+    description: "Enemies with 4 or more debuffs are marked for death, increasing damage taken by 50% from all sources for 7 (+7 per stack) seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -2220,19 +2234,21 @@ export const items = Object.freeze({
       constant.Category.DAMAGE,
     ],
     id: 104,
-    stats: [{
-      stat: "Damage",
-      value: "50%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+50%",
-    }],
+    stats: [
+      {
+        stat: "Duration",
+        value: "7s",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+7s",
+      }
+    ],
   },
   105: {
     wikiLink: "https://riskofrain2.gamepedia.com/Interstellar_Desk_Plant",
     name: "Interstellar Desk Plant",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/1/1e/Interstellar_Desk_Plant.png",
     shortDescription: "Plant a healing fruit on kill.",
-    description: "On kill, plant a healing fruit seed that grows into a plant after 5 seconds.\n\nThe plant heals for 5% of maximum health every second to all allies within 3m (+1.5m per stack). Lasts 10 seconds.",
+    description: "On kill, plant a healing fruit seed that grows into a plant after 5 seconds.\n\nThe plant heals for 10% of maximum health every second to all allies within 5m (+5.0m per stack). Lasts 10 seconds.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.HEALING,
@@ -2660,8 +2676,8 @@ export const equipment = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Effigy_of_Grief",
     name: "Effigy of Grief",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/45/Effigy_of_Grief.png",
-    shortDescription: "Drop an effigy that cripples ALL characters inside. Can be picked back up.",
-    description: "ALL characters within are slowed by 50% and have their armor reduced by 20.",
+    shortDescription: "Drop a permanent effigy that cripples ALL characters inside. Can place up to 5.",
+    description: "ALL characters within are slowed by 50% and have their armor reduced by 20. Can place up to 5.",
     itemRarity: constant.ItemRarity.LUNAR_EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
