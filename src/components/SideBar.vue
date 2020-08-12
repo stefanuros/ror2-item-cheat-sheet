@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="item-stats-section" v-if="!this.isEquipment">
+      <div class="item-stats-section" v-if="this.shouldShowStatStacking">
         <h4 class="item-stats-label">Item Stacking</h4>
         <table class="item-stats-table" v-if="itemData.stats">
           <tr class="item-stats-labels">
@@ -119,6 +119,11 @@ export default {
     },
     isEquipment() {
       return this.selectedItem.type === SelectionType.EQUIPMENT;
+    },
+    shouldShowStatStacking() {
+      return this.itemData.stats
+        && this.itemData.stats.length > 0
+        && !this.isEquipment;
     },
   },
   methods: {
