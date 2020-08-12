@@ -2477,7 +2477,7 @@ export const items = Object.freeze({
     ],
     unlock: {
       name: "The Calm",
-      description: "It is completed by beating the game on Monsoon difficulty.",
+      description: "Beat the game on Monsoon difficulty.",
       link: "https://riskofrain2.gamepedia.com/The_Calm",
     },
     id: 114,
@@ -3037,7 +3037,7 @@ export const equipment = Object.freeze({
     ],
     unlock: {
       name: "I Love Dying!",
-      description: "It is completed by dying 20 times.",
+      description: "Die 20 times.",
       link: "https://riskofrain2.gamepedia.com/I_Love_Dying!",
     },
     id: 35,
