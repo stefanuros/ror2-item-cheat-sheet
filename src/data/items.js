@@ -2266,7 +2266,7 @@ export const items = Object.freeze({
     name: "Interstellar Desk Plant",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/1/1e/Interstellar_Desk_Plant.png",
     shortDescription: "Plant a healing fruit on kill.",
-    description: "On kill, plant a healing fruit seed that grows into a plant after 5 seconds.\n\nThe plant heals for 5% of maximum health every second to all allies within 3m (+1.5m per stack). Lasts 10 seconds.",
+    description: "On kill, plant a healing fruit seed that grows into a plant after 5 seconds.\n\nThe plant heals for 10% of maximum health every second to all allies within 5m (+5.0m per stack). Lasts 10 seconds.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.HEALING,
