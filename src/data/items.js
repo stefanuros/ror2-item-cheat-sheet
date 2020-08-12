@@ -188,12 +188,6 @@ export const items = Object.freeze({
     stats: [
       {
         stat: "Heal",
-        value: "8",
-        stackType: constant.StackType.NONE,
-        stackValue: "+0",
-      },
-      {
-        stat: "Heal",
         value: "2%",
         stackType: constant.StackType.LINEAR,
         stackValue: "+2%",
@@ -510,7 +504,7 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/H3AD-5T_v2",
     name: "H3AD-5T v2",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/36/H3AD-5T_v2.png",
-    shortDescription: "Increase jump height. Hold 'Use' to slam down to the ground.",
+    shortDescription: "Increase jump height. Hold 'Interact' to slam down to the ground.",
     description: "Increase jump height. Creates a 5m-100m radius kinetic explosion on hitting the ground, dealing 1000%-10000% base damage that scales up with speed. Recharges in 10 (-50% per stack) seconds.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
@@ -550,7 +544,7 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Warbanner",
     name: "Warbanner",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/f0/Warbanner.png",
-    shortDescription: "Drop a Warbanner on leveling up, giving you great strength.",
+    shortDescription: "Drop a Warbanner on level up or starting the Teleporter event. Grants allies attack and movement speed.",
     description: "On level up or starting the Teleporter event, drop a banner that strengthens all allies within 16m (+8m per stack). Raise attack and movement speed by 30%.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
@@ -834,12 +828,6 @@ export const items = Object.freeze({
     },
     id: 36,
     stats: [
-      {
-        stat: "Heal",
-        value: "10",
-        stackType: constant.StackType.NONE,
-        stackValue: "+0",
-      },
       {
         stat: "Heal",
         value: "5%",
@@ -1352,7 +1340,7 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Runald%27s_Band",
     name: "Runald's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/05/Runald%27s_Band.png",
-    shortDescription: "Chance on hit to strike an enemy with a runic ice blast.",
+    shortDescription: "High damage hits also blasts enemies with runic ice. Recharges over time.",
     description: "Hits that deal more than 400% damage also blasts enemies with a runic ice blast, slowing them by 80% for 3s (+3s per stack) and dealing 250% (+250% per stack) TOTAL damage. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
@@ -1387,7 +1375,7 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Kjaro%27s_Band",
     name: "Kjaro's Band",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/eb/Kjaro%27s_Band.png",
-    shortDescription: "Chance on hit to strike an enemy with a runic flame tornado.",
+    shortDescription: "High damage hits also blasts enemies with a runic flame tornado. Recharges over time.",
     description: "Hits that deal more than 400% damage also blasts enemies with a runic flame tornado, dealing 300% (+300% per stack) TOTAL damage over time. Recharges every 10 seconds.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
@@ -2248,12 +2236,6 @@ export const items = Object.freeze({
     id: 104,
     stats: [
       {
-        stat: "Damage",
-        value: "50%",
-        stackType: constant.StackType.NONE,
-        stackValue: "+0%",
-      },
-      {
         stat: "Duration",
         value: "7s",
         stackType: constant.StackType.LINEAR,
@@ -2694,7 +2676,7 @@ export const equipment = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Effigy_of_Grief",
     name: "Effigy of Grief",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/45/Effigy_of_Grief.png",
-    shortDescription: "Drop an effigy that cripples ALL characters inside. Can be picked back up.",
+    shortDescription: "Drop a permanent effigy that cripples ALL characters inside. Can place up to 5.",
     description: "ALL characters within are slowed by 50% and have their armor reduced by 20. Can place up to 5.",
     itemRarity: constant.ItemRarity.LUNAR_EQUIPMENT,
     tag: [
