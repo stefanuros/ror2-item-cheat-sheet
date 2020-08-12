@@ -1759,7 +1759,7 @@ export const items = Object.freeze({
     name: "Little Disciple",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/08/Little_Disciple.png",
     shortDescription: "Fire tracking wisps while sprinting.",
-    description: "Fire a tracking wisp for 100% (+100% per stack) damage. Fires every 0.5 seconds while sprinting.",
+    description: "Fire a tracking wisp for 300% (+300% per stack) damage. Fires every 1.6 seconds while sprinting. Fire rate increases with movement speed.",
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: "Grovetender",
     tag: [
@@ -1773,9 +1773,9 @@ export const items = Object.freeze({
     id: 83,
     stats: [{
       stat: "Damage",
-      value: "100%",
+      value: "300%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+100%",
+      stackValue: "+300%",
     }],
   },
   84: {
