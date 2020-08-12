@@ -2695,7 +2695,7 @@ export const equipment = Object.freeze({
     name: "Effigy of Grief",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/45/Effigy_of_Grief.png",
     shortDescription: "Drop an effigy that cripples ALL characters inside. Can be picked back up.",
-    description: "ALL characters within are slowed by 50% and have their armor reduced by 20.",
+    description: "ALL characters within are slowed by 50% and have their armor reduced by 20. Can place up to 5.",
     itemRarity: constant.ItemRarity.LUNAR_EQUIPMENT,
     tag: [
       constant.Tag.UTILITY,
