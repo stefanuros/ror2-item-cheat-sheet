@@ -190,10 +190,11 @@ export default {
   font-size: var(--description-text-size);
   margin: 1px 3px 3px 5px;
 
-  /* Align vertically */
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
+  /* Truncate */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
 
   color: var(--sub-text-colour);
 }
