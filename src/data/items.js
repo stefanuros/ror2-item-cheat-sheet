@@ -2490,7 +2490,7 @@ export const items = Object.freeze({
     {
       stat: "Unfavourable Rolls",
       value: "1",
-      stackType: constant.StackType.HYPERBOLIC,
+      stackType: constant.StackType.LINEAR,
       stackValue: "1",
     }],
   },
