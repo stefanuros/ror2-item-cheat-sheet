@@ -74,7 +74,7 @@ export const items = Object.freeze({
     name: "Brilliant Behemoth",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/fa/Brilliant_Behemoth.png",
     shortDescription: "All your attacks explode!",
-    description: "All your attacks explode in a 4m (+2.5m per stack) radius for a bonus 60% TOTAL damage to nearby enemies.",
+    description: "All your attacks explode in a 4m (+1.5m per stack) radius for a bonus 60% TOTAL damage to nearby enemies.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.DAMAGE,
@@ -89,7 +89,7 @@ export const items = Object.freeze({
       stat: "Explosion Radius",
       value: "4m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+2.5m",
+      stackValue: "+1.5m",
     }],
   },
   3: {
@@ -590,7 +590,7 @@ export const items = Object.freeze({
     name: "Harvester's Scythe",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/e1/Harvester%27s_Scythe.png",
     shortDescription: "'Critical Strikes' heal you.",
-    description: "Gain 5% critical chance (+0% per stack). Critical strikes heal for 8 (+4 per stack) health.",
+    description: "Gain 5% critical chance. Critical strikes heal for 8 (+4 per stack) health.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.HEALING,
@@ -624,7 +624,7 @@ export const items = Object.freeze({
     name: "Cautious Slug",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/c/c6/Cautious_Slug.png",
     shortDescription: "Rapidly heal outside of danger.",
-    description: "Increases passive health regeneration by 3 hp/s (+3 hp/s per stack) while outside of combat.",
+    description: "Increases base health regeneration by +4 hp/s (+4 hp/s per stack) while outside of combat.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -635,9 +635,9 @@ export const items = Object.freeze({
     id: 27,
     stats: [{
       stat: "Health Regeneration",
-      value: "3hp/s",
+      value: "4 hp/s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+3hp/s",
+      stackValue: "+4 hp/s",
     }],
   },
   29: {
@@ -758,7 +758,7 @@ export const items = Object.freeze({
     name: "Infusion",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/7d/Infusion.png",
     shortDescription: "Killing an enemy permanently increases your health, up to 100.",
-    description: "Killing an enemy increases your health permanently by 1, up to a maximum of 100 (+100 per stack) health.",
+    description: "Killing an enemy increases your health permanently by 1 (+1 per stack), up to a maximum of 100 (+100 per stack) health.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.UTILITY,
@@ -775,12 +775,20 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Slaughter",
     },
     id: 33,
-    stats: [{
-      stat: "Health Increase",
-      value: "100",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+100",
-    }],
+    stats: [
+      {
+        stat: "Health Per Kill",
+        value: "1",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+1",
+      },
+      {
+        stat: "Health Increase",
+        value: "100",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+100",
+      }
+    ],
   },
   35: {
     wikiLink: "https://riskofrain2.gamepedia.com/57_Leaf_Clover",
@@ -855,7 +863,7 @@ export const items = Object.freeze({
     stats: [{
       stat: "Chance",
       value: "18%",
-      stackType: constant.StackType.HYPERBOLIC,
+      stackType: constant.StackType.SPECIAL,
       stackValue: "+10%",
     }],
   },
@@ -1281,9 +1289,9 @@ export const items = Object.freeze({
     id: 60,
     stats: [{
       stat: "Chance",
-      value: "",
+      value: "-",
       stackType: constant.StackType.SPECIAL,
-      stackValue: "",
+      stackValue: "-",
     }],
   },
   61: {
@@ -1729,18 +1737,20 @@ export const items = Object.freeze({
       constant.Category.MINION,
     ],
     id: 82,
-    stats: [{
-      stat: "Health",
-      value: "100%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+100%",
-    },
-    {
-      stat: "Damage",
-      value: "100%",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+50%",
-    }],
+    stats: [
+      {
+        stat: "Damage",
+        value: "100%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+50%",
+      },
+      {
+        stat: "Health",
+        value: "100%",
+        stackType: constant.StackType.LINEAR,
+        stackValue: "+100%",
+      }
+    ],
   },
   83: {
     wikiLink: "https://riskofrain2.gamepedia.com/Little_Disciple",
@@ -2121,7 +2131,7 @@ export const items = Object.freeze({
     name: "Genesis Loop",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/c/c8/Genesis_Loop.png",
     shortDescription: "Fire an electric nova at low health.",
-    description: "Falling below 25% health causes you to explode, dealing 6000% base damage. Recharges every 30 seconds (-50% per stack).",
+    description: "Falling below 25% health causes you to explode, dealing 6000% base damage. Recharges every 30 / (2 +1 per stack) seconds.",
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: "Wandering Vagrant",
     tag: [
@@ -2133,11 +2143,10 @@ export const items = Object.freeze({
     ],
     id: 97,
     stats: [{
-      stat: "Recharge",
-      value: "30s",
-      stackType: constant.StackType.EXPONENTIAL,
-      stackValue: "-50%",
-      effectiveMax: 11,
+      stat: "Recharge Speed",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+50%",
     }],
   },
   98: {
@@ -2145,7 +2154,7 @@ export const items = Object.freeze({
     name: "Beads of Fealty",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/07/Beads_of_Fealty.png",
     shortDescription: "Seems to do nothing... but...",
-    description: "Celestial Portals will take the player to A Moment, Whole instead of A Moment, Fractured.",
+    description: "Celestial Portals will take the player to \"A Moment, Whole\" instead of \"A Moment, Fractured\".",
     itemRarity: constant.ItemRarity.LUNAR,
     tag: [
       constant.Tag.LUNAR,
@@ -2260,9 +2269,9 @@ export const items = Object.freeze({
     id: 105,
     stats: [{
       stat: "Radius",
-      value: "3m",
+      value: "5m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.5m",
+      stackValue: "+5m",
     }],
   },
   106: {
@@ -2326,7 +2335,7 @@ export const items = Object.freeze({
       stackValue: "-50%",
     }],
   },
-  108: {
+  111: {
     wikiLink: "https://riskofrain2.gamepedia.com/Defensive_Microbots",
     name: "Defensive Microbots",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/dd/Defensive_Microbots.png",
@@ -2340,7 +2349,7 @@ export const items = Object.freeze({
     category: [
       constant.Category.SURVIVABILITY,
     ],
-    id: 108,
+    id: 111,
     stats: [
       {
         stat: "Projectiles Shot",
@@ -2350,29 +2359,7 @@ export const items = Object.freeze({
       }
     ],
   },
-  109: {
-    wikiLink: "https://riskofrain2.gamepedia.com/Mired_Urn",
-    name: "Mired Urn",
-    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/62/Mired_Urn.png",
-    shortDescription: "Siphon health from nearby characters while in combat.",
-    description: "While in combat, the nearest 1 (+1 per stack) characters to you within 13m will be 'tethered' to you, dealing 100% damage per second, applying tar, and healing you for 100% of the damage dealt.",
-    itemRarity: constant.ItemRarity.BOSS,
-    tag: [
-      constant.Tag.BOSS,
-    ],
-    category: [
-      constant.Category.DAMAGE,
-      constant.Category.HEALING,
-    ],
-    id: 109,
-    stats: [{
-      stat: "Tethered Characters",
-      value: "1",
-      stackType: constant.StackType.LINEAR,
-      stackValue: "+1",
-    }],
-  },
-  110: {
+  112: {
     wikiLink: "https://riskofrain2.gamepedia.com/Molten_Perforator",
     name: "Molten Perforator",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/71/Molten_Perforator.png",
@@ -2386,7 +2373,7 @@ export const items = Object.freeze({
       constant.Category.DAMAGE,
       constant.Category.AOE,
     ],
-    id: 110,
+    id: 112,
     stats: [{
       stat: "Damage",
       value: "300%",
@@ -2394,12 +2381,12 @@ export const items = Object.freeze({
       stackValue: "+300%",
     }],
   },
-  111: {
+  113: {
     wikiLink: "https://riskofrain2.gamepedia.com/Shatterspleen",
     name: "Shatterspleen",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/c/cd/Shatterspleen.png",
     shortDescription: "Critical strikes always bleed enemies. Bleeding enemies now explode.",
-    description: "Critical Strikes bleed enemies for 240% base damage. Bleeding enemies explode on death for 400% (+400% per stack) damage, plus an additional 15% (+15% per stack) of their maximum health.",
+    description: "Gain 5% critical chance. Critical Strikes bleed enemies for 240% base damage. Bleeding enemies explode on death for 400% (+400% per stack) damage, plus an additional 15% (+15% per stack) of their maximum health.",
     itemRarity: constant.ItemRarity.BOSS,
     tag: [
       constant.Tag.BOSS,
@@ -2410,7 +2397,7 @@ export const items = Object.freeze({
       constant.Category.ON_HIT_EFFECT,
       constant.Category.ON_KILL_EFFECT,
     ],
-    id: 111,
+    id: 113,
     stats: [{
       stat: "Damage (Base)",
       value: "400%",
@@ -2418,18 +2405,46 @@ export const items = Object.freeze({
       stackValue: "+400%",
     },
     {
-      stat: "Damage (Max Health)",
+      stat: "Damage (Max HP)",
       value: "15%",
       stackType: constant.StackType.LINEAR,
       stackValue: "+15%",
+    },
+    {
+      stat: "Crit Chance",
+      value: "5%",
+      stackType: constant.StackType.NONE,
+      stackValue: "+0%",
     }],
   },
-  112: {
+  114: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Mired_Urn",
+    name: "Mired Urn",
+    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/62/Mired_Urn.png",
+    shortDescription: "Siphon health from nearby characters while in combat.",
+    description: "While in combat, the nearest 1 (+1 per stack) characters to you within 13m will be 'tethered' to you, dealing 100% damage per second, applying tar, and healing you for 100% of the damage dealt.",
+    itemRarity: constant.ItemRarity.BOSS,
+    tag: [
+      constant.Tag.BOSS,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.HEALING,
+    ],
+    id: 114,
+    stats: [{
+      stat: "Tethered Characters",
+      value: "1",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1",
+    }],
+  },
+  115: {
     wikiLink: "https://riskofrain2.gamepedia.com/Defiant_Gouge",
     name: "Defiant Gouge",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/b/b5/Defiant_Gouge.png",
     shortDescription: "Using a Shrine summons enemies nearby.",
-    description: "Using a Shrine summons enemies nearby. Scales over time.",
+    description: "Using a Shrine summons enemies (stronger per stack) nearby. Scales over time.",
     itemRarity: constant.ItemRarity.LUNAR,
     tag: [
       constant.Tag.UTILITY,
@@ -2438,9 +2453,15 @@ export const items = Object.freeze({
     category: [
       constant.Category.UTILITY,
     ],
-    id: 112,
+    stats: [{
+      stat: "Enemy Difficulty",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%",
+    }],
+    id: 115,
   },
-  113: {
+  116: {
     wikiLink: "https://riskofrain2.gamepedia.com/Mercurial_Rachis",
     name: "Mercurial Rachis",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/2/25/Mercurial_Rachis.png",
@@ -2453,7 +2474,7 @@ export const items = Object.freeze({
     category: [
       constant.Category.DAMAGE,
     ],
-    id: 113,
+    id: 116,
     stats: [{
       stat: "Range",
       value: "16m",
@@ -2461,7 +2482,75 @@ export const items = Object.freeze({
       stackValue: "+50%",
     }],
   },
-  114: {
+  117: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Item_Scrap,_White",
+    name: "Item Scrap, White",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/9/99/Item_Scrap%2C_White.png",
+    shortDescription: "Does nothing. Prioritized when used with 3D Printers.",
+    description: "Does nothing. Prioritized when used with 3D Printers.",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.WORLD_UNIQUE,
+      constant.Tag.SCRAP,
+    ],
+    category: [
+      constant.Category.UTILITY,
+    ],
+    id: 117,
+    stats: [],
+  },
+  118: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Item_Scrap,_Green",
+    name: "Item Scrap, Green",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/0/01/Item_Scrap%2C_Green.png",
+    shortDescription: "Does nothing. Prioritized when used with 3D Printers.",
+    description: "Does nothing. Prioritized when used with 3D Printers.",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.WORLD_UNIQUE,
+      constant.Tag.SCRAP,
+    ],
+    category: [
+      constant.Category.UTILITY,
+    ],
+    id: 118,
+    stats: [],
+  },
+  119: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Item_Scrap,_Red",
+    name: "Item Scrap, Red",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/4/48/Item_Scrap%2C_Red.png",
+    shortDescription: "Does nothing. Prioritized when used with 3D Printers.",
+    description: "Does nothing. Prioritized when used with 3D Printers.",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.WORLD_UNIQUE,
+      constant.Tag.SCRAP,
+    ],
+    category: [
+      constant.Category.UTILITY,
+    ],
+    id: 119,
+    stats: [],
+  },
+  120: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Item_Scrap,_Yellow",
+    name: "Item Scrap, Yellow",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/7f/Item_Scrap%2C_Yellow.png",
+    shortDescription: "Does nothing. Prioritized when used with 3D Printers.",
+    description: "Does nothing. Prioritized when used with 3D Printers.",
+    itemRarity: constant.ItemRarity.BOSS,
+    tag: [
+      constant.Tag.WORLD_UNIQUE,
+      constant.Tag.SCRAP,
+    ],
+    category: [
+      constant.Category.UTILITY,
+    ],
+    id: 120,
+    stats: [],
+  },
+  121: {
     wikiLink: "https://riskofrain2.gamepedia.com/Purity",
     name: "Purity",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/a/a2/Purity.png",
@@ -2480,7 +2569,7 @@ export const items = Object.freeze({
       description: "Beat the game on Monsoon difficulty.",
       link: "https://riskofrain2.gamepedia.com/The_Calm",
     },
-    id: 114,
+    id: 121,
     stats: [{
       stat: "Cooldown Reduction",
       value: "2s",
@@ -2779,6 +2868,7 @@ export const equipment = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Funded!",
     },
     id: 19,
+    cooldown: "N/A",
   },
   20: {
     wikiLink: "https://riskofrain2.gamepedia.com/Gnarled_Woodsprite",
@@ -3022,26 +3112,20 @@ export const equipment = Object.freeze({
     cooldown: "45s",
   },
   35: {
-    wikiLink: "https://riskofrain2.gamepedia.com/Forgive_Me_Please",
-    name: "Forgive Me Please",
-    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/78/Forgive_Me_Please.png",
-    shortDescription: "Throw a cursed doll that repeatedly triggers your 'On Kill' effects.",
-    description: "Throw a cursed doll out that triggers any On-Kill effects you have every 1 second for 8 seconds.",
+    wikiLink: "https://riskofrain2.gamepedia.com/Super_Massive_Leech",
+    name: "Super Massive Leech",
+    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/a/ae/Super_Massive_Leech.png",
+    shortDescription: "Heal for a percentage of the damage you deal for 8 seconds.",
+    description: "Heal for 20% of the damage you deal. Lasts 8 seconds.",
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
-      constant.Tag.DAMAGE,
+      constant.Tag.HEALING,
     ],
     category: [
-      constant.Category.DAMAGE,
-      constant.Category.ON_KILL_EFFECT,
+      constant.Category.HEALING,
     ],
-    unlock: {
-      name: "I Love Dying!",
-      description: "Die 20 times.",
-      link: "https://riskofrain2.gamepedia.com/I_Love_Dying!",
-    },
     id: 35,
-    cooldown: "45s",
+    cooldown: "60s",
   },
   36: {
     wikiLink: "https://riskofrain2.gamepedia.com/Gorag%27s_Opus",
@@ -3062,20 +3146,26 @@ export const equipment = Object.freeze({
     cooldown: "45s",
   },
   37: {
-    wikiLink: "https://riskofrain2.gamepedia.com/Super_Massive_Leech",
-    name: "Super Massive Leech",
-    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/a/ae/Super_Massive_Leech.png",
-    shortDescription: "Heal for a percentage of the damage you deal for 8 seconds.",
-    description: "Heal for 20% of the damage you deal. Lasts 8 seconds.",
+    wikiLink: "https://riskofrain2.gamepedia.com/Forgive_Me_Please",
+    name: "Forgive Me Please",
+    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/78/Forgive_Me_Please.png",
+    shortDescription: "Throw a cursed doll that repeatedly triggers your 'On Kill' effects.",
+    description: "Throw a cursed doll out that triggers any On-Kill effects you have every 1 second for 8 seconds.",
     itemRarity: constant.ItemRarity.EQUIPMENT,
     tag: [
-      constant.Tag.HEALING,
+      constant.Tag.DAMAGE,
     ],
     category: [
-      constant.Category.HEALING,
+      constant.Category.DAMAGE,
+      constant.Category.ON_KILL_EFFECT,
     ],
+    unlock: {
+      name: "I Love Dying!",
+      description: "Die 20 times.",
+      link: "https://riskofrain2.gamepedia.com/I_Love_Dying!",
+    },
     id: 37,
-    cooldown: "60s",
+    cooldown: "45s",
   },
 });
 
