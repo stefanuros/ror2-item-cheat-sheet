@@ -52,6 +52,7 @@ export const Tag = Object.freeze({
   WORLD_UNIQUE: Symbol("World Unique"),
   TRANSFORMATION: Symbol("Transformation"),
   MISC: Symbol("Misc"),
+  SCRAP: Symbol("Scrap"),
 });
 
 export const Category = Object.freeze({

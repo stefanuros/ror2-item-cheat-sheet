@@ -287,6 +287,7 @@ hr {
   text-align: center;
   font-size: 90%;
   margin-bottom: 0px;
+  white-space: break-spaces;
 }
 
 .equipment-cooldown {
