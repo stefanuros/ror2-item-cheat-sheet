@@ -1,5 +1,7 @@
 <template>
   <div class="item-list-wrapper">
+    <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
+    <hr class="item-list-divisor">
     <div class="item-list" v-bind:class="[this.cardSize]">
       <ItemCard 
         v-show="!isItemIdListEmpty"
@@ -15,8 +17,6 @@
     >
       No Matching {{ itemListType.description }} Found
     </div>
-    <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
-    <hr class="item-list-divisor">
   </div>
 </template>
 
