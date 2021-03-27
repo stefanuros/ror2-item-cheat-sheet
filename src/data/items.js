@@ -1150,7 +1150,10 @@ export const items = Object.freeze({
     shortDescription: "Boosts health and regeneration.",
     description: "Increase maximum health by 40 (+40 per stack) and health regeneration by 1.6 (+1.6 per stack) health / second.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Stone Titan",
+    dropsFrom: {
+      source: "Stone Titan",
+      url: "https://riskofrain2.fandom.com/wiki/Stone_Titan"
+    },
     tag: [
       constant.Tag.UTILITY,
       constant.Tag.HEALING,
@@ -1180,7 +1183,10 @@ export const items = Object.freeze({
     shortDescription: "Recruit a Beetle Guard.",
     description: "Every 30 seconds, summon a Beetle Guard with bonus 300% damage and 100% health. Can have up to 1 (+1 per stack) Guards at a time.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Beetle Queen",
+    dropsFrom: {
+      source: "Beetle Queen",
+      url: "https://riskofrain2.fandom.com/wiki/Beetle_Queen"
+    },
     tag: [
       constant.Tag.UTILITY,
     ],
@@ -1723,7 +1729,10 @@ export const items = Object.freeze({
     shortDescription: "Summon Aurelionite during the Teleporter event.",
     description: "Summon Aurelionite during the teleporter event. It has 100% (+50% per stack) damage and 100% (+100% per stack) health.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Aurelionite",
+    dropsFrom: {
+      source: "Aurelionite",
+      url: "https://riskofrain2.fandom.com/wiki/Aurelionite"
+    },
     tag: [
       constant.Tag.UTILITY,
       constant.Tag.WORLD_UNIQUE,
@@ -1754,7 +1763,10 @@ export const items = Object.freeze({
     shortDescription: "Fire tracking wisps while sprinting.",
     description: "Fire a tracking wisp for 300% (+300% per stack) damage. Fires every 1.6 seconds while sprinting. Fire rate increases with movement speed.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Grovetender",
+    dropsFrom: {
+      source: "Grovetender",
+      url: "https://riskofrain2.fandom.com/wiki/Grovetender"
+    },
     tag: [
       constant.Tag.DAMAGE,
       constant.Tag.SPRINT_RELATED,
@@ -1952,7 +1964,10 @@ export const items = Object.freeze({
     shortDescription: "Increase your maximum health.",
     description: "Increases maximum health by 10% (+10% per stack).",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Cleansing Pool",
+    dropsFrom: {
+      source: "Cleansing Pool",
+      url: "https://riskofrain2.fandom.com/wiki/Cleansing_Pool",
+    },
     tag: [
       constant.Tag.UTILITY,
       constant.Tag.WORLD_UNIQUE,
@@ -1975,7 +1990,10 @@ export const items = Object.freeze({
     shortDescription: "Increase ALL of your stats.",
     description: "Increases ALL stats by 10% (+10% per stack).",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Cleansing Pool",
+    dropsFrom: {
+      source: "Cleansing Pool",
+      url: "https://riskofrain2.fandom.com/wiki/Cleansing_Pool"
+    },
     tag: [
       constant.Tag.DAMAGE,
       constant.Tag.HEALING,
@@ -2127,7 +2145,10 @@ export const items = Object.freeze({
     shortDescription: "Fire an electric nova at low health.",
     description: "Falling below 25% health causes you to explode, dealing 6000% base damage. Recharges every 30 / (2 +1 per stack) seconds.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Wandering Vagrant",
+    dropsFrom: {
+      source: "Wandering Vagrant",
+      url: "https://riskofrain2.fandom.com/wiki/Wandering_Vagrant"
+    },
     tag: [
       constant.Tag.DAMAGE,
     ],
@@ -2165,7 +2186,10 @@ export const items = Object.freeze({
     shortDescription: "A stone shard with immense power.",
     description: "They are used to deal damage to the Artifact Reliquary, who is otherwise completely impervious to normal damage.",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Bulwark's Ambry",
+    dropsFrom: {
+      source: "Bulwark's Ambry",
+      url: "https://riskofrain2.fandom.com/wiki/Bulwark%27s_Ambry"
+    },
     tag: [
       constant.Tag.WORLD_UNIQUE,
     ],
@@ -2275,7 +2299,10 @@ export const items = Object.freeze({
     shortDescription: "Chance on kill to summon an Ancestral Pod.",
     description: "7% chance (+1% per stack) on kill to summon an Ancestral Pod that distracts enemies.\n\nOnce it fully grows, it will hatch into an allied Parent with 100% health (+100% per stack).",
     itemRarity: constant.ItemRarity.BOSS,
-    dropsFrom: "Grandparent",
+    dropsFrom: {
+      source: "Grandparent",
+      url: "https://riskofrain2.fandom.com/wiki/Grandparent"
+    },
     tag: [
       constant.Tag.UTILITY,
       constant.Tag.ON_KILL_EFFECT,
@@ -2360,6 +2387,10 @@ export const items = Object.freeze({
     shortDescription: "Chance on hit to fire magma balls.",
     description: "10% chance on hit to call forth 3 magma balls from an enemy, dealing 300% (+300% per stack) damage each.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Magma Worm",
+      url: "https://riskofrain2.fandom.com/wiki/Magma_Worm"
+    },
     tag: [
       constant.Tag.BOSS,
     ],
@@ -2382,6 +2413,10 @@ export const items = Object.freeze({
     shortDescription: "Critical strikes always bleed enemies. Bleeding enemies now explode.",
     description: "Gain 5% critical chance. Critical Strikes bleed enemies for 240% base damage. Bleeding enemies explode on death for 400% (+400% per stack) damage, plus an additional 15% (+15% per stack) of their maximum health.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Imp Overlord",
+      url: "https://riskofrain2.fandom.com/wiki/Imp_Overlord"
+    },
     tag: [
       constant.Tag.BOSS,
     ],
@@ -2418,6 +2453,10 @@ export const items = Object.freeze({
     shortDescription: "Siphon health from nearby enemies while in combat.",
     description: "While in combat, the nearest 1 (+1 per stack) enemies to you within 13m will be 'tethered' to you, dealing 100% damage per second, applying tar, and healing you for 100% of the damage dealt.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Clay Dunestrider",
+      url: "https://riskofrain2.fandom.com/wiki/Clay_Dunestrider"
+    },
     tag: [
       constant.Tag.BOSS,
     ],
@@ -2534,6 +2573,10 @@ export const items = Object.freeze({
     shortDescription: "Does nothing. Prioritized when used with 3D Printers.",
     description: "Does nothing. Prioritized when used with 3D Printers.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Scrapper",
+      url: "https://riskofrain2.fandom.com/wiki/Scrapper"
+    },
     tag: [
       constant.Tag.WORLD_UNIQUE,
       constant.Tag.SCRAP,
@@ -2650,6 +2693,10 @@ export const items = Object.freeze({
     shortDescription: "Recruit a pair of Solus Probes that gain power with more allies.",
     description: "Every 30 seconds, summon two Solus Probes that gain +100% (+100% per stack) damage per ally on your team.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Solus Control Unit",
+      url: "https://riskofrain2.fandom.com/wiki/Solus_Control_Unit"
+    },
     tag: [
       constant.Tag.UTILITY,
     ],
@@ -2673,6 +2720,10 @@ export const items = Object.freeze({
     shortDescription: "Chance on hit to call down a lightning strike.",
     description: "10% chance on hit to down a lightning strike, dealing 500% (+500% per stack) damage.",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Overloading Worm",
+      url: "https://riskofrain2.fandom.com/wiki/Overloading_Worm"
+    },
     tag: [
       constant.Tag.DAMAGE,
     ],
@@ -2695,6 +2746,10 @@ export const items = Object.freeze({
     shortDescription: "Receive flat healing when attacked.",
     description: "Heal from incoming damage for 15 (+15 per stack).",
     itemRarity: constant.ItemRarity.BOSS,
+    dropsFrom: {
+      source: "Grandparent",
+      url: "https://riskofrain2.fandom.com/wiki/Grandparent"
+    },
     tag: [
       constant.Tag.HEALING,
     ],
@@ -2780,7 +2835,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/08/Ifrit%27s_Distinction.png",
     shortDescription: "Become an aspect of fire.",
     description: "You become Blazing. A trail of fire will follow you. Enemies that you attack, or that make contact with your trail will be ignited for 4s dealing 100% damage.",
-    dropsFrom: "Blazing Elites",
+    dropsFrom: {
+      source: "Blazing Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
@@ -2799,7 +2857,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/0a/Silence_Between_Two_Strikes.png",
     shortDescription: "Become an aspect of lightning.",
     description: "You become Overloading. 50% of your health is replaced by sheilds that rapidly recharge 7 seconds after you've stopped taking damage. Attacks attach a bomb that explodes after 1.5s dealing 100% damage.",
-    dropsFrom: "Overloading Elites",
+    dropsFrom: {
+      source: "Overloading Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
@@ -2820,7 +2881,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/8/8b/Her_Biting_Embrace.png",
     shortDescription: "Become an aspect of ice.",
     description: "You become Glacial. Attacked enemies are slowed for 80% on hit for 1.5s. When a player holding this equipment dies, after 2s they will explode for 150% damage in addition to freezing enemies around them.",
-    dropsFrom: "Glacial Elites",
+    dropsFrom: {
+      source: "Glacial Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
@@ -2840,7 +2904,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/9/9b/N%27kuhana%27s_Retort.png",
     shortDescription: "Become an aspect of corruption.",
     description: "You become Malachite. You periodically release 3-4 spiked balls that sprout spike pits when they land. On death you have a chance to spawn a Malachite Urchin that shoots spikes until it expires.",
-    dropsFrom: "Malachite Elites",
+    dropsFrom: {
+      source: "Malachite Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
@@ -3170,7 +3237,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d2/Spectral_Circlet.png",
     shortDescription: "Become an aspect of incorporeality.",
     description: "You become Celestine. Your attacks apply an 80% slow for 3 seconds.",
-    dropsFrom: "Celestine Elites",
+    dropsFrom: {
+      source: "Celestine Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
@@ -3299,7 +3369,10 @@ export const equipment = Object.freeze({
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d2/Spectral_Circlet.png",
     shortDescription: "Become an aspect of perfection.",
     description: "You become Perfected. Your health is replaced by shields that rapidly recharge 7 seconds after you've stopped taking damage. Your attacks also apply crippled",
-    dropsFrom: "Perfected Elites",
+    dropsFrom: {
+      source: "Perfected Elites",
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+    },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
       constant.Tag.TRANSFORMATION,
