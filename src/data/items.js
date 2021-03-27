@@ -323,7 +323,7 @@ export const items = Object.freeze({
     name: "Frost Relic",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/5/58/Frost_Relic.png",
     shortDescription: "Killing enemies surrounds you with an ice storm.",
-    description: "Killing an enemy surrounds you with an ice storm that deals 600% damage per second. The storm grows with every kill, increasing its radius by 1m. Stacks up to 6m (+6m per stack).",
+    description: "Killing an enemy surrounds you with an ice storm that deals 600% damage per second and slows enemies by 80% for 1.5s. The storm grows with every kill, increasing its radius by 1m. Stacks up to 6m (+3m per stack).",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.DAMAGE,
@@ -339,7 +339,7 @@ export const items = Object.freeze({
       stat: "Ice Storm Radius",
       value: "6m",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+6m",
+      stackValue: "+3m",
     }],
   },
   15: {
@@ -370,8 +370,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Bustling_Fungus",
     name: "Bustling Fungus",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/33/Bustling_Fungus.png",
-    shortDescription: "Heal all nearby allies after standing still for 2 seconds.",
-    description: "After standing still for 2 seconds, create a zone that heals for 4.5% (+2.25% per stack) of your health every second to all allies within 3m (+1.5m per stack).",
+    shortDescription: "Heal all nearby allies after standing still for 1 seconds.",
+    description: "After standing still for 1 second, create a zone that heals for 4.5% (+2.25% per stack) of your health every second to all allies within 3m (+1.5m per stack).",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.HEALING,
@@ -400,8 +400,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Crowbar",
     name: "Crowbar",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/c/c0/Crowbar.png",
-    shortDescription: "Deal more damage to healthy enemies.",
-    description: "Deal 150% (+50% per stack) damage to enemies above 90% health.",
+    shortDescription: "Deal bonus damage to enemies above 90% health.",
+    description: "Deal 75% (+75% per stack) damage to enemies above 90% health.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -418,9 +418,9 @@ export const items = Object.freeze({
     id: 17,
     stats: [{
       stat: "Damage",
-      value: "150%",
+      value: "75%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+50%",
+      stackValue: "+75%",
     }],
   },
   19: {
@@ -461,7 +461,7 @@ export const items = Object.freeze({
     name: "Tri-Tip Dagger",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/1/17/Tri-Tip_Dagger.png",
     shortDescription: "Chance to bleed enemies on hit.",
-    description: "15% (+15% per stack) chance to bleed an enemy for 240% base damage.",
+    description: "10% (+10% per stack) chance to bleed an enemy for 240% base damage.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -473,10 +473,10 @@ export const items = Object.freeze({
     id: 20,
     stats: [{
       stat: "Bleed Chance",
-      value: "15%",
+      value: "10%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+15%",
-      effectiveMax: 7,
+      stackValue: "+10%",
+      effectiveMax: 10,
     }],
   },
   21: {
@@ -505,7 +505,7 @@ export const items = Object.freeze({
     name: "H3AD-5T v2",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/36/H3AD-5T_v2.png",
     shortDescription: "Increase jump height. Hold 'Interact' to slam down to the ground.",
-    description: "Increase jump height. Creates a 5m-100m radius kinetic explosion on hitting the ground, dealing 1000%-10000% base damage that scales up with speed. Recharges in 10 (-50% per stack) seconds.",
+    description: "Increase jump height. Creates a 5m-100m radius kinetic explosion on hitting the ground, dealing 1000%-10000% base damage that scales up with fall distance. Recharges in 10 (-50% per stack) seconds.",
     itemRarity: constant.ItemRarity.LEGENDARY,
     tag: [
       constant.Tag.DAMAGE,
@@ -567,8 +567,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Old_War_Stealthkit",
     name: "Old War Stealthkit",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/2/2c/Old_War_Stealthkit.png",
-    shortDescription: "Turn invisible on taking heavy damage.",
-    description: "Chance on taking damage to gain 40% movement speed and invisibility for 3s (+1.5s per stack). Chance increases the more damage you take.",
+    shortDescription: "Turn invisible at low health.",
+    description: "Falling below 25% health causes you to gain 40% movement speed and invisibility for 5s. Recharges every 30 seconds (-50% per stack).",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
       constant.Tag.UTILITY,
@@ -579,10 +579,10 @@ export const items = Object.freeze({
     ],
     id: 25,
     stats: [{
-      stat: "Duration",
-      value: "3s",
+      stat: "Cooldown",
+      value: "30s",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+1.5s",
+      stackValue: "-50%",
     }],
   },
   26: {
@@ -906,7 +906,7 @@ export const items = Object.freeze({
     name: "Gasoline",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/6e/Gasoline.png",
     shortDescription: "Killing enemies sets nearby enemies on fire.",
-    description: "Killing an enemy ignites all enemies within 12m (+4m per stack). Enemies burn for 150% (+75% per stack) base damage.",
+    description: "Killing an enemy ignites all enemies within 12m (+4m per stack) for 150% base damage. Additionally, enemies burn for 150% (+75% per stack) base damage. ",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1201,7 +1201,7 @@ export const items = Object.freeze({
     name: "Energy Drink",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/7e/Energy_Drink.png",
     shortDescription: "Sprint faster.",
-    description: "Sprint speed is improved by 30% (+20% per stack).",
+    description: "Sprint speed is improved by 25% (+25% per stack).",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.UTILITY,
@@ -1213,9 +1213,9 @@ export const items = Object.freeze({
     id: 57,
     stats: [{
       stat: "Sprint Speed",
-      value: "30%",
+      value: "25%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+20%",
+      stackValue: "+25%",
     }],
   },
   58: {
@@ -1271,8 +1271,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Rusted_Key",
     name: "Rusted Key",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/9/9b/Rusted_Key.png",
-    shortDescription: "Gain access to a Rusty Lockbox that contains treasure.",
-    description: "A hidden cache containing an item will appear in a random location on each stage. (Increases rarity of the item per stack).",
+    shortDescription: "Gain access to a Rusty Lockbox that contains a powerful item.",
+    description: "A hidden cache containing an item (80%/20%) will appear in a random location on each stage. Opening the cache consumes this item.",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.UTILITY,
@@ -1287,12 +1287,7 @@ export const items = Object.freeze({
       link: "https://riskofrain2.gamepedia.com/Keyed_Up",
     },
     id: 60,
-    stats: [{
-      stat: "Chance",
-      value: "-",
-      stackType: constant.StackType.SPECIAL,
-      stackValue: "-",
-    }],
+    stats: [],
   },
   61: {
     wikiLink: "https://riskofrain2.gamepedia.com/Armor-Piercing_Rounds",
@@ -1825,7 +1820,7 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Lepton_Daisy",
     name: "Lepton Daisy",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/73/Lepton_Daisy.png",
-    shortDescription: "Periodically release a healing nova during the Teleporter event.",
+    shortDescription: "Periodically release a healing nova during the Teleporter event and 'Holdout Zones' such as the Void Fields.",
     description: "Release a healing nova during the Teleporter event, healing all nearby allies for 50% of their maximum health. Occurs 1 (+1 per stack) times.",
     itemRarity: constant.ItemRarity.UNCOMMON,
     tag: [
@@ -1848,7 +1843,7 @@ export const items = Object.freeze({
     name: "Focus Crystal",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/5/59/Focus_Crystal.png",
     shortDescription: "Deal bonus damage to nearby enemies.",
-    description: "Increase damage to enemies within 13m by 15% (+15% per stack).",
+    description: "Increase damage to enemies within 13m by 20% (+20% per stack).",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
       constant.Tag.DAMAGE,
@@ -1859,9 +1854,9 @@ export const items = Object.freeze({
     id: 87,
     stats: [{
       stat: "Damage",
-      value: "15%",
+      value: "20%",
       stackType: constant.StackType.LINEAR,
-      stackValue: "+15%",
+      stackValue: "+20%",
     }],
   },
   88: {
@@ -1929,19 +1924,18 @@ export const items = Object.freeze({
     }],
   },
   91: {
-    wikiLink: "https://riskofrain2.gamepedia.com/Fresh_Meat",
-    name: "Fresh Meat",
-    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/ec/Fresh_Meat.png",
-    shortDescription: "Regenerate health after killing an enemy.",
-    description: "Increases base health regeneration by +2 hp/s for 3s (+3s per stack) after killing an enemy.",
+    wikiLink: "https://riskofrain2.gamepedia.com/Bison_Steak",
+    name: "Bison Steak",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/9/9f/Bison_Steak.png",
+    shortDescription: "Gain 25 max health.",
+    description: "Increases maximum health by 25 (+25 per stack).",
     itemRarity: constant.ItemRarity.COMMON,
     tag: [
-      constant.Tag.HEALING,
-      constant.Tag.ON_KILL_EFFECT,
+      constant.Tag.UTILITY,
     ],
     category: [
-      constant.Category.HEALING,
-      constant.Category.ON_KILL_EFFECT,
+      constant.Category.SURVIVABILITY,
+      constant.Category.UTILITY,
     ],
     id: 91,
     stats: [{
@@ -2421,8 +2415,8 @@ export const items = Object.freeze({
     wikiLink: "https://riskofrain2.gamepedia.com/Mired_Urn",
     name: "Mired Urn",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/62/Mired_Urn.png",
-    shortDescription: "Siphon health from nearby characters while in combat.",
-    description: "While in combat, the nearest 1 (+1 per stack) characters to you within 13m will be 'tethered' to you, dealing 100% damage per second, applying tar, and healing you for 100% of the damage dealt.",
+    shortDescription: "Siphon health from nearby enemies while in combat.",
+    description: "While in combat, the nearest 1 (+1 per stack) enemies to you within 13m will be 'tethered' to you, dealing 100% damage per second, applying tar, and healing you for 100% of the damage dealt.",
     itemRarity: constant.ItemRarity.BOSS,
     tag: [
       constant.Tag.BOSS,
@@ -2433,7 +2427,7 @@ export const items = Object.freeze({
     ],
     id: 114,
     stats: [{
-      stat: "Tethered Characters",
+      stat: "Tethered Enemies",
       value: "1",
       stackType: constant.StackType.LINEAR,
       stackValue: "+1",
