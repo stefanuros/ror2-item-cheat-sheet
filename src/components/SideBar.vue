@@ -24,6 +24,22 @@
         <p class="item-short-description">{{ itemData.shortDescription }}</p>
         <hr>
         <p class="item-description">{{ itemData.description }}</p>
+
+        <div v-if="itemData.dropsFrom" class="drops-from-section">
+          <p class="drops-from-data">
+            Drops From: <b>{{itemData.dropsFrom.source}}</b>
+          </p>
+          <a
+            v-if="itemData.dropsFrom.url" 
+            v-bind:href="itemData.dropsFrom.url" 
+            target="_blank" 
+            class="drops-from-link"
+          >
+            <font-awesome-icon class="fa-icon" icon="external-link-alt" />
+            More Info
+          </a>
+        </div>
+
         <p 
           class="equipment-cooldown"
           v-if="this.isEquipment"
@@ -288,6 +304,27 @@ hr {
   font-size: 90%;
   margin-bottom: 0px;
   white-space: break-spaces;
+}
+
+.drops-from-section {
+  justify-content: center;
+  display: grid;
+  padding-left: var(--margin-left);
+  padding-right: var(--margin-left);
+  text-align: center;
+}
+
+.drops-from-data {
+  font-size: var(--main-text-size);
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.drops-from-link {
+  color: var(--sub-text-colour);
+  text-decoration: none;
+  font-size: var(--sub-text-size);
+  font-style: italic;
 }
 
 .equipment-cooldown {
