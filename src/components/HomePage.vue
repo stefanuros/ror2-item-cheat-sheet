@@ -40,15 +40,23 @@ export default {
 
 .home-page {
   font-family: var(--font-family);
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  overflow: hidden;
 }
 
 .info-section {
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
+  overflow: hidden;
 }
 
 .item-list-section {
   flex: 1;
+  overflow-y: auto;
 }
 </style>

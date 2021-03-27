@@ -1,7 +1,6 @@
 <template>
   <div 
     class="side-bar-wrapper"
-    v-bind:class="{ 'side-bar-margin': selectedItem != null }"
   >
     <div 
       class="side-bar" 
@@ -178,6 +177,8 @@ export default {
   --sub-text-size: 80%;
 
   --top-bar-height: 60px;
+
+  overflow-y: auto;
 }
 
 /* Setting colours for different rarities */
@@ -206,20 +207,14 @@ export default {
   --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
-.side-bar-margin {
-  height: calc( 100vh - 60px );
-  height: fill;
-  margin-right: var(--side-bar-width);
-}
-
 .side-bar {
-  height: inherit;
   width: var(--side-bar-width);
   background: var(--side-bar-background-colour);
-  position: fixed;
-  right: 0px;
 
   color: var(--main-text-colour);
+
+  padding-bottom: var(--margin-left);
+  min-height: calc(100% - var(--margin-left));
 }
 
 .top-section {
