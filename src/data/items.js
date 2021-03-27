@@ -3293,6 +3293,26 @@ export const equipment = Object.freeze({
     id: 37,
     cooldown: "45s",
   },
+  38: {
+    wikiLink: "https://riskofrain2.gamepedia.com/Spectral_Circlet",
+    name: "Shared Design",
+    image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d2/Spectral_Circlet.png",
+    shortDescription: "Become an aspect of perfection.",
+    description: "You become Perfected. Your health is replaced by shields that rapidly recharge 7 seconds after you've stopped taking damage. Your attacks also apply crippled",
+    dropsFrom: "Perfected Elites",
+    itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
+    tag: [
+      constant.Tag.TRANSFORMATION,
+    ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.TRANSFORMATION,
+      constant.Category.MISC,
+    ],
+    hidden: true,
+    cooldown: "N/A",
+    id: 38,
+  },
 });
 
 /**
