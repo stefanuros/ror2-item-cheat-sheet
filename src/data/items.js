@@ -2577,6 +2577,138 @@ export const items = Object.freeze({
       stackValue: "1",
     }],
   },
+  122: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Hooks_of_Heresy",
+    name: "Hooks of Heresy",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/66/Hooks_of_Heresy.png",
+    shortDescription: "Replace your Secondary Skill with 'Slicing Maelstrom'.",
+    description: "Replace your Secondary Skill with Slicing Maelstrom.\n\nCharge up a projectile that deals 175% damage per second to nearby enemies, exploding after 3 seconds to deal 700% damage and root enemies for 3 (+3 per stack) seconds. Recharges after 5 (+5 per stack) seconds.",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.AI_BLACKLIST,
+      constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+    ],
+    unlock: {
+      name: "Blockade Breaker",
+      description: "Kill 15 boss monsters in a single run.",
+      link: "https://riskofrain2.fandom.com/wiki/Blockade_Breaker",
+    },
+    id: 122,
+    stats: [{
+      stat: "Root Duration",
+      value: "3s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+3s",
+    },
+    {
+      stat: "Recharge Time",
+      value: "5s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+5s",
+    }],
+  },
+  123: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Essence_of_Heresy",
+    name: "Essence of Heresy",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/3/3e/Essence_of_Heresy.png",
+    shortDescription: "Replace your Special Skill with 'Ruin'.",
+    description: "Replace your Special Skill with Ruin.\n\nDealing damage adds a stack of Ruin for 10 (+10 per stack) seconds. Activating the skill detonates all Ruin stacks at unlimited range, dealing 300% damage plus 120% damage per stack of Ruin. Recharges after 8 (+8 per stack) seconds.",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.AI_BLACKLIST,
+      constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+    ],
+    unlock: {
+      name: "Blockade Breaker",
+      description: "Kill 15 boss monsters in a single run.",
+      link: "https://riskofrain2.fandom.com/wiki/Blockade_Breaker",
+    },
+    id: 123,
+    stats: [{
+      stat: "Ruin Duration",
+      value: "10s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+10s",
+    },
+    {
+      stat: "Recharge Time",
+      value: "8s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+8s",
+    }],
+  },
+  124: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Empathy_Cores",
+    name: "Empathy Cores",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/5/51/Empathy_Cores.png",
+    shortDescription: "Recruit a pair of Solus Probes that gain power with more allies.",
+    description: "Every 30 seconds, summon two Solus Probes that gain +100% (+100% per stack) damage per ally on your team.",
+    itemRarity: constant.ItemRarity.BOSS,
+    tag: [
+      constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.MINION,
+      constant.Category.DAMAGE,
+      constant.Category.UTILITY,
+    ],
+    id: 124,
+    stats: [{
+      stat: "Probe Damage",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%",
+    }],
+  },
+  125: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Charged_Perforator",
+    name: "Charged Perforator",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/cc/Charged_Perforator.png",
+    shortDescription: "Chance on hit to call down a lightning strike.",
+    description: "10% chance on hit to down a lightning strike, dealing 500% (+500% per stack) damage.",
+    itemRarity: constant.ItemRarity.BOSS,
+    tag: [
+      constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.ON_HIT_EFFECT,
+    ],
+    id: 125,
+    stats: [{
+      stat: "Damage",
+      value: "500%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+500%",
+    }],
+  },
+  126: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Planula",
+    name: "Planula",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/a/a9/Planula.png",
+    shortDescription: "Receive flat healing when attacked.",
+    description: "Heal from incoming damage for 15 (+15 per stack).",
+    itemRarity: constant.ItemRarity.BOSS,
+    tag: [
+      constant.Tag.HEALING,
+    ],
+    category: [
+      constant.Category.HEALING,
+    ],
+    id: 126,
+    stats: [{
+      stat: "Healing",
+      value: "15",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+15",
+    }],
+  },
 });
 
 export const equipment = Object.freeze({
