@@ -5,7 +5,7 @@
     <div class="info-section">
       <div class="item-list-section">
         <ItemList style="flex: 1;" :itemListType="SelectionType.ITEM" />
-        <ItemList style="flex: 1;" :itemListType="SelectionType.EQUIPMENT" />
+        <ItemList style="flex: 1;" :itemListType="SelectionType.SOTV" />
       </div>
       <SideBar/>
     </div>

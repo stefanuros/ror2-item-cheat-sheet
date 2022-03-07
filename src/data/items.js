@@ -2764,16 +2764,7 @@ export const items = Object.freeze({
       stackValue: "+15",
     }],
   },
-});
-
-export const equipment = Object.freeze({
-  /** Get all non-hidden, item keys */
-  getItemIds() {
-    return Object.keys(this).filter(key => {
-      return typeof this[key] === "object";
-    });
-  },
-  0: {
+  127: {
     wikiLink: "https://riskofrain2.gamepedia.com/Disposable_Missile_Launcher",
     name: "Disposable Missile Launcher",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/78/Disposable_Missile_Launcher.png",
@@ -2787,10 +2778,10 @@ export const equipment = Object.freeze({
       constant.Category.DAMAGE,
       constant.Category.TRACKING_PROJECTILE,
     ],
-    id: 0,
+    id: 128,
     cooldown: "45s",
   },
-  1: {
+  129: {
     wikiLink: "https://riskofrain2.gamepedia.com/Foreign_Fruit",
     name: "Foreign Fruit",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d0/Foreign_Fruit.png",
@@ -2804,10 +2795,10 @@ export const equipment = Object.freeze({
       constant.Category.HEALING,
       constant.Category.SURVIVABILITY,
     ],
-    id: 1,
+    id: 129,
     cooldown: "45s",
   },
-  2: {
+  130: {
     wikiLink: "https://riskofrain2.gamepedia.com/Glowing_Meteorite",
     name: "Glowing Meteorite",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/f4/Glowing_Meteorite.png",
@@ -2826,10 +2817,10 @@ export const equipment = Object.freeze({
       description: "Carry 5 Lunar items in a single run.",
       link: "https://riskofrain2.gamepedia.com/Moon_Worshipper",
     },
-    id: 2,
+    id: 130,
     cooldown: "140s",
   },
-  4: {
+  131: {
     wikiLink: "https://riskofrain2.gamepedia.com/Ifrit%27s_Distinction",
     name: "Ifrit's Distinction",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/08/Ifrit%27s_Distinction.png",
@@ -2849,9 +2840,9 @@ export const equipment = Object.freeze({
       constant.Category.TRANSFORMATION,
     ],
     cooldown: "N/A",
-    id: 4,
+    id: 131,
   },
-  5: {
+  132: {
     wikiLink: "https://riskofrain2.gamepedia.com/Silence_Between_Two_Strikes",
     name: "Silence Between Two Strikes",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/0/0a/Silence_Between_Two_Strikes.png",
@@ -2873,9 +2864,9 @@ export const equipment = Object.freeze({
       constant.Category.MISC,
     ],
     cooldown: "N/A",
-    id: 5,
+    id: 132,
   },
-  8: {
+  133: {
     wikiLink: "https://riskofrain2.gamepedia.com/Her_Biting_Embrace",
     name: "Her Biting Embrace",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/8/8b/Her_Biting_Embrace.png",
@@ -2896,9 +2887,9 @@ export const equipment = Object.freeze({
       constant.Category.AOE,
     ],
     cooldown: "N/A",
-    id: 8,
+    id: 133,
   },
-  9: {
+  134: {
     wikiLink: "https://riskofrain2.gamepedia.com/N%27kuhana%27s_Retort",
     name: "N'kuhana's Retort",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/9/9b/N%27kuhana%27s_Retort.png",
@@ -2919,9 +2910,9 @@ export const equipment = Object.freeze({
       constant.Category.MINION,
     ],
     cooldown: "N/A",
-    id: 9,
+    id: 134,
   },
-  10: {
+  135: {
     wikiLink: "https://riskofrain2.gamepedia.com/Primordial_Cube",
     name: "Primordial Cube",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d9/Primordial_Cube.png",
@@ -2935,10 +2926,10 @@ export const equipment = Object.freeze({
       constant.Category.UTILITY,
       constant.Category.AOE,
     ],
-    id: 10,
+    id: 135,
     cooldown: "60s",
   },
-  12: {
+  136: {
     wikiLink: "https://riskofrain2.gamepedia.com/Ocular_HUD",
     name: "Ocular HUD",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/68/Ocular_HUD.png",
@@ -2953,10 +2944,10 @@ export const equipment = Object.freeze({
       constant.Category.CRITICAL_STRIKE,
       constant.Category.ON_HIT_EFFECT,
     ],
-    id: 12,
+    id: 136,
     cooldown: "60s",
   },
-  13: {
+  137: {
     wikiLink: "https://riskofrain2.gamepedia.com/The_Back-up",
     name: "The Back-up",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/39/The_Back-up.png",
@@ -2975,10 +2966,10 @@ export const equipment = Object.freeze({
       description: "Repair 30 drones or turrets.",
       link: "https://riskofrain2.gamepedia.com/Mechanic",
     },
-    id: 13,
+    id: 138,
     cooldown: "100s",
   },
-  15: {
+  139: {
     wikiLink: "https://riskofrain2.gamepedia.com/Preon_Accumulator",
     name: "Preon Accumulator",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/fe/Preon_Accumulator.png",
@@ -2997,10 +2988,10 @@ export const equipment = Object.freeze({
       description: "Open the Timed Security Chest on Rallypoint Delta.",
       link: "https://riskofrain2.gamepedia.com/REDACTED",
     },
-    id: 15,
+    id: 139,
     cooldown: "140s",
   },
-  17: {
+  140: {
     wikiLink: "https://riskofrain2.gamepedia.com/Milky_Chrysalis",
     name: "Milky Chrysalis",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/e3/Milky_Chrysalis.png",
@@ -3015,10 +3006,10 @@ export const equipment = Object.freeze({
       constant.Category.MOBILITY,
       constant.Category.TRANSFORMATION,
     ],
-    id: 17,
+    id: 140,
     cooldown: "60s",
   },
-  18: {
+  141: {
     wikiLink: "https://riskofrain2.gamepedia.com/Royal_Capacitor",
     name: "Royal Capacitor",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/e/ef/Royal_Capacitor.png",
@@ -3038,10 +3029,10 @@ export const equipment = Object.freeze({
       description: "Defeat the Teleporter bosses after activating 2 Shrines of the Mountain.",
       link: "https://riskofrain2.gamepedia.com/Ascendant",
     },
-    id: 18,
+    id: 141,
     cooldown: "20s",
   },
-  19: {
+  142: {
     wikiLink: "https://riskofrain2.gamepedia.com/The_Crowdfunder",
     name: "The Crowdfunder",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d4/The_Crowdfunder.png",
@@ -3060,10 +3051,10 @@ export const equipment = Object.freeze({
       description: "Collect $30,480 total gold.",
       link: "https://riskofrain2.gamepedia.com/Funded!",
     },
-    id: 19,
+    id: 142,
     cooldown: "N/A",
   },
-  20: {
+  143: {
     wikiLink: "https://riskofrain2.gamepedia.com/Gnarled_Woodsprite",
     name: "Gnarled Woodsprite",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d8/Gnarled_Woodsprite.png",
@@ -3082,10 +3073,10 @@ export const equipment = Object.freeze({
       description: "Fully upgrade a Shrine of the Woods.",
       link: "https://riskofrain2.gamepedia.com/One_with_the_Woods",
     },
-    id: 20,
+    id: 143,
     cooldown: "15s",
   },
-  22: {
+  144: {
     wikiLink: "https://riskofrain2.gamepedia.com/Helfire_Tincture",
     name: "Helfire Tincture",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/4d/Helfire_Tincture.png",
@@ -3099,10 +3090,10 @@ export const equipment = Object.freeze({
       constant.Category.DAMAGE,
       constant.Category.AOE,
     ],
-    id: 22,
+    id: 144,
     cooldown: "45s",
   },
-  24: {
+  145: {
     wikiLink: "https://riskofrain2.gamepedia.com/Radar_Scanner",
     name: "Radar Scanner",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/7f/Radar_Scanner.png",
@@ -3120,10 +3111,10 @@ export const equipment = Object.freeze({
       description: "Collect 10 Monster or Environment Logs.",
       link: "https://riskofrain2.gamepedia.com/Bookworm",
     },
-    id: 24,
+    id: 145,
     cooldown: "45s",
   },
-  25: {
+  146: {
     wikiLink: "https://riskofrain2.gamepedia.com/Effigy_of_Grief",
     name: "Effigy of Grief",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/45/Effigy_of_Grief.png",
@@ -3139,9 +3130,9 @@ export const equipment = Object.freeze({
       constant.Category.MISC,
     ],
     cooldown: "N/A",
-    id: 25,
+    id: 146,
   },
-  26: {
+  147: {
     wikiLink: "https://riskofrain2.gamepedia.com/Eccentric_Vase",
     name: "Eccentric Vase",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/c/ce/Eccentric_Vase.png",
@@ -3155,10 +3146,10 @@ export const equipment = Object.freeze({
       constant.Category.UTILITY,
       constant.Category.MOBILITY,
     ],
-    id: 26,
+    id: 147,
     cooldown: "45s",
   },
-  27: {
+  148: {
     wikiLink: "https://riskofrain2.gamepedia.com/Spinel_Tonic",
     name: "Spinel Tonic",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/2/29/Spinel_Tonic.png",
@@ -3176,10 +3167,10 @@ export const equipment = Object.freeze({
       constant.Category.HEALING,
       constant.Category.MOBILITY,
     ],
-    id: 27,
+    id: 148,
     cooldown: "60s",
   },
-  28: {
+  149: {
     wikiLink: "https://riskofrain2.gamepedia.com/Fuel_Array",
     name: "Fuel Array",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/f/fe/Fuel_Array.png",
@@ -3193,9 +3184,9 @@ export const equipment = Object.freeze({
       constant.Category.MISC,
     ],
     cooldown: "N/A",
-    id: 28,
+    id: 149,
   },
-  29: {
+  150: {
     wikiLink: "https://riskofrain2.gamepedia.com/Blast_Shower",
     name: "Blast Shower",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/4f/Blast_Shower.png",
@@ -3209,10 +3200,10 @@ export const equipment = Object.freeze({
       constant.Category.UTILITY,
       constant.Category.SURVIVABILITY,
     ],
-    id: 29,
+    id: 150,
     cooldown: "20s",
   },
-  30: {
+  151: {
     wikiLink: "https://riskofrain2.gamepedia.com/Volcanic_Egg",
     name: "Volcanic Egg",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/2/2e/Volcanic_Egg.png",
@@ -3228,10 +3219,10 @@ export const equipment = Object.freeze({
       constant.Category.UTILITY,
       constant.Category.TRANSFORMATION,
     ],
-    id: 30,
+    id: 151,
     cooldown: "30s",
   },
-  31: {
+  152: {
     wikiLink: "https://riskofrain2.gamepedia.com/Spectral_Circlet",
     name: "Spectral Circlet",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d2/Spectral_Circlet.png",
@@ -3251,9 +3242,9 @@ export const equipment = Object.freeze({
       constant.Category.MISC,
     ],
     cooldown: "N/A",
-    id: 31,
+    id: 152,
   },
-  32: {
+  153: {
     wikiLink: "https://riskofrain2.gamepedia.com/Jade_Elephant",
     name: "Jade Elephant",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/4/41/Jade_Elephant.png",
@@ -3266,10 +3257,10 @@ export const equipment = Object.freeze({
     category: [
       constant.Category.SURVIVABILITY,
     ],
-    id: 32,
+    id: 153,
     cooldown: "45s",
   },
-  33: {
+  154: {
     wikiLink: "https://riskofrain2.gamepedia.com/Sawmerang",
     name: "Sawmerang",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/62/Sawmerang.png",
@@ -3283,10 +3274,10 @@ export const equipment = Object.freeze({
       constant.Category.DAMAGE,
       constant.Category.AOE,
     ],
-    id: 33,
+    id: 154,
     cooldown: "45s",
   },
-  34: {
+  155: {
     wikiLink: "https://riskofrain2.gamepedia.com/Recycler",
     name: "Recycler",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/6/67/Recycler.png",
@@ -3304,10 +3295,10 @@ export const equipment = Object.freeze({
       description: "Destroy 20 flying rocks in Sky Meadow.",
       link: "https://riskofrain2.gamepedia.com/Cleanup_Duty",
     },
-    id: 34,
+    id: 155,
     cooldown: "45s",
   },
-  35: {
+  156: {
     wikiLink: "https://riskofrain2.gamepedia.com/Super_Massive_Leech",
     name: "Super Massive Leech",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/a/ae/Super_Massive_Leech.png",
@@ -3320,10 +3311,10 @@ export const equipment = Object.freeze({
     category: [
       constant.Category.HEALING,
     ],
-    id: 35,
+    id: 156,
     cooldown: "60s",
   },
-  36: {
+  157: {
     wikiLink: "https://riskofrain2.gamepedia.com/Gorag%27s_Opus",
     name: "Gorag's Opus",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/5/56/Gorag%27s_Opus.png",
@@ -3338,10 +3329,10 @@ export const equipment = Object.freeze({
       constant.Category.ATTACK_SPEED,
       constant.Category.MOBILITY,
     ],
-    id: 36,
+    id: 157,
     cooldown: "45s",
   },
-  37: {
+  158: {
     wikiLink: "https://riskofrain2.gamepedia.com/Forgive_Me_Please",
     name: "Forgive Me Please",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/7/78/Forgive_Me_Please.png",
@@ -3360,10 +3351,10 @@ export const equipment = Object.freeze({
       description: "Die 20 times.",
       link: "https://riskofrain2.gamepedia.com/I_Love_Dying!",
     },
-    id: 37,
+    id: 158,
     cooldown: "45s",
   },
-  38: {
+  159: {
     wikiLink: "https://riskofrain2.gamepedia.com/Spectral_Circlet",
     name: "Shared Design",
     image: "https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/d/d2/Spectral_Circlet.png",
@@ -3384,7 +3375,841 @@ export const equipment = Object.freeze({
     ],
     hidden: true,
     cooldown: "N/A",
+    id: 159,
+  }
+});
+
+export const sotv = Object.freeze({
+  /** Get all non-hidden, item keys */
+  getItemIds() {
+    return Object.keys(this).filter(key => {
+      return typeof this[key] === "object";
+    });
+  },
+  0: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Executive_Card",
+    name: "Executive Card",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/8/82/Executive_Card.png",
+    shortDescription: "Gain 10% cash back on all purchases. Multishops remain open.",
+    description: "Whenever you make a gold purchase, get 10% of the spent gold back. If the purchase is a multishop terminal, the other terminals will remain open.",
+    itemRarity: constant.ItemRarity.EQUIPMENT,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 0,
+    cooldown: "0.1s",
+  },
+  1: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Goobo_Jr.",
+    name: "Goobo Jr.",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/3/3a/Goobo_Jr..png",
+    shortDescription: "Create a clone of you for 30 seconds.",
+    description: "Spawn a gummy clone that has 200% damage and 200% health. Expires in 30 seconds.",
+    itemRarity: constant.ItemRarity.EQUIPMENT,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 1,
+    cooldown: "100s",
+  },
+  2: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Molotov_(6-Pack)",
+    name: "Molotov (6-Pack)",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/bf/Molotov_%286-Pack%29.png",
+    shortDescription: "Throw 6 flaming molotovs that ignite enemies upon shattering.",
+    description: "Throw 6 molotov cocktails that ignites enemies for 500% base damage. Each molotov leaves a burning area for 200% damage per second.",
+    itemRarity: constant.ItemRarity.EQUIPMENT,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 2,
+    cooldown: "45s",
+  },
+  3: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Trophy_Hunter%27s_Tricorn",
+    name: "Trophy Hunter's Tricorn",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/72/Trophy_Hunter%27s_Tricorn.png",
+    shortDescription: "Execute a large monster and claim its trophy. Consumed on use.",
+    description: "Execute any enemy capable of spawning a unique reward, and it will drop that item. Equipment is consumed on use.",
+    itemRarity: constant.ItemRarity.EQUIPMENT,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 3,
+    cooldown: "0s",
+  },
+  4: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Mocha",
+    name: "Mocha",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/4/48/Mocha.png",
+    shortDescription: "Slightly increase attack speed and movement speed.",
+    description: "Increases attack speed by 7.5% (+7.5 per stack) and movement speed by 7% (+7% per stack).",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.DAMAGE,
+      constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.ATTACK_SPEED,
+      constant.Category.UTILITY,
+    ],
+    id: 4,
+    stats: [{
+      stat: "Attack Speed",
+      value: "7.5%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+7.5%",
+    },
+    {
+      stat: "Movement Speed",
+      value: "7%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+7%",
+    }],
+  },
+  5: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Power_Elixir",
+    name: "Power Elixir",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/5/51/Power_Elixir.png/",
+    shortDescription: "Receive an instant heal at low health. Consumed on use.",
+    description: "Taking damage to below 25% health consumes this item, healing you for 75% of maximum health.",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.HEALING,
+    ],
+    category: [
+      constant.Category.HEALING
+    ],
+    id: 5,
+  },
+  6: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Delicate_Watch",
+    name: "Delicate Watch",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/c6/Delicate_Watch.png",
+    shortDescription: "Deal bonus damage. Breaks at low health.",
+    description: "Increase damage by 20% (+20% per stack). Taking damage to below 25% health breaks this item.",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.DAMAGE,
+    ],
+    category: [
+      constant.Category.DAMAGE,
+    ],
+    id: 6,
+    stats: [{
+      stat: "Damage",
+      value: "20%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+20%",
+    }],
+  },
+  7: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Oddly-shaped_Opal",
+    name: "Oddly-shaped Opal",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/f/f3/Oddly-shaped_Opal.png",
+    shortDescription: "Reduce damage the first time you are hit.",
+    description: "Increase armor by 100 (+100 per stack) while out of danger.",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.UTILITY,
+    ],
+    category: [
+      constant.Category.UTILITY,
+    ],
+    id: 7,
+    stats: [{
+      stat: "Armor",
+      value: "100",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100",
+    }],
+  },
+  8: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Roll_of_Pennies",
+    name: "Roll of Pennies",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/e/e9/Roll_of_Pennies.png",
+    shortDescription: "Gain gold on taking damage.",
+    description: "Gain 3 (+3 per stack) gold on taking damage from an enemy. Scales over time.",
+    itemRarity: constant.ItemRarity.COMMON,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 8,
+    stats: [{
+      stat: "Base Gold",
+      value: "3",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+3",
+    }],
+  },
+  9: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Shipping_Request_Form",
+    name: "Shipping Request Form",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/4/44/Shipping_Request_Form.png",
+    shortDescription: "Get a delivery each stage that contains powerful items.",
+    description: "A delivery containing 2 items (79%/20%/1%) will appear in a random location on each stage. (Increases rarity chances of the items per stack).",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 9
+  },
+  10: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Hunter's_Harpoon",
+    name: "Hunter's Harpoon",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/c4/Hunter%27s_Harpoon.png",
+    shortDescription: "Killing an enemy gives you a burst of movement speed.",
+    description: "Killing an enemy increases movement speed by 125%, fading over 1 (+0.5 per stack) seconds.",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY,
+      constant.Category.ON_KILL_EFFECT
+    ],
+    id: 10,
+    stats: [{
+      stat: "Duration",
+      value: "1s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+0.5s"
+    }],
+  },
+  11: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Regenerating_Scrap",
+    name: "Regenerating Scrap",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/77/Regenerating_Scrap.png",
+    shortDescription: "Prioritized when used with Uncommon 3D Printers. Usable once per stage.",
+    description: "Does nothing. Prioritized when used with Uncommon 3D Printers. At the start of each stage, it regenerates.",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 11
+  },
+  12: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Shuriken",
+    name: "Shuriken",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/a/ac/Shuriken.png",
+    shortDescription: "Activating your Primary skill also throws a shuriken. Recharges over time.",
+    description: "Activating your Primary skill also throws a shuriken that deals 400% (+100% per stack) base damage. You can hold up to 3 (+1 per stack) shurikens which all reload over 10 seconds.",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 12,
+    stats: [{
+      stat: "Damage",
+      value: "400%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%"
+    },
+    {
+      stat: "Shurikens",
+      value: "3",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1"
+    }],
+  },
+  13: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Ignition_Tank",
+    name: "Ignition Tank",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/e/ed/Ignition_Tank.png",
+    shortDescription: "Your ignite effects deal 2x more damage, and last 2x as long.",
+    description: "Ignite effects deal +300% (+300% per stack) more damage over time.",
+    itemRarity: constant.ItemRarity.UNCOMMON,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 13,
+    stats: [{
+      stat: "Damage",
+      value: "300%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+300%"
+    }],
+  },
+  14: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Laser_Scope",
+    name: "Laser Scope",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/0/00/Laser_Scope.png",
+    shortDescription: "Your 'Critical Strikes' deal an additional 100% damage.",
+    description: "Critical Strikes deal an additional 100% damage (+100% per stack).",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 14,
+    stats: [{
+      stat: "Damage",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%"
+    }],
+  },
+  15: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Spare_Drone_Parts",
+    name: "Spare Drone Parts",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/8/85/Spare_Drone_Parts.png",
+    shortDescription: "Your drones fire faster, have less cooldowns, shoot missiles, and gain a bonus chaingun.",
+    description: "Gain Col. Droneman. Drones gain +50% (+50% per stack) attack speed and cooldown reduction. Drones gain 10% chance to fire a missile on hit, dealing 300% TOTAL damage. Drones gain an automatic chain gun that deals 6x100% damage, bouncing to 2 enemies.",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.ATTACK_SPEED
+    ],
+    id: 15,
+    stats: [{
+      stat: "Attack Speed",
+      value: "50%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+50%"
+    }],
+  },
+  16: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Ben%27s_Raincoat",
+    name: "Ben's Raincoat",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/2/25/Ben%27s_Raincoat.png",
+    shortDescription: "Become immune to all debuffs. Increase maximum health.",
+    description: "Whenever you would receive a debuff, prevent it. Increases maximum health by 100 (+100 per stack).",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 16,
+    stats: [{
+      stat: "Max Health",
+      value: "100",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100"
+    }],
+  },
+  17: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Pocket_I.C.B.M.",
+    name: "Pocket I.C.B.M.",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/f/ff/Pocket_I.C.B.M..png",
+    shortDescription: "All Missile items deal more damage and fire an additional two missiles.",
+    description: "All missile items and equipment fire an additional 2 missiles. Increase missile damage by 0% (+50% per stack)",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 17,
+    stats: [{
+      stat: "Damage",
+      value: "0%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+50%"
+    }],
+  },
+  18: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Symbiotic_Scorpion",
+    name: "Symbiotic Scorpion",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/9/91/Symbiotic_Scorpion.png",
+    shortDescription: "Permanently reduce armor on hit.",
+    description: "100% chance on hit to reduce armor by 2 (+2 per stack) permanently.",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 18,
+    stats: [{
+      stat: "Armor Reduction",
+      value: "2",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+2"
+    }],
+  },
+  19: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Bottled_Chaos",
+    name: "Bottled Chaos",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/4/42/Bottled_Chaos.png",
+    shortDescription: "Activating your Equipment triggers an additional, random Equipment effect.",
+    description: "Trigger a random equipment effect 1 (+1 per stack) time(s).",
+    itemRarity: constant.ItemRarity.LEGENDARY,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 19,
+    stats: [{
+      stat: "Effects",
+      value: "1",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1"
+    }],
+  },
+  20: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Defense_Nucleus",
+    name: "Defense Nucleus",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/1/10/Defense_Nucleus.png",
+    shortDescription: "Summon an Alpha Construct on killing an elite.",
+    description: "Killing elite monsters spawns an Alpha Construct. Limited to 4 (+4 per stack).",
+    dropsFrom: {
+      source: "Xi Construct",
+      url: "https://riskofrain2.fandom.com/wiki/Xi_Construct"
+    },
+    itemRarity: constant.ItemRarity.BOSS, 
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 20,
+    stats: [{
+      stat: "Max Constructs",
+      value: "4",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+4"
+    }],
+  },
+  21: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Stone_Flux_Pauldron",
+    name: "Stone Flux Pauldron",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/b1/Stone_Flux_Pauldron.png",
+    shortDescription: "Double your health... BUT halve your speed.",
+    description: "Increase max health by 100% (+100% per stack). Reduce movement speed by 50% (+50% per stack).",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 21,
+    stats: [{
+      stat: "Max Health",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%"
+    },
+    {
+      stat: "Speed",
+      value: "50%",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-50%"
+    }],
+  },
+  22: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Light_Flux_Pauldron",
+    name: "Light Flux Pauldron",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/6e/Light_Flux_Pauldron.png",
+    shortDescription: "Halve your cooldowns.. BUT halve your attack speed.",
+    description: "Decrease skill cooldowns by 50% (+50% per stack). Decrease attack speed by 50% (+50% per stack).",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 22,
+    stats: [{
+      stat: "Skill Cooldowns",
+      value: "50%",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-50%"
+    },
+    {
+      stat: "Attack Speed",
+      value: "50%",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-50%"
+    }],
+  },
+  23: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Eulogy_Zero",
+    name: "Eulogy Zero",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/1/12/Eulogy_Zero.png",
+    shortDescription: "Items and equipment have a small chance to transform into a Lunar item instead.",
+    description: "Items have a 5% (+5% per stack) chance to become a Lunar item instead.",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 23,
+    stats: [{
+      stat: "Effect Chance",
+      value: "5%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+5%"
+    }],
+  },
+  24: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Egocentrism",
+    name: "Egocentrism",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/9/90/Egocentrism.png",
+    shortDescription: "Gain multiple orbiting bombs. Every minute, assimilate another item into Egocentrism.",
+    description: "Every 3 (-50% per stack) seconds, gain an orbiting bomb that detonates on impact for 360% damage, up to a maximum of 3 bombs (+1 per stack). Every 60 seconds, a random item is converted into this item.",
+    itemRarity: constant.ItemRarity.LUNAR,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 24,
+    stats: [{
+      stat: "Charge Time",
+      value: "3s",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-50%"
+    },
+    {
+      stat: "Max Orbs",
+      value: "3",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1"
+    }],
+  },
+  25: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Safer_Spaces",
+    name: "Safer Spaces",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/9/9d/Safer_Spaces.png",
+    shortDescription: "Block the next source of damage. Corrupts all Tougher Times.",
+    description: "Blocks incoming damage once. Recharges after 15 seconds (-10% per stack) Corrupts all Tougher Times.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 25,
+    stats: [{
+      stat: "Recharge",
+      value: "15s",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-10%"
+    }],
+  },
+  26: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Needletick",
+    name: "Needletick",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/76/Needletick.png",
+    shortDescription: "Chance to collapse enemies on hit. Corrupts all Tri-Tip Daggers.",
+    description: "10% (+10% per stack) chance to collapse an enemy for 400% base damage. Corrupts all Tri-Tip Daggers.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 26,
+    stats: [{
+      stat: "Chance to Collapse",
+      value: "10%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+10%"
+    }],
+  },
+  27: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Lost_Seer%27s_Lenses",
+    name: "Lost Seer's Lenses",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/1/14/Lost_Seer%27s_Lenses.png",
+    shortDescription: "Gain a 0.5% chance to instantly kill a non-boss enemy. Corrupts all Lens-Maker's Glasses.",
+    description: "Your attacks have a 0.5% (+0.5% per stack) chance to instantly kill a non-Boss enemy. Corrupts all Lens-Maker's Glasses.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 27,
+    stats: [{
+      stat: "Kill Chance",
+      value: "0.5",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+0.5%"
+    }],
+  },
+  28: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Weeping_Fungus",
+    name: "Weeping Fungus",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/e/e1/Weeping_Fungus.png",
+    shortDescription: "Heal while sprinting. Corrupts all Bustling Fungi.",
+    description: "Heals for 2% (+2% per stack) of your health every second while sprinting. Corrupts all Bustling Fungi.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.HEALING
+    ],
+    category: [
+      constant.Category.HEALING
+    ],
+    id: 28,
+    stats: [{
+      stat: "HP Per Second",
+      value: "2%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+2%"
+    }],
+  },
+  29: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Encrusted_Key",
+    name: "Encrusted Key",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/f/fa/Encrusted_Key.png",
+    shortDescription: "Gain access to an Encrusted Cache that contains a void item. Corrupts all Rusted Keys.",
+    description: "A hidden cache containing an item (60%/30%/10%) will appear in a random location on each stage. Opening the cache consumes this item. Corrupts all Rusted Keys.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 29
+  },
+  30: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Polylute",
+    name: "Polylute",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/b5/Polylute.png",
+    shortDescription: "Chance to repeatedly strike a single enemy with lightning. Corrupts all Ukuleles.",
+    description: "25% chance to fire lightning for 60% TOTAL damage up to 3 (+3 per stack) times. Corrupts all Ukuleles.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 30,
+    stats: [{
+      stat: "Hits",
+      value: "3",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+3"
+    }],
+  },
+  31: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Singularity_Band",
+    name: "Singularity Band",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/3/30/Singularity_Band.png",
+    shortDescription: "High damage hits also create unstable black holes. Recharges over time. Corrupts all Runald's and Kjaro's Bands.",
+    description: "Hits that deal more than 400% damage also fire a black hole that draws enemies within 15m into its center. Lasts 5 seconds before collapsing, dealing 100% (+100% per stack) TOTAL damage. Recharges every 20 seconds. Corrupts all Runald's and Kjaro's Bands.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 31,
+    stats: [{
+      stat: "Damage",
+      value: "100%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+100%"
+    }],
+  },
+  32: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Voidsent_Flame",
+    name: "Voidsent Flame",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/69/Voidsent_Flame.png",
+    shortDescription: "Full health enemies also detonate on hit. Corrupts all Will-o'-the-wisps.",
+    description: "Upon hitting an enemy at full health, spawn a lava pillar in a 12m (+2.4m per stack) radius for 350% (+280% per stack) base damage. Corrupts all Will-o'-the-wisps.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 32,
+    stats: [{
+      stat: "Damage",
+      value: "350%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+280%"
+    },
+    {
+      stat: "Radius",
+      value: "12m",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+2.4m"
+    }],
+  },
+  33: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Plasma_Shrimp",
+    name: "Plasma Shrimp",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/cf/Plasma_Shrimp.png",
+    shortDescription: "While you have shield, fire missiles on every hit. Corrupts all AtG Missile Mk. 1s.",
+    description: "Gain a shield equal to 10% of your maximum health. While you have a shield, hitting an enemy fires a missile that deals 40% (+40% per stack) TOTAL damage. Corrupts all AtG Missile Mk. 1s.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE,
+      constant.Category.UTILITY
+    ],
+    id: 33,
+    stats: [{
+      stat: "Damage",
+      value: "40%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+40%"
+    }],
+  },
+  34: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Tentabauble",
+    name: "Tentauble",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/64/Tentabauble.png",
+    shortDescription: "Chance to root enemies on hit. Corrupts all Chronobaubles.",
+    description: "5% (+5% per stack) chance on hit to root enemies for 1s (+1s per stack). Corrupts all Chronobaubles.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 34,
+    stats: [{
+      stat: "Root Chance",
+      value: "5%",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+5%"
+    },
+    {
+      stat: "Duration",
+      value: "1s",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1s"
+    }],
+  },
+  35: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Benthic_Bloom",
+    name: "Benthic Bloom",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/b0/Benthic_Bloom.png",
+    shortDescription: "Upgrades your items at the start of each stage. Corrupts all 57 Leaf Clovers.",
+    description: "Upgrades 3 (+3 per stack) random items to items of the next higher rarity at the start of each stage. Corrupts all 57 Leaf Clovers.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 35,
+    stats: [{
+      stat: "Items Upgraded",
+      value: "3",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+3"
+    }],
+  },
+  36: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Newly_Hatched_Zoea",
+    name: "Newly Hatched Zoea",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/5/55/Newly_Hatched_Zoea.png",
+    shortDescription: "Periodically recruit allies from the Void. Corrupts all yellow items.",
+    description: "Every 60 (-50% per stack) seconds, gain a random Void ally. Can have up to 1 (+1 per stack) allies at a time. Corrupts all yellow items.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.DAMAGE
+    ],
+    category: [
+      constant.Category.DAMAGE
+    ],
+    id: 36,
+    stats: [{
+      stat: "Charge Time",
+      value: "60s",
+      stackType: constant.StackType.HYPERBOLIC,
+      stackValue: "-50%"
+    },
+    {
+      stat: "Max Allies",
+      value: "1",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1"
+    }],
+  },
+  37: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Pluripotent_Larva",
+    name: "Pluripotent Larva",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/2/26/Pluripotent_Larva.png",
+    shortDescription: "Get a corrupted extra life. Consumed on use. Corrupts all Dio's Best Friends.",
+    description: "Upon death, this item will be consumed and you will return to life with 3 seconds of invulnerability, and all of your items that can be corrupted will be. Corrupts all Dio's Best Friends.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
+    id: 37
+  },
+  38: {
+    wikiLink: "https://riskofrain2.fandom.com/wiki/Lysate_Cell",
+    name: "Lysate Cell",
+    image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/5/53/Lysate_Cell.png",
+    shortDescription: "Add an extra charge of your Special skill. Corrupts all Fuel Cells.",
+    description: "Add +1 (+1 per stack) charge of your Special skill. Reduces Special skill cooldown by 33%. Corrupts all Fuel Cells.",
+    itemRarity: constant.ItemRarity.VOID,
+    tag: [
+      constant.Tag.UTILITY
+    ],
+    category: [
+      constant.Category.UTILITY
+    ],
     id: 38,
+    stats: [{
+      stat: "Charges",
+      value: "1",
+      stackType: constant.StackType.LINEAR,
+      stackValue: "+1"
+    }],
   },
 });
 
@@ -3393,7 +4218,7 @@ export const equipment = Object.freeze({
  */
 export const SelectionTypeMapping = Object.freeze({
   [SelectionType.ITEM]: items,
-  [SelectionType.EQUIPMENT]: equipment,
+  [SelectionType.SOTV]: sotv,
   // [SelectionType.ARTIFACT]: equipment,
   // [SelectionType.CHARACTER]: equipment,
 });

@@ -194,6 +194,10 @@ export default {
   --item-card-colour: #DF4D39;
   --item-card-colour-opaque: rgba(223, 77, 57, var(--background-opacity));
 }
+.item-colour-void {
+  --item-card-colour: #C678B4;
+  --item-card-colour-opaque: rgba(198, 120, 180, var(--background-opacity));
+}
 .item-colour-boss { 
   --item-card-colour: #AEBA23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
