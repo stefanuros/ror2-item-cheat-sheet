@@ -4102,7 +4102,7 @@ export const sotv = Object.freeze({
   },
   34: {
     wikiLink: "https://riskofrain2.fandom.com/wiki/Tentabauble",
-    name: "Tentauble",
+    name: "Tentabauble",
     image: "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/64/Tentabauble.png",
     shortDescription: "Chance to root enemies on hit. Corrupts all Chronobaubles.",
     description: "5% (+5% per stack) chance on hit to root enemies for 1s (+1s per stack). Corrupts all Chronobaubles.",
