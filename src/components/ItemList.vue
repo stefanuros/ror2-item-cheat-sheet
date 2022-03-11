@@ -24,7 +24,7 @@
 import { mapState } from 'vuex';
 import ItemCard from './ItemCard.vue';
 
-import { items, equipment } from "../data/items";
+import { items, sotv } from "../data/items";
 import { SelectionType, SelectionTypePluralization } from "../data/constants";
 import ItemIdUtils from '../helpers/ItemIdUtils';
 
@@ -63,8 +63,8 @@ export default {
 
       if (this.itemListType === SelectionType.ITEM) {
         itemList = items;
-      } else if (this.itemListType === SelectionType.EQUIPMENT) {
-        itemList = equipment;
+      } else if (this.itemListType === SelectionType.SOTV) {
+        itemList = sotv;
       }
 
       // Go through the operations and apply each operation to the output of the

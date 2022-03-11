@@ -15,6 +15,7 @@ export const ItemRarity = Object.freeze({
   EQUIPMENT: Symbol("Equipment"),
   ELITE_EQUIPMENT: Symbol("Elite Equipment"),
   LUNAR_EQUIPMENT: Symbol("Lunar Equipment"),
+  VOID: Symbol("Void")
 });
 
 // Set the symbols from itemRarity to be the keys for their sort value
@@ -24,9 +25,10 @@ export const ItemRaritySortValue = Object.freeze({
   [ItemRarity.LEGENDARY]: 2,
   [ItemRarity.BOSS]: 3,
   [ItemRarity.LUNAR]: 4,
-  [ItemRarity.EQUIPMENT]: 0,
-  [ItemRarity.ELITE_EQUIPMENT]: 1,
-  [ItemRarity.LUNAR_EQUIPMENT]: 2,
+  [ItemRarity.EQUIPMENT]: 6,
+  [ItemRarity.ELITE_EQUIPMENT]: 6,
+  [ItemRarity.LUNAR_EQUIPMENT]: 4,
+  [ItemRarity.VOID]: 7
 });
 
 // Set the symbols from itemRarity to be the keys for their css class value
@@ -39,6 +41,7 @@ export const ItemRarityClass = Object.freeze({
   [ItemRarity.EQUIPMENT]: "equipment-colour-normal",
   [ItemRarity.ELITE_EQUIPMENT]: "equipment-colour-elite",
   [ItemRarity.LUNAR_EQUIPMENT]: "equipment-colour-lunar",
+  [ItemRarity.VOID]: "item-colour-void"
 });
 
 export const Tag = Object.freeze({
@@ -77,14 +80,14 @@ export const Category = Object.freeze({
 
 export const SelectionType = Object.freeze({
   ITEM: Symbol("Item"),
-  EQUIPMENT: Symbol("Equipment"),
+  SOTV: Symbol("Survivors of the Void"),
   CHARACTER: Symbol("Character"),
   ARTIFACT: Symbol("Artifact"),
 });
 
 export const SelectionTypePluralization = Object.freeze({
   [SelectionType.ITEM]: `${SelectionType.ITEM.description}s`,
-  [SelectionType.EQUIPMENT]: `${SelectionType.EQUIPMENT.description}`,
+  [SelectionType.SOTV]: `${SelectionType.SOTV.description}`,
   [SelectionType.CHARACTER]: `${SelectionType.CHARACTER.description}s`,
   [SelectionType.ARTIFACT]: `${SelectionType.ARTIFACT.description}s`,
 });

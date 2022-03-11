@@ -25,7 +25,7 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 
-import { items, equipment } from "../data/items";
+import { items, sotv } from "../data/items";
 import { ItemRarityClass, SelectionType } from '../data/constants';
 
 export default {
@@ -47,8 +47,8 @@ export default {
       if (this.itemType === SelectionType.ITEM) {
         return items[this.itemId];
       }
-      if (this.itemType === SelectionType.EQUIPMENT) {
-        return equipment[this.itemId];
+      if (this.itemType === SelectionType.SOTV) {
+        return sotv[this.itemId];
       }
 
       return [];
@@ -106,6 +106,10 @@ export default {
 .item-colour-legendary { 
   --item-card-colour: #DF4D39;
   --item-card-colour-opaque: rgba(223, 77, 57, var(--background-opacity));
+}
+.item-colour-void {
+  --item-card-colour: #C678B4;
+  --item-card-colour-opaque: rgba(198, 120, 180, var(--background-opacity));
 }
 .item-colour-boss { 
   --item-card-colour: #AEBA23;
