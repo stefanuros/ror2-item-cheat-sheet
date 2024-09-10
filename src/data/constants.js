@@ -1,103 +1,120 @@
-export const StackType = Object.freeze({
-  LINEAR: Symbol("Linear"),
-  HYPERBOLIC: Symbol("Hyperbolic"),
-  EXPONENTIAL: Symbol("Exponential"),
-  SPECIAL: Symbol("Special"),
-  NONE: Symbol("None"),
-});
+import SotVIcon from "../assets/SotV_Icon.webp";
+import SotSIcon from "../assets/SotS_Icon.webp";
 
-export const ItemRarity = Object.freeze({
-  COMMON: Symbol("Common"),
-  UNCOMMON: Symbol("Uncommon"),
-  LEGENDARY: Symbol("Legendary"),
-  BOSS: Symbol("Boss"),
-  LUNAR: Symbol("Lunar"),
-  EQUIPMENT: Symbol("Equipment"),
-  ELITE_EQUIPMENT: Symbol("Elite Equipment"),
-  LUNAR_EQUIPMENT: Symbol("Lunar Equipment"),
-});
+export const StackType = {
+  LINEAR: "Linear",
+  HYPERBOLIC: "Hyperbolic",
+  EXPONENTIAL: "Exponential",
+  SPECIAL: "Special",
+  NONE: "None",
+};
+
+export const ItemRarity = {
+  COMMON: "Common",
+  UNCOMMON: "Uncommon",
+  LEGENDARY: "Legendary",
+  BOSS: "Boss",
+  LUNAR: "Lunar",
+  EQUIPMENT: "Equipment",
+  ELITE_EQUIPMENT: "Elite Equipment",
+  LUNAR_EQUIPMENT: "Lunar Equipment",
+  VOID: "Void",
+};
+
+export const EquipmentItemRarities = [
+  ItemRarity.EQUIPMENT,
+  ItemRarity.ELITE_EQUIPMENT,
+  ItemRarity.LUNAR_EQUIPMENT,
+];
 
 // Set the symbols from itemRarity to be the keys for their sort value
-export const ItemRaritySortValue = Object.freeze({
+export const ItemRaritySortValue = {
   [ItemRarity.COMMON]: 0,
   [ItemRarity.UNCOMMON]: 1,
   [ItemRarity.LEGENDARY]: 2,
   [ItemRarity.BOSS]: 3,
-  [ItemRarity.LUNAR]: 4,
-  [ItemRarity.EQUIPMENT]: 0,
-  [ItemRarity.ELITE_EQUIPMENT]: 1,
-  [ItemRarity.LUNAR_EQUIPMENT]: 2,
-});
+  [ItemRarity.VOID]: 4,
+  [ItemRarity.LUNAR]: 5,
+  [ItemRarity.LUNAR_EQUIPMENT]: 0,
+  [ItemRarity.EQUIPMENT]: 1,
+  [ItemRarity.ELITE_EQUIPMENT]: 2,
+};
 
 // Set the symbols from itemRarity to be the keys for their css class value
-export const ItemRarityClass = Object.freeze({
+export const ItemRarityClass = {
   [ItemRarity.COMMON]: "item-colour-common",
   [ItemRarity.UNCOMMON]: "item-colour-uncommon",
+  [ItemRarity.VOID]: "item-colour-void",
   [ItemRarity.LEGENDARY]: "item-colour-legendary",
   [ItemRarity.BOSS]: "item-colour-boss",
   [ItemRarity.LUNAR]: "item-colour-lunar",
   [ItemRarity.EQUIPMENT]: "equipment-colour-normal",
   [ItemRarity.ELITE_EQUIPMENT]: "equipment-colour-elite",
   [ItemRarity.LUNAR_EQUIPMENT]: "equipment-colour-lunar",
-});
+};
 
-export const Tag = Object.freeze({
-  DAMAGE: Symbol("Damage"),
-  AI_BLACKLIST: Symbol("AI Blacklist"),
-  UTILITY: Symbol("Utility"),
-  HEALING: Symbol("Healing"),
-  SPRINT_RELATED: Symbol("Sprint Related"),
-  ON_KILL_EFFECT: Symbol("On Kill Effect"),
-  EQUIPMENT_RELATED: Symbol("Equipment Related"),
-  WORLD_UNIQUE: Symbol("World Unique"),
-  TRANSFORMATION: Symbol("Transformation"),
-  MISC: Symbol("Misc"),
-  SCRAP: Symbol("Scrap"),
-});
+export const Tag = {
+  DAMAGE: "Damage",
+  AI_BLACKLIST: "AI Blacklist",
+  UTILITY: "Utility",
+  HEALING: "Healing",
+  SPRINT_RELATED: "Sprint Related",
+  ON_KILL_EFFECT: "On Kill Effect",
+  EQUIPMENT_RELATED: "Equipment Related",
+  WORLD_UNIQUE: "World Unique",
+  TRANSFORMATION: "Transformation",
+  MISC: "Misc",
+  SCRAP: "Scrap",
+};
 
-export const Category = Object.freeze({
-  DAMAGE: Symbol("Damage"),
-  UTILITY: Symbol("Utility"),
-  HEALING: Symbol("Healing"),
-  ON_KILL_EFFECT: Symbol("On Kill Effect"),
-  ON_HIT_EFFECT: Symbol("On Hit Effect"),
-  EQUIPMENT_RELATED: Symbol("Equipment Related"),
-  TRANSFORMATION: Symbol("Transformation"),
-  MISC: Symbol("Misc"),
-  MOBILITY: Symbol('Mobility'),
-  SHIELD: Symbol('Shield'),
-  ATTACK_SPEED: Symbol("Attack Speed"),
-  COOLDOWN: Symbol("Cooldown"),
-  CRITICAL_STRIKE: Symbol("Critical Strike"),
-  SURVIVABILITY: Symbol("Survivability"),
-  AOE: Symbol("AOE"),
-  TRACKING_PROJECTILE: Symbol("Tracking Projectile"),
-  MINION: Symbol("Minion"),
-});
+export const Category = {
+  DAMAGE: "Damage",
+  UTILITY: "Utility",
+  HEALING: "Healing",
+  ON_KILL_EFFECT: "On Kill Effect",
+  ON_HIT_EFFECT: "On Hit Effect",
+  EQUIPMENT_RELATED: "Equipment Related",
+  TRANSFORMATION: "Transformation",
+  MISC: "Misc",
+  MOBILITY: 'Mobility',
+  SHIELD: 'Shield',
+  ATTACK_SPEED: "Attack Speed",
+  COOLDOWN: "Cooldown",
+  CRITICAL_STRIKE: "Critical Strike",
+  SURVIVABILITY: "Survivability",
+  AOE: "AOE",
+  TRACKING_PROJECTILE: "Tracking Projectile",
+  MINION: "Minion",
+};
 
-export const SelectionType = Object.freeze({
-  ITEM: Symbol("Item"),
-  EQUIPMENT: Symbol("Equipment"),
-  CHARACTER: Symbol("Character"),
-  ARTIFACT: Symbol("Artifact"),
-});
+export const SelectionType = {
+  ITEM: "Item",
+  EQUIPMENT: "Equipment",
+  CHARACTER: "Character",
+  ARTIFACT: "Artifact",
+};
 
-export const SelectionTypePluralization = Object.freeze({
-  [SelectionType.ITEM]: `${SelectionType.ITEM.description}s`,
-  [SelectionType.EQUIPMENT]: `${SelectionType.EQUIPMENT.description}`,
-  [SelectionType.CHARACTER]: `${SelectionType.CHARACTER.description}s`,
-  [SelectionType.ARTIFACT]: `${SelectionType.ARTIFACT.description}s`,
-});
+export const SelectionTypePluralization = {
+  [SelectionType.ITEM]: `${SelectionType.ITEM}s`,
+  [SelectionType.EQUIPMENT]: `${SelectionType.EQUIPMENT}`,
+  [SelectionType.CHARACTER]: `${SelectionType.CHARACTER}s`,
+  [SelectionType.ARTIFACT]: `${SelectionType.ARTIFACT}s`,
+};
 
-export const SortType = Object.freeze({
-  ID: Symbol("Id"),
-  NAME: Symbol("Name"),
-  RARITY: Symbol("Rarity"),
-});
+export const SortType = {
+  ID: "Id",
+  NAME: "Name",
+  RARITY: "Rarity",
+};
 
-export const Theme = Object.freeze({
+export const Theme = {
   SMALL: "small-view",
   LARGE: "large-view",
   LIGHT: "light-theme",
   DARK: "dark-theme",
-});
+};
+
+export const DlcIconUrl = {
+  "Survivors of the Void": SotVIcon,
+  "Seekers of the Storm": SotSIcon,
+};

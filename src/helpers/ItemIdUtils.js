@@ -1,5 +1,4 @@
-import { items } from "../data/items";
-import { SortType, ItemRaritySortValue as rarityValues } from '../data/constants';
+import { ItemRarity, SortType, ItemRaritySortValue as rarityValues, EquipmentItemRarities } from '../data/constants';
 
 /**
  * Sorts a list of item ids, given a sort type
@@ -29,7 +28,21 @@ const sortOperation = (itemIds, itemList, sortBy) => {
       return (itemList[a].name < itemList[b].name ? -1 : 1);
     }
 
-    // Sort by ID (default)
+    if (sortBy === SortType.ID) {
+      if (!itemList[a].id && !itemList[b].id) {
+        return (itemList[a].name < itemList[b].name ? -1 : 1);
+      }
+      if (!itemList[a].id) {
+        return 1;
+      }
+      if (!itemList[b].id) {
+        return -1;
+      }
+
+      return (Number(itemList[a].id) < Number(itemList[b].id) ? -1 : 1);
+    }
+
+    // default
     return a - b;
   });
 };
@@ -57,7 +70,7 @@ const filterOperation = (itemIds, itemList, filterBy) => {
   if (category == null) {
     category = [];
   }
-  
+
   if (rarity == null) {
     rarity = [];
   }
@@ -70,7 +83,7 @@ const filterOperation = (itemIds, itemList, filterBy) => {
       });
 
     // Check if the rarity is one to show
-    const rarityMatches = (rarity.length === 0) 
+    const rarityMatches = (rarity.length === 0)
       || rarity.includes(itemList[id].itemRarity);
 
     return categoryMatches && rarityMatches;
@@ -117,9 +130,19 @@ const showHiddenOperation = (itemIds, itemList, showHidden) => {
   });
 };
 
+const filterByItemListType = (itemIds, itemList, isEquipment) => {
+  return itemIds.filter(id => {
+    if (isEquipment) {
+      return EquipmentItemRarities.includes(itemList[id].itemRarity);
+    }
+    return !EquipmentItemRarities.includes(itemList[id].itemRarity);
+  });
+};
+
 export default {
   sortOperation,
   filterOperation,
   searchOperation,
   showHiddenOperation,
+  filterByItemListType,
 };

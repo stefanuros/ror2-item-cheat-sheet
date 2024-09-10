@@ -1,6 +1,7 @@
 <template>
   <div class="category-filter">
-   <multiselect class="filter-select"
+    <multiselect
+      class="filter-select"
       placeholder="Filter By Category"
       v-model="filterByCategory"
       :options="categoryOptions"
@@ -11,28 +12,30 @@
       :preselect-first="false"
       :showNoResults="false"
       label="name"
-      track-by="code">
+      track-by="code"
+    >
     </multiselect>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-import { Multiselect } from 'vue-multiselect';
-import { Category } from '../../data/constants';
-import { bus } from '../../main';
+import { mapMutations } from "vuex";
+import { Multiselect } from "vue-multiselect";
+import { Category } from "../../data/constants";
+import { bus } from "../../main";
 
 const clear = {
   name: "Clear All",
   code: Symbol("Clear All"),
 };
-const rarities = [clear].concat(Object.values(Category).map((category) => {
-  return {
-    name: category.description,
-    code: category,
-  };
-}));
-
+const rarities = [clear].concat(
+  Object.values(Category).map((category) => {
+    return {
+      name: category.description,
+      code: category,
+    };
+  })
+);
 
 export default {
   name: "CategoryFilter",
@@ -42,19 +45,19 @@ export default {
       filterByCategory: null,
       categoryOptions: rarities,
     };
-  },  
+  },
   created() {
-    bus.$on('filterCategory', (filter) => {
-      this.filterByCategory = [{
-        name: filter.description,
-        code: filter,
-      }];
+    bus.$on("filterCategory", (filter) => {
+      this.filterByCategory = [
+        {
+          name: filter.description,
+          code: filter,
+        },
+      ];
     });
   },
   methods: {
-    ...mapMutations([
-      'setFilterByState',
-    ]),
+    ...mapMutations(["setFilterByState"]),
     clearAll() {
       this.filterByCategory = null;
       this.setFilterByState({ category: [] });
@@ -65,7 +68,7 @@ export default {
       if (!selected || selected.includes(clear)) {
         this.clearAll();
       } else {
-        const filter = selected.map(item => item.code);
+        const filter = selected.map((item) => item.code);
         this.setFilterByState({ category: filter });
       }
     },
@@ -91,7 +94,6 @@ export default {
   overflow: hidden;
   display: grid;
 }
-
 
 .category-filter .multiselect {
   margin-top: 10px;
@@ -122,7 +124,7 @@ export default {
 }
 
 .category-filter .multiselect__input:focus::-webkit-input-placeholder {
-  transition: text-indent 0.5s 0.5s ease; 
+  transition: text-indent 0.5s 0.5s ease;
   text-indent: 0%;
   opacity: 1;
 }
@@ -130,13 +132,13 @@ export default {
 .category-filter .multiselect__tag {
   position: relative;
   display: inline-block;
-  
+
   padding: 5px;
   border-radius: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
   max-width: 100%;
-  
+
   color: #fff;
   background: #777;
   line-height: 1;
@@ -178,8 +180,8 @@ export default {
 }
 
 .category-filter .multiselect__option:hover {
-  background:  rgba(170, 170, 170, 0.9);;
-  
+  background: rgba(170, 170, 170, 0.9);
+
   border-radius: 4px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   transition: 0.4s;

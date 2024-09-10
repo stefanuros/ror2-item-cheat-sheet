@@ -50,7 +50,9 @@
       "no-plusplus": "off",
       "arrow-parens": "off",
       "object-curly-newline": "off",
-      "arrow-body-style": "off"
+      "arrow-body-style": "off",
+      "max-len": "warn",
+      "space-before-function-paren": "warn"
     }
   },
   "browserslist": [

@@ -1,19 +1,18 @@
 <template>
-  <div 
-    class="item-card" 
+  <div
+    class="item-card"
     v-bind:class="[this.rarityClass, this.cardSize]"
     v-on:mouseup="itemCardClick()"
   >
-    <img class="item-icon" v-bind:src="itemData.image" />
+    <div class="image-div">
+      <img class="dlc-icon" v-if="itemData.dlc" v-bind:src="this.dlcIconUrl" />
+      <img class="item-icon" :src="this.itemImageUrl" />
+    </div>
     <div class="item-details">
       <h4 class="item-name">
         {{ itemData.name }}
-        <span class="item-id" unselectable="on">#{{ itemId }}</span>
-        <span 
-          class="item-effective-max"
-          v-if="effectiveMax > 0"
-          unselectable="on"
-        >
+        <span class="item-id" v-if="itemData.id" unselectable="on">#{{ itemData.id }}</span>
+        <span class="item-effective-max" v-if="effectiveMax > 0" unselectable="on">
           Max: {{ effectiveMax }}
         </span>
       </h4>
@@ -23,18 +22,22 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
-import { items, equipment } from "../data/items";
-import { ItemRarityClass, SelectionType } from '../data/constants';
+import items from "../data/items.json";
+import itemImages from "../data/itemImages.json";
+import { ItemRarityClass, DlcIconUrl } from "../data/constants";
 
 export default {
   name: "ItemCard",
   props: ["itemId", "itemType"],
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+    };
+  },
   computed: {
-    ...mapState([
-      'cardSize',
-    ]),
+    ...mapState(["cardSize"]),
     effectiveMax() {
       return (this.itemData.stats || []).reduce((tot, val) => {
         return Math.max(tot, val.effectiveMax || 0);
@@ -44,20 +47,23 @@ export default {
       return ItemRarityClass[this.itemData.itemRarity];
     },
     itemData() {
-      if (this.itemType === SelectionType.ITEM) {
-        return items[this.itemId];
+      return items[this.itemId];
+    },
+    dlcIconUrl() {
+      if (this.itemData.dlc) {
+        return DlcIconUrl[this.itemData.dlc];
       }
-      if (this.itemType === SelectionType.EQUIPMENT) {
-        return equipment[this.itemId];
+      return "";
+    },
+    itemImageUrl() {
+      if (itemImages[this.itemId]) {
+        return `items/${itemImages[this.itemId]}`;
       }
-
-      return [];
+      return "";
     },
   },
   methods: {
-    ...mapMutations([
-      'setSelectedItem',
-    ]),
+    ...mapMutations(["setSelectedItem"]),
     itemCardClick() {
       this.setSelectedItem({ id: this.itemId, type: this.itemType });
     },
@@ -78,6 +84,8 @@ export default {
   --description-text-size: 70%;
 
   --item-card-margin: 2px;
+
+  --dlc-icon-size: 14px;
 }
 
 .large-view {
@@ -92,31 +100,39 @@ export default {
   --description-text-size: 80%;
 
   --item-card-margin: 2px;
+
+  --dlc-icon-size: 14px;
 }
 
 /* Setting colours for different rarities */
-.item-colour-common { 
-  --item-card-colour: #96A6A6;
+.item-colour-common {
+  --item-card-colour: #96a6a6;
   --item-card-colour-opaque: rgba(199, 204, 206, var(--background-opacity));
 }
-.item-colour-uncommon { 
-  --item-card-colour: #71BC39;
+.item-colour-uncommon {
+  --item-card-colour: #71bc39;
   --item-card-colour-opaque: rgba(113, 188, 57, var(--background-opacity));
 }
-.item-colour-legendary { 
-  --item-card-colour: #DF4D39;
+.item-colour-void {
+  --item-card-colour: #a92964;
+  --item-card-colour-opaque: rgba(169, 41, 100, var(--background-opacity));
+}
+.item-colour-legendary {
+  --item-card-colour: #df4d39;
   --item-card-colour-opaque: rgba(223, 77, 57, var(--background-opacity));
 }
-.item-colour-boss { 
-  --item-card-colour: #AEBA23;
+.item-colour-boss {
+  --item-card-colour: #aeba23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
 }
-.item-colour-lunar, .equipment-colour-lunar { 
-  --item-card-colour: #36B8E0;
+.item-colour-lunar,
+.equipment-colour-lunar {
+  --item-card-colour: #36b8e0;
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
 }
-.equipment-colour-normal, .equipment-colour-elite {
-  --item-card-colour: #C78536;
+.equipment-colour-normal,
+.equipment-colour-elite {
+  --item-card-colour: #c78536;
   --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
@@ -130,18 +146,18 @@ export default {
 
   margin: var(--item-card-margin);
 
-  -webkit-user-select: none; /* Safari */        
+  -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
 
 .item-card:hover {
-  margin-bottom: calc( 2 * var(--item-card-margin));
+  margin-bottom: calc(2 * var(--item-card-margin));
   margin-top: 0px;
   margin-right: 0px;
-  margin-left: calc( 2 * var(--item-card-margin));
-  box-shadow: calc( -1 * var(--item-card-margin) ) var(--item-card-margin) 5px #999999;
+  margin-left: calc(2 * var(--item-card-margin));
+  box-shadow: calc(-1 * var(--item-card-margin)) var(--item-card-margin) 5px #999999;
 }
 
 .item-card:active {
@@ -179,7 +195,7 @@ export default {
   color: var(--sub-text-colour);
   /* float: right; */
 
-    user-select: none;
+  user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
@@ -194,7 +210,7 @@ export default {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
 
   color: var(--sub-text-colour);
 }
@@ -209,5 +225,16 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
+}
+
+.image-div {
+  position: relative;
+}
+
+.dlc-icon {
+  height: var(--dlc-icon-size);
+  width: auto;
+  margin: 2px 0px 0px 2px;
+  position: absolute;
 }
 </style>

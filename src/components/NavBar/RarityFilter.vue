@@ -1,6 +1,7 @@
 <template>
   <div class="rarity-filter">
-    <multiselect class="filter-select"
+    <multiselect
+      class="filter-select"
       placeholder="Filter By Rarity Type"
       v-model="filterByRarity"
       :options="rarityOptions"
@@ -11,28 +12,30 @@
       :preselect-first="false"
       :showNoResults="false"
       label="name"
-      track-by="code">
+      track-by="code"
+    >
     </multiselect>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-import { Multiselect } from 'vue-multiselect';
-import { ItemRarity } from '../../data/constants';
-import { bus } from '../../main';
+import { mapMutations } from "vuex";
+import { Multiselect } from "vue-multiselect";
+import { ItemRarity } from "../../data/constants";
+import { bus } from "../../main";
 
 const clear = {
   name: "Clear All",
   code: Symbol("Clear All"),
 };
-const rarities = [clear].concat(Object.values(ItemRarity).map((rarity) => {
-  return {
-    name: rarity.description,
-    code: rarity,
-  };
-}));
-
+const rarities = [clear].concat(
+  Object.values(ItemRarity).map((rarity) => {
+    return {
+      name: rarity.description,
+      code: rarity,
+    };
+  })
+);
 
 export default {
   name: "RarityFilter",
@@ -42,19 +45,19 @@ export default {
       filterByRarity: null,
       rarityOptions: rarities,
     };
-  }, 
+  },
   created() {
-    bus.$on('filterRarity', (filter) => {
-      this.filterByRarity = [{
-        name: filter.description,
-        code: filter,
-      }];
+    bus.$on("filterRarity", (filter) => {
+      this.filterByRarity = [
+        {
+          name: filter.description,
+          code: filter,
+        },
+      ];
     });
   },
   methods: {
-    ...mapMutations([
-      'setFilterByState',
-    ]),
+    ...mapMutations(["setFilterByState"]),
     clearAll() {
       this.filterByRarity = null;
       this.setFilterByState({ rarity: [] });
@@ -65,7 +68,7 @@ export default {
       if (!selected || selected.includes(clear)) {
         this.clearAll();
       } else {
-        const filter = selected.map(item => item.code);
+        const filter = selected.map((item) => item.code);
         this.setFilterByState({ rarity: filter });
       }
     },
@@ -91,7 +94,6 @@ export default {
 
   display: grid;
 }
-
 
 .rarity-filter .multiselect {
   margin-top: 10px;
@@ -178,8 +180,8 @@ export default {
 }
 
 .rarity-filter .multiselect__option:hover {
-  background:  rgba(170, 170, 170, 0.9);;
-  
+  background: rgba(170, 170, 170, 0.9);
+
   border-radius: 4px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
   transition: 0.4s;
@@ -192,5 +194,4 @@ export default {
   background: #777;
   color: #fff;
 }
-
 </style>

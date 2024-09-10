@@ -12,7 +12,7 @@ export const items = Object.freeze({
    * Get all non-hidden, item keys
    * @param getHidden - Optional, false by default. If true, will return hidden values too
   */
-  getItemIds() {
+  getItemIds () {
     return Object.keys(this).filter(key => {
       return typeof this[key] === "object";
     });
@@ -787,7 +787,7 @@ export const items = Object.freeze({
         value: "100",
         stackType: constant.StackType.LINEAR,
         stackValue: "+100",
-      }
+      },
     ],
   },
   35: {
@@ -841,7 +841,7 @@ export const items = Object.freeze({
         value: "5%",
         stackType: constant.StackType.LINEAR,
         stackValue: "+5%",
-      }
+      },
     ],
   },
   37: {
@@ -1152,7 +1152,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Stone Titan",
-      url: "https://riskofrain2.fandom.com/wiki/Stone_Titan"
+      url: "https://riskofrain2.fandom.com/wiki/Stone_Titan",
     },
     tag: [
       constant.Tag.UTILITY,
@@ -1185,7 +1185,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Beetle Queen",
-      url: "https://riskofrain2.fandom.com/wiki/Beetle_Queen"
+      url: "https://riskofrain2.fandom.com/wiki/Beetle_Queen",
     },
     tag: [
       constant.Tag.UTILITY,
@@ -1377,7 +1377,7 @@ export const items = Object.freeze({
         value: "250%",
         stackType: constant.StackType.LINEAR,
         stackValue: "+250%",
-      }
+      },
     ],
   },
   64: {
@@ -1406,7 +1406,7 @@ export const items = Object.freeze({
         value: "300%",
         stackType: constant.StackType.LINEAR,
         stackValue: "+300%",
-      }
+      },
     ],
   },
   65: {
@@ -1731,7 +1731,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Aurelionite",
-      url: "https://riskofrain2.fandom.com/wiki/Aurelionite"
+      url: "https://riskofrain2.fandom.com/wiki/Aurelionite",
     },
     tag: [
       constant.Tag.UTILITY,
@@ -1753,7 +1753,7 @@ export const items = Object.freeze({
         value: "100%",
         stackType: constant.StackType.LINEAR,
         stackValue: "+100%",
-      }
+      },
     ],
   },
   83: {
@@ -1765,7 +1765,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Grovetender",
-      url: "https://riskofrain2.fandom.com/wiki/Grovetender"
+      url: "https://riskofrain2.fandom.com/wiki/Grovetender",
     },
     tag: [
       constant.Tag.DAMAGE,
@@ -1992,7 +1992,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Cleansing Pool",
-      url: "https://riskofrain2.fandom.com/wiki/Cleansing_Pool"
+      url: "https://riskofrain2.fandom.com/wiki/Cleansing_Pool",
     },
     tag: [
       constant.Tag.DAMAGE,
@@ -2147,7 +2147,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Wandering Vagrant",
-      url: "https://riskofrain2.fandom.com/wiki/Wandering_Vagrant"
+      url: "https://riskofrain2.fandom.com/wiki/Wandering_Vagrant",
     },
     tag: [
       constant.Tag.DAMAGE,
@@ -2188,7 +2188,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Bulwark's Ambry",
-      url: "https://riskofrain2.fandom.com/wiki/Bulwark%27s_Ambry"
+      url: "https://riskofrain2.fandom.com/wiki/Bulwark%27s_Ambry",
     },
     tag: [
       constant.Tag.WORLD_UNIQUE,
@@ -2267,7 +2267,7 @@ export const items = Object.freeze({
         value: "7s",
         stackType: constant.StackType.LINEAR,
         stackValue: "+7s",
-      }
+      },
     ],
   },
   105: {
@@ -2301,7 +2301,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Grandparent",
-      url: "https://riskofrain2.fandom.com/wiki/Grandparent"
+      url: "https://riskofrain2.fandom.com/wiki/Grandparent",
     },
     tag: [
       constant.Tag.UTILITY,
@@ -2377,7 +2377,7 @@ export const items = Object.freeze({
         value: "1",
         stackType: constant.StackType.LINEAR,
         stackValue: "+1",
-      }
+      },
     ],
   },
   112: {
@@ -2389,7 +2389,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Magma Worm",
-      url: "https://riskofrain2.fandom.com/wiki/Magma_Worm"
+      url: "https://riskofrain2.fandom.com/wiki/Magma_Worm",
     },
     tag: [
       constant.Tag.BOSS,
@@ -2415,7 +2415,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Imp Overlord",
-      url: "https://riskofrain2.fandom.com/wiki/Imp_Overlord"
+      url: "https://riskofrain2.fandom.com/wiki/Imp_Overlord",
     },
     tag: [
       constant.Tag.BOSS,
@@ -2455,7 +2455,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Clay Dunestrider",
-      url: "https://riskofrain2.fandom.com/wiki/Clay_Dunestrider"
+      url: "https://riskofrain2.fandom.com/wiki/Clay_Dunestrider",
     },
     tag: [
       constant.Tag.BOSS,
@@ -2575,7 +2575,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Scrapper",
-      url: "https://riskofrain2.fandom.com/wiki/Scrapper"
+      url: "https://riskofrain2.fandom.com/wiki/Scrapper",
     },
     tag: [
       constant.Tag.WORLD_UNIQUE,
@@ -2695,7 +2695,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Solus Control Unit",
-      url: "https://riskofrain2.fandom.com/wiki/Solus_Control_Unit"
+      url: "https://riskofrain2.fandom.com/wiki/Solus_Control_Unit",
     },
     tag: [
       constant.Tag.UTILITY,
@@ -2722,7 +2722,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Overloading Worm",
-      url: "https://riskofrain2.fandom.com/wiki/Overloading_Worm"
+      url: "https://riskofrain2.fandom.com/wiki/Overloading_Worm",
     },
     tag: [
       constant.Tag.DAMAGE,
@@ -2748,7 +2748,7 @@ export const items = Object.freeze({
     itemRarity: constant.ItemRarity.BOSS,
     dropsFrom: {
       source: "Grandparent",
-      url: "https://riskofrain2.fandom.com/wiki/Grandparent"
+      url: "https://riskofrain2.fandom.com/wiki/Grandparent",
     },
     tag: [
       constant.Tag.HEALING,
@@ -2768,7 +2768,7 @@ export const items = Object.freeze({
 
 export const equipment = Object.freeze({
   /** Get all non-hidden, item keys */
-  getItemIds() {
+  getItemIds () {
     return Object.keys(this).filter(key => {
       return typeof this[key] === "object";
     });
@@ -2837,7 +2837,7 @@ export const equipment = Object.freeze({
     description: "You become Blazing. A trail of fire will follow you. Enemies that you attack, or that make contact with your trail will be ignited for 4s dealing 100% damage.",
     dropsFrom: {
       source: "Blazing Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -2859,7 +2859,7 @@ export const equipment = Object.freeze({
     description: "You become Overloading. 50% of your health is replaced by sheilds that rapidly recharge 7 seconds after you've stopped taking damage. Attacks attach a bomb that explodes after 1.5s dealing 100% damage.",
     dropsFrom: {
       source: "Overloading Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -2883,7 +2883,7 @@ export const equipment = Object.freeze({
     description: "You become Glacial. Attacked enemies are slowed for 80% on hit for 1.5s. When a player holding this equipment dies, after 2s they will explode for 150% damage in addition to freezing enemies around them.",
     dropsFrom: {
       source: "Glacial Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -2906,7 +2906,7 @@ export const equipment = Object.freeze({
     description: "You become Malachite. You periodically release 3-4 spiked balls that sprout spike pits when they land. On death you have a chance to spawn a Malachite Urchin that shoots spikes until it expires.",
     dropsFrom: {
       source: "Malachite Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -3239,7 +3239,7 @@ export const equipment = Object.freeze({
     description: "You become Celestine. Your attacks apply an 80% slow for 3 seconds.",
     dropsFrom: {
       source: "Celestine Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -3371,7 +3371,7 @@ export const equipment = Object.freeze({
     description: "You become Perfected. Your health is replaced by shields that rapidly recharge 7 seconds after you've stopped taking damage. Your attacks also apply crippled",
     dropsFrom: {
       source: "Perfected Elites",
-      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites"
+      url: "https://riskofrain2.fandom.com/wiki/Monsters#Elites",
     },
     itemRarity: constant.ItemRarity.ELITE_EQUIPMENT,
     tag: [
@@ -3386,14 +3386,4 @@ export const equipment = Object.freeze({
     cooldown: "N/A",
     id: 38,
   },
-});
-
-/**
- * This maps the selection types to the appropriate lists
- */
-export const SelectionTypeMapping = Object.freeze({
-  [SelectionType.ITEM]: items,
-  [SelectionType.EQUIPMENT]: equipment,
-  // [SelectionType.ARTIFACT]: equipment,
-  // [SelectionType.CHARACTER]: equipment,
 });

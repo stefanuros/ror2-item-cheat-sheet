@@ -1,7 +1,7 @@
 <template>
   <div class="top-bar-wrapper">
     <div class="top-bar" :class="{ 'top-bar-fixed': fixed }">
-      <div class="nav-bar">
+      <div class="nav-bar" v-show="false">
         <SearchBar />
         <SortBySelector />
         <CategoryFilter />
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import SearchBar from './NavBar/SearchBar.vue';
-import SortBySelector from './NavBar/SortBySelector.vue';
-import CategoryFilter from './NavBar/CategoryFilter.vue';
-import RarityFilter from './NavBar/RarityFilter.vue';
+import SearchBar from "./NavBar/SearchBar.vue";
+import SortBySelector from "./NavBar/SortBySelector.vue";
+import CategoryFilter from "./NavBar/CategoryFilter.vue";
+import RarityFilter from "./NavBar/RarityFilter.vue";
 
 export default {
-  name: 'TopBar',
-  props: ['fixed'],
+  name: "TopBar",
+  props: ["fixed"],
   components: {
     SearchBar,
     SortBySelector,
@@ -61,5 +61,4 @@ export default {
   display: flex;
   flex-flow: row wrap;
 }
-
 </style>

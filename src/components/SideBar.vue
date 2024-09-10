@@ -1,37 +1,35 @@
 <template>
-  <div 
-    class="side-bar-wrapper"
-  >
-    <div 
-      class="side-bar" 
-      v-if="selectedItem != null"
-      v-bind:class="[this.rarityClass]"
-    >
+  <div class="side-bar-wrapper">
+    <div class="side-bar" v-if="selectedItem != null" v-bind:class="[this.rarityClass]">
       <div class="top-section">
         <a class="wiki-link" v-bind:href="itemData.wikiLink" target="_blank">
           <font-awesome-icon class="item-link-icon" icon="external-link-alt" />
         </a>
-        <p class="item-id">#{{ this.itemData.id }}</p>
+        <p class="item-id" v-if="this.itemData.id">#{{ this.itemData.id }}</p>
         <CloseIcon v-bind:clickCloseButton="this.clickCloseButton" class="close-icon" />
       </div>
 
       <div class="item-info-section">
-        <hr style="margin-top: 0px;">
+        <hr style="margin-top: 0px" />
         <h3 class="item-name">{{ itemData.name }}</h3>
-        <hr>
-        <img class="item-icon" v-bind:src="itemData.image" />
+        <span class="dlc-title">
+          <img class="dlc-icon" v-if="itemData.dlc" v-bind:src="this.dlcIconUrl" />
+          <p class="item-short-description item-dlc" v-if="itemData.dlc">{{ itemData.dlc }}</p>
+        </span>
+        <hr />
+        <img class="item-icon" :src="this.itemImageUrl" />
         <p class="item-short-description">{{ itemData.shortDescription }}</p>
-        <hr>
+        <hr />
         <p class="item-description">{{ itemData.description }}</p>
 
         <div v-if="itemData.dropsFrom" class="drops-from-section">
           <p class="drops-from-data">
-            Drops From: <b>{{itemData.dropsFrom.source}}</b>
+            Drops From: <b>{{ itemData.dropsFrom.source }}</b>
           </p>
           <a
-            v-if="itemData.dropsFrom.url" 
-            v-bind:href="itemData.dropsFrom.url" 
-            target="_blank" 
+            v-if="itemData.dropsFrom.url"
+            v-bind:href="itemData.dropsFrom.url"
+            target="_blank"
             class="drops-from-link"
           >
             <font-awesome-icon class="fa-icon" icon="external-link-alt" />
@@ -39,12 +37,10 @@
           </a>
         </div>
 
-        <p 
-          class="equipment-cooldown"
-          v-if="this.isEquipment"
-          >
-          Cooldown: <b>{{ itemData.cooldown }}</b></p>
-        <hr>
+        <p class="equipment-cooldown" v-if="this.isEquipment && itemData.cooldown">
+          Cooldown: <b>{{ itemData.cooldown }}</b>
+        </p>
+        <hr />
       </div>
 
       <div class="unlock-info-section" v-if="itemData.unlock">
@@ -54,26 +50,23 @@
           <font-awesome-icon class="fa-icon" icon="external-link-alt" />
           More Info
         </a>
-        <hr>
+        <hr />
       </div>
 
       <div class="item-category-section">
         <h4 class="item-rarity-label">Rarity</h4>
-        <p 
-          class="item-rarity"
-          v-on:mouseup="clickRarityPill(itemData.itemRarity)"
-          >
-          {{ itemData.itemRarity.description }}
+        <p class="item-rarity" v-on:mouseup="clickRarityPill(itemData.itemRarity)">
+          {{ itemData.itemRarity }}
         </p>
         <h4 class="item-category-label">Category</h4>
         <div class="item-category-list">
-          <p 
+          <p
             class="item-category"
             v-for="category in itemData.category"
             v-bind:key="category"
             v-on:mouseup="clickCategoryPill(category)"
-            >
-            {{ category.description }}
+          >
+            {{ category }}
           </p>
         </div>
       </div>
@@ -87,15 +80,11 @@
             <th class="stat-stack-label">Stack</th>
             <th class="stat-add-label">Add</th>
           </tr>
-          <tr 
-            class="item-stat"
-            v-for="stat in itemData.stats"
-            v-bind:key="stat.stat"
-            >
-              <td class="stat-name">{{ stat.stat }}</td>
-              <td class="stat-value">{{ stat.value }}</td>
-              <td class="stat-stack">{{ stat.stackType.description }}</td>
-              <td class="stat-add">{{ stat.stackValue }}</td>
+          <tr class="item-stat" v-for="stat in itemData.stats" v-bind:key="stat.stat">
+            <td class="stat-name">{{ stat.stat }}</td>
+            <td class="stat-value">{{ stat.value }}</td>
+            <td class="stat-stack">{{ stat.stackType }}</td>
+            <td class="stat-add">{{ stat.stackValue }}</td>
           </tr>
         </table>
       </div>
@@ -104,13 +93,14 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
-import CloseIcon from './Icons/CloseIcon.vue';
+import CloseIcon from "./Icons/CloseIcon.vue";
+import items from "../data/items.json";
+import itemImages from "../data/itemImages.json";
 
-import { SelectionTypeMapping } from '../data/items';
-import { ItemRarityClass, SelectionType } from '../data/constants';
-import { bus } from '../main';
+import { ItemRarityClass, SelectionType, DlcIconUrl } from "../data/constants";
+import { bus } from "../main";
 
 export default {
   name: "SideBar",
@@ -118,16 +108,13 @@ export default {
     CloseIcon,
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
-    ...mapState([
-      'selectedItem',
-    ]),
+    ...mapState(["selectedItem"]),
     itemData() {
-      const { id, type } = this.selectedItem;
-      return SelectionTypeMapping[type][id];
+      const { id } = this.selectedItem;
+      return items[id];
     },
     rarityClass() {
       return ItemRarityClass[this.itemData.itemRarity];
@@ -136,25 +123,32 @@ export default {
       return this.selectedItem.type === SelectionType.EQUIPMENT;
     },
     shouldShowStatStacking() {
-      return this.itemData.stats
-        && this.itemData.stats.length > 0
-        && !this.isEquipment;
+      return this.itemData.stats && this.itemData.stats.length > 0 && !this.isEquipment;
+    },
+    dlcIconUrl() {
+      if (this.itemData.dlc) {
+        return DlcIconUrl[this.itemData.dlc];
+      }
+      return "";
+    },
+    itemImageUrl() {
+      if (itemImages[this.selectedItem.id]) {
+        return `items/${itemImages[this.selectedItem.id]}`;
+      }
+      return "";
     },
   },
   methods: {
-    ...mapMutations([
-      'setSelectedItem',
-      'setFilterByState',
-    ]),
+    ...mapMutations(["setSelectedItem", "setFilterByState"]),
     clickCloseButton() {
       this.setSelectedItem(null);
     },
     clickRarityPill(rarity) {
-      bus.$emit('filterRarity', rarity);
+      bus.$emit("filterRarity", rarity);
       this.setFilterByState({ rarity: [rarity] });
     },
     clickCategoryPill(category) {
-      bus.$emit('filterCategory', category);
+      bus.$emit("filterCategory", category);
       this.setFilterByState({ category: [category] });
     },
   },
@@ -168,10 +162,12 @@ export default {
 
   --item-icon-size: 150px;
 
+  --dlc-icon-size: 16px;
+
   --margin-left: 20px;
   --margin-top: var(--margin-left);
 
-  --main-text-colour: #FFF;
+  --main-text-colour: #fff;
   --main-text-size: 90%;
   --sub-text-colour: #999;
   --sub-text-size: 80%;
@@ -182,28 +178,34 @@ export default {
 }
 
 /* Setting colours for different rarities */
-.item-colour-common { 
-  --item-card-colour: #96A6A6;
+.item-colour-common {
+  --item-card-colour: #96a6a6;
   --item-card-colour-opaque: rgba(199, 204, 206, var(--background-opacity));
 }
-.item-colour-uncommon { 
-  --item-card-colour: #71BC39;
+.item-colour-uncommon {
+  --item-card-colour: #71bc39;
   --item-card-colour-opaque: rgba(113, 188, 57, var(--background-opacity));
 }
-.item-colour-legendary { 
-  --item-card-colour: #DF4D39;
+.item-colour-void {
+  --item-card-colour: #a92964;
+  --item-card-colour-opaque: rgba(169, 41, 100, var(--background-opacity));
+}
+.item-colour-legendary {
+  --item-card-colour: #df4d39;
   --item-card-colour-opaque: rgba(223, 77, 57, var(--background-opacity));
 }
-.item-colour-boss { 
-  --item-card-colour: #AEBA23;
+.item-colour-boss {
+  --item-card-colour: #aeba23;
   --item-card-colour-opaque: rgba(174, 186, 35, var(--background-opacity));
 }
-.item-colour-lunar, .equipment-colour-lunar { 
-  --item-card-colour: #36B8E0;
+.item-colour-lunar,
+.equipment-colour-lunar {
+  --item-card-colour: #36b8e0;
   --item-card-colour-opaque: rgba(54, 184, 224, var(--background-opacity));
 }
-.equipment-colour-normal, .equipment-colour-elite {
-  --item-card-colour: #C78536;
+.equipment-colour-normal,
+.equipment-colour-elite {
+  --item-card-colour: #c78536;
   --item-card-colour-opaque: rgba(199, 133, 54, var(--background-opacity));
 }
 
@@ -258,8 +260,8 @@ export default {
 }
 
 hr {
-  margin-left: calc( -1 * var(--margin-left) );
-  margin-right: calc( -1 * var(--margin-left) );
+  margin-left: calc(-1 * var(--margin-left));
+  margin-right: calc(-1 * var(--margin-left));
   color: var(--sub-text-colour);
 }
 
@@ -282,6 +284,18 @@ hr {
   margin: auto;
   border: 5px var(--item-card-colour) solid;
   background: radial-gradient(var(--item-card-colour), #222222);
+}
+
+.dlc-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.dlc-icon {
+  height: var(--dlc-icon-size);
+  width: auto;
+  margin: auto 4px auto 0px;
 }
 
 .item-short-description {
@@ -442,7 +456,9 @@ hr {
   margin-top: 10px;
 }
 
-.item-stats-table, td, th {
+.item-stats-table,
+td,
+th {
   border: 1px var(--sub-text-colour) solid;
 }
 
@@ -450,11 +466,17 @@ tr:nth-child(even) {
   background-color: #555;
 }
 
-.stat-name-label, .stat-value-label, .stat-stack-label, .stat-add-label {
+.stat-name-label,
+.stat-value-label,
+.stat-stack-label,
+.stat-add-label {
   padding: 3px 5px;
 }
 
-.stat-name, .stat-value, .stat-stack, .stat-add {
+.stat-name,
+.stat-value,
+.stat-stack,
+.stat-add {
   font-size: var(--main-text-size);
   padding: 3px 5px;
 }

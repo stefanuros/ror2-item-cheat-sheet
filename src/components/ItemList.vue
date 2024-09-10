@@ -1,9 +1,9 @@
 <template>
   <div class="item-list-wrapper">
     <h2 class="item-list-header">{{ SelectionTypePluralization[itemListType] }}</h2>
-    <hr class="item-list-divisor">
+    <hr class="item-list-divisor" />
     <div class="item-list" v-bind:class="[this.cardSize]">
-      <ItemCard 
+      <ItemCard
         v-show="!isItemIdListEmpty"
         v-for="itemId in itemIdList"
         v-bind:key="itemId"
@@ -11,28 +11,23 @@
         :itemType="itemListType"
       />
     </div>
-    <div
-      class="no-items-message"
-      v-show="isItemIdListEmpty"
-    >
+    <div class="no-items-message" v-show="isItemIdListEmpty">
       No Matching {{ itemListType.description }} Found
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import ItemCard from './ItemCard.vue';
+import { mapState } from "vuex";
+import ItemCard from "./ItemCard.vue";
 
-import { items, equipment } from "../data/items";
+import itemsV2 from "../data/items.json";
 import { SelectionType, SelectionTypePluralization } from "../data/constants";
-import ItemIdUtils from '../helpers/ItemIdUtils';
+import ItemIdUtils from "../helpers/ItemIdUtils";
 
 export default {
   name: "ItemList",
-  props: [
-    'itemListType',
-  ],
+  props: ["itemListType"],
   data() {
     return {
       SelectionTypePluralization,
@@ -42,36 +37,29 @@ export default {
     ItemCard,
   },
   computed: {
-    ...mapState([
-      'showHidden',
-      'sortBy',
-      'filterBy',
-      'searchTerm',
-      'cardSize',
-    ]),
+    ...mapState(["showHidden", "sortBy", "filterBy", "searchTerm", "cardSize"]),
     itemIdList() {
       // Set a list of operations that will be done to the item id list
       // * Note: Order matters in this list
       const itemIdOperations = [
         (itemIds, itemList) => ItemIdUtils.showHiddenOperation(itemIds, itemList, this.showHidden),
+        (itemIds, itemList) =>
+          // eslint-disable-next-line implicit-arrow-linebreak
+          ItemIdUtils.filterByItemListType(
+            itemIds,
+            itemList,
+            this.itemListType === SelectionType.EQUIPMENT
+          ),
         (itemIds, itemList) => ItemIdUtils.filterOperation(itemIds, itemList, this.filterBy),
         (itemIds, itemList) => ItemIdUtils.searchOperation(itemIds, itemList, this.searchTerm),
         (itemIds, itemList) => ItemIdUtils.sortOperation(itemIds, itemList, this.sortBy),
       ];
 
-      let itemList;
-
-      if (this.itemListType === SelectionType.ITEM) {
-        itemList = items;
-      } else if (this.itemListType === SelectionType.EQUIPMENT) {
-        itemList = equipment;
-      }
-
       // Go through the operations and apply each operation to the output of the
       // previous operation
       return itemIdOperations.reduce((itemIds, operation) => {
-        return operation(itemIds, itemList);
-      }, itemList.getItemIds());
+        return operation(itemIds, itemsV2);
+      }, Object.keys(itemsV2));
     },
     isItemIdListEmpty() {
       return this.itemIdList.length <= 0;
@@ -119,5 +107,4 @@ hr.item-list-divisor {
   margin: 0px 25px 10px;
   border: 1px solid var(--no-items-message-colour);
 }
-
 </style>
