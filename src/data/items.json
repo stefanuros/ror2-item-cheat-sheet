@@ -1043,6 +1043,7 @@
     "image": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
     "dlc": "Seekers of the Storm",
     "name": "Luminous Shot",
+    "shortDescription": "Activating your Secondary skill charges your Primary skill with powerful lightning strikes. Requires 3 charges.",
     "description": "Using the secondary skill charges the next primary attack, dealing +150% damage (+25% per item stack) per charge to 5 times (+1 per item stack)",
     "itemRarity": "Uncommon",
     "category": [],

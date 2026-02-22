@@ -1,11 +1,11 @@
 <template>
   <div class="top-bar-wrapper">
     <div class="top-bar" :class="{ 'top-bar-fixed': fixed }">
-      <div class="nav-bar" v-show="false">
+      <div class="nav-bar">
         <SearchBar />
-        <SortBySelector />
-        <CategoryFilter />
-        <RarityFilter />
+        <SortBySelector v-show="false" />
+        <CategoryFilter v-show="false" />
+        <RarityFilter v-show="false" />
       </div>
     </div>
   </div>
