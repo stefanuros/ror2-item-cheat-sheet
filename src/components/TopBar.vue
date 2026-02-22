@@ -1,7 +1,7 @@
 <template>
   <div class="top-bar-wrapper">
     <div class="top-bar" :class="{ 'top-bar-fixed': fixed }">
-      <div class="nav-bar" v-show="false">
+      <div class="nav-bar">
         <SearchBar />
         <SortBySelector />
         <CategoryFilter />

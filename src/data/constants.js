@@ -1,5 +1,6 @@
 import SotVIcon from "../assets/SotV_Icon.webp";
 import SotSIcon from "../assets/SotS_Icon.webp";
+import ACIcon from "../assets/AC_Icon.webp";
 
 export const StackType = {
   LINEAR: "Linear",
@@ -102,7 +103,7 @@ export const SelectionTypePluralization = {
 };
 
 export const SortType = {
-  ID: "Id",
+  // ID: "Id",
   NAME: "Name",
   RARITY: "Rarity",
 };
@@ -117,4 +118,5 @@ export const Theme = {
 export const DlcIconUrl = {
   "Survivors of the Void": SotVIcon,
   "Seekers of the Storm": SotSIcon,
+  "Alloyed Collective": ACIcon,
 };

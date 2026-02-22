@@ -12,7 +12,7 @@
       />
     </div>
     <div class="no-items-message" v-show="isItemIdListEmpty">
-      No Matching {{ itemListType.description }} Found
+      No Matching {{ itemListType }} Found
     </div>
   </div>
 </template>
