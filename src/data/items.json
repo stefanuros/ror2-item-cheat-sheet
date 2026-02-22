@@ -3678,5 +3678,307 @@
     "shortDescription": "Looks like it could power something. EXTREMELY unstable...",
     "description": "Looks like it could power something. EXTREMELY unstable...",
     "itemRarity": "Equipment"
+  },
+  "Eclipse Lite": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Eclipse_Lite",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/0/0c/Eclipse_Lite.png/revision/latest?cb=20251122204244",
+    "dlc": "Alloyed Collective",
+    "name": "Eclipse Lite",
+    "shortDescription": "Gain temporary barrier when skills come off cooldown.",
+    "description": "When a skill comes off cooldown, gain a temporary barrier for 1% (+0.25% per stack) of your maximum health per second of the skill's base cooldown.",
+    "itemRarity": "Common",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Barrier",
+        "value": "1%",
+        "stackType": "Linear",
+        "stackValue": "+0.25%"
+      }
+    ]
+  },
+  "Hiker's Boots": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Hiker%27s_Boots",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/7a/Hiker%27s_Boots.png/revision/latest?cb=20251123013936",
+    "dlc": "Alloyed Collective",
+    "name": "Hiker's Boots",
+    "shortDescription": "Striking from high ground grants crit chance and damage.",
+    "description": "Striking enemies from a higher elevation grants +1% (+1% per stack) critical strike chance and critical strike damage, up to 10 times. Lasts 10 seconds.",
+    "itemRarity": "Common",
+    "category": ["Damage"],
+    "stats": [
+      {
+        "stat": "Critical Chance",
+        "value": "1%",
+        "stackType": "Linear",
+        "stackValue": "+1%"
+      }
+    ]
+  },
+  "Box of Dynamite": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Box_of_Dynamite",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/f/f1/Box_of_Dynamite.png/revision/latest?cb=20251122210247",
+    "dlc": "Alloyed Collective",
+    "name": "Box of Dynamite",
+    "shortDescription": "Gain a drone that drops dynamite.",
+    "description": "Gain Lt. Droneboy. While in combat, your drones drop sticks of dynamite that detonate for 240% (+85% per stack) damage, stunning enemies. Recharges after 10 seconds.",
+    "itemRarity": "Uncommon",
+    "category": ["Damage"],
+    "stats": [
+      {
+        "stat": "Damage",
+        "value": "240%",
+        "stackType": "Linear",
+        "stackValue": "+85%"
+      }
+    ]
+  },
+  "Collector's Compulsion": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Collector%27s_Compulsion",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/b7/Collector%27s_Compulsion.png/revision/latest?cb=20251122205203",
+    "dlc": "Alloyed Collective",
+    "name": "Collector's Compulsion",
+    "shortDescription": "Picking up items temporarily increases all stats.",
+    "description": "Picking up an item or other collectible increases all stats by +3% for 20 seconds, up to 3 (+2 per stack) times. Barrels grant minor pickups.",
+    "itemRarity": "Uncommon",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "All Stats Increase",
+        "value": "3%",
+        "stackType": "Linear",
+        "stackValue": "+3%"
+      }
+    ]
+  },
+  "Faraday Spur": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Faraday_Spur",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/2/23/Faraday_Spur.png/revision/latest?cb=20251122211140",
+    "dlc": "Alloyed Collective",
+    "name": "Faraday Spur",
+    "shortDescription": "Build charge for movement speed and explosive jump.",
+    "description": "Moving around builds up charge, granting up to +160% movement speed and +200% jump height at 100%. At 25% charge or higher, jumping triggers an explosive discharge for 400% (+280% per stack) damage in a 5m to 32.3m (+7.5m per stack) area.",
+    "itemRarity": "Uncommon",
+    "category": ["Damage", "Utility"],
+    "stats": [
+      {
+        "stat": "Damage",
+        "value": "400%",
+        "stackType": "Linear",
+        "stackValue": "+280%"
+      },
+      {
+        "stat": "Movement Speed",
+        "value": "160%",
+        "stackType": "Linear",
+        "stackValue": "0%"
+      }
+    ]
+  },
+  "Kinetic Dampener": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Kinetic_Dampener",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/5/57/Kinetic_Dampener.png/revision/latest?cb=20251122212647",
+    "dlc": "Alloyed Collective",
+    "name": "Kinetic Dampener",
+    "shortDescription": "Gain armor with shield, pulse when shield breaks.",
+    "description": "Increases armor by 30 (+30 per stack) while you have a shield. When shield breaks, release a stunning pulse for 100% damage plus an amount equal to 100% (+10% per stack) of your max shield. Grants a shield for 4% of your max health.",
+    "itemRarity": "Uncommon",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Armor",
+        "value": "30",
+        "stackType": "Linear",
+        "stackValue": "+30"
+      }
+    ]
+  },
+  "Networked Suffering": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Networked_Suffering",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/d/d6/Networked_Suffering.png/revision/latest?cb=20251122214739",
+    "dlc": "Alloyed Collective",
+    "name": "Networked Suffering",
+    "shortDescription": "Infect enemies with shared damage pool.",
+    "description": "Infect up to 4 (+2 per stack) enemies with a computer virus that duplicates 50% of all damage taken and sends it to a global damage pool. Every 3 seconds, ALL infected enemies suffer 100% pooled damage.",
+    "itemRarity": "Legendary",
+    "category": ["Damage"],
+    "stats": [
+      {
+        "stat": "Infected Enemies",
+        "value": "4",
+        "stackType": "Linear",
+        "stackValue": "+2"
+      }
+    ]
+  },
+  "Orphaned Core": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Orphaned_Core",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/7/7f/Orphaned_Core.png/revision/latest?cb=20251122214757",
+    "dlc": "Alloyed Collective",
+    "name": "Orphaned Core",
+    "shortDescription": "Gain a friendly Solus unit.",
+    "description": "Gain a friendly Solus unit that launches itself at enemies for 400% (+400% per stack) damage. The unit inherits your movement speed items and deals more damage the faster it moves. The unit can be pet to cleanse negative effects. Recharges after 15 seconds.",
+    "itemRarity": "Legendary",
+    "category": ["Damage"],
+    "stats": [
+      {
+        "stat": "Damage",
+        "value": "400%",
+        "stackType": "Linear",
+        "stackValue": "+400%"
+      }
+    ]
+  },
+  "Substandard Duplicator": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Substandard_Duplicator",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/6f/Substandard_Duplicator.png/revision/latest?cb=20251122214816",
+    "dlc": "Alloyed Collective",
+    "name": "Substandard Duplicator",
+    "shortDescription": "Picking up items grants temporary copies.",
+    "description": "Picking up an item gives you a temporary copy of itself. Temporary items last an additional 10 (+10 per stack) seconds.",
+    "itemRarity": "Legendary",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Duration",
+        "value": "10s",
+        "stackType": "Linear",
+        "stackValue": "+10s"
+      }
+    ]
+  },
+  "Encrypted Cerebellum": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Encrypted_Cerebellum",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/0/09/Encrypted_Cerebellum.png/revision/latest?cb=20251122223003",
+    "dlc": "Alloyed Collective",
+    "name": "Encrypted Cerebellum",
+    "shortDescription": "Encrypted remnants of the Collective network.",
+    "description": "Contains encrypted remnants of the Collective network. Needs to be decrypted before it can be returned.",
+    "itemRarity": "Boss",
+    "category": ["Misc"],
+    "stats": []
+  },
+  "Exposed Cerebellum": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Exposed_Cerebellum",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/61/Exposed_Cerebellum.png/revision/latest?cb=20251122223017",
+    "dlc": "Alloyed Collective",
+    "name": "Exposed Cerebellum",
+    "shortDescription": "Collective network data nexus.",
+    "description": "A swarming data nexus representing the Collective network. Can be given to a powerful entity.",
+    "itemRarity": "Boss",
+    "category": ["Misc"],
+    "stats": []
+  },
+  "Faulty Conductor": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Faulty_Conductor",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/1/16/Faulty_Conductor.png/revision/latest?cb=20251122223034",
+    "dlc": "Alloyed Collective",
+    "name": "Faulty Conductor",
+    "shortDescription": "Periodically energize nearby allies.",
+    "description": "Every 15 (-20% per stack) seconds, release a wave of electricity that energizes nearby allies for 7 seconds. Energized allies gain +30% attack and movement speed, and ALWAYS land critical strikes with electric items and attacks.",
+    "itemRarity": "Boss",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Cooldown",
+        "value": "15s",
+        "stackType": "Linear",
+        "stackValue": "-20%"
+      }
+    ]
+  },
+  "Functional Coupler": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Functional_Coupler",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/0/07/Functional_Coupler.png/revision/latest?cb=20251122222946",
+    "dlc": "Alloyed Collective",
+    "name": "Functional Coupler",
+    "shortDescription": "Hold additional equipment.",
+    "description": "Hold 1 additional equipment (+1 per stack). Press the interact and equipment buttons to cycle through held equipment.",
+    "itemRarity": "Boss",
+    "category": ["Equipment Related"],
+    "stats": [
+      {
+        "stat": "Additional Equipment",
+        "value": "1",
+        "stackType": "Linear",
+        "stackValue": "+1"
+      }
+    ]
+  },
+  "Prison Matrix": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Prison_Matrix",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/6/63/Prison_Matrix.png/revision/latest?cb=20251122223651",
+    "dlc": "Alloyed Collective",
+    "name": "Prison Matrix",
+    "shortDescription": "Gain armor. Can be placed in Matrix Terminal.",
+    "description": "Gain +50% armor. Can be placed in a Matrix Terminal.",
+    "itemRarity": "Boss",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Armor",
+        "value": "50%",
+        "stackType": "Linear",
+        "stackValue": "0%"
+      }
+    ]
+  },
+  "Sentry Key": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Sentry_Key",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/e/e9/Sentry_Key.png/revision/latest?cb=20251122223707",
+    "dlc": "Alloyed Collective",
+    "name": "Sentry Key",
+    "shortDescription": "Gain move speed. Can be placed in terminal.",
+    "description": "Gain +15% move speed. Can be placed in a Sentry Terminal or used for decryption.",
+    "itemRarity": "Boss",
+    "category": ["Utility"],
+    "stats": [
+      {
+        "stat": "Movement Speed",
+        "value": "15%",
+        "stackType": "Linear",
+        "stackValue": "0%"
+      }
+    ]
+  },
+  "Neutronium Weight": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Neutronium_Weight",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/a/a2/Neutronium_Weight.png/revision/latest?cb=20251122224850",
+    "dlc": "Alloyed Collective",
+    "name": "Neutronium Weight",
+    "shortDescription": "Reduces stats but can be sent to enemies.",
+    "description": "Reduces your stats while in combat, but send this item to an enemy on hit. On death, this item will be sent to its holder's killer. Reduces damage by 30% (+10% per stack), attack speed by 30% (+10% per stack), movement speed by 30% (+10% per stack), and armor by 35 (+15 per stack).",
+    "itemRarity": "Lunar",
+    "category": ["Misc"],
+    "stats": [
+      {
+        "stat": "Damage Reduction",
+        "value": "30%",
+        "stackType": "Exponential",
+        "stackValue": "+10%"
+      }
+    ]
+  },
+  "Deus Ex Machina": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Deus_Ex_Machina",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/b/b7/Deus_Ex_Machina.png/revision/latest?cb=20251122230018",
+    "dlc": "Alloyed Collective",
+    "name": "Deus Ex Machina",
+    "shortDescription": "Parry any damage and gain Blessing.",
+    "description": "Briefly enter a countering stance that lets you parry any and ALL damage. A successful parry nullifies incoming damage, reduces your equipment cooldown by 75%, and grants Blessing, causing your next attack to ALWAYS activate your on-hit effects.",
+    "itemRarity": "Equipment",
+    "category": ["Utility"],
+    "stats": []
+  },
+  "Of One Mind": {
+    "wikiLink": "https://riskofrain2.fandom.com/wiki/Of_One_Mind",
+    "image": "https://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/8/8b/Of_One_Mind.png/revision/latest?cb=20251123010036",
+    "dlc": "Alloyed Collective",
+    "name": "Of One Mind",
+    "shortDescription": "Become an aspect of the Collective.",
+    "description": "Become an aspect of the Collective.",
+    "itemRarity": "Elite Equipment",
+    "category": ["Misc"],
+    "stats": []
   }
 }
