@@ -1,10 +1,10 @@
 <template>
   <div class="sort-by">
     <p class="sort-by-label" unselectable="on">Sort By</p>
-    <multiselect 
+    <multiselect
       placeholder="None"
-      class="sort-by-select" 
-      id="sort-by-select" 
+      class="sort-by-select"
+      id="sort-by-select"
       name="sort-by-select"
       v-model="sortBy"
       :options="sortOptions"
@@ -13,19 +13,20 @@
       :close-on-select="true"
       :preselect-first="true"
       label="name"
-      track-by="value">
+      track-by="value"
+    >
     </multiselect>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-import { Multiselect } from 'vue-multiselect';
-import { SortType } from '../../data/constants';
+import { mapMutations } from "vuex";
+import { Multiselect } from "vue-multiselect";
+import { SortType } from "../../data/constants";
 
 const sortOptions = Object.entries(SortType).map((entry) => {
   return {
-    name: entry[1].description,
+    name: entry[1],
     value: entry[0],
   };
 });
@@ -41,9 +42,7 @@ export default {
     };
   },
   methods: {
-    ...mapMutations([
-      'updateSortByState',
-    ]),
+    ...mapMutations(["updateSortByState"]),
   },
   watch: {
     sortBy(sort) {
@@ -55,10 +54,28 @@ export default {
 
 <style>
 .sort-by-select {
-  --sort-by-select-height: 20px;
-  --sort-by-select-width: 50px;
+  --sort-by-select-height: 40px;
+  --sort-by-select-width: 70px;
   --sort-by-select-text-size: 100%;
   --sort-by-label-size: 110%;
+}
+
+.multiselect__tags {
+  height: var(--sort-by-select-height);
+}
+
+.multiselect__single {
+  border: 2px #96a6a6 solid;
+  border-radius: 10px;
+  padding: 4px 8px;
+  margin-left: 2px;
+  top: 10px;
+  position: relative;
+}
+
+.multiselect__single:hover {
+  background: rgba(190, 190, 190, 0.25);
+  transition: background-color 0.25s ease;
 }
 
 .sort-by {
@@ -93,23 +110,19 @@ export default {
   color: #757575;
 
   border-radius: 10px;
-  border: none;
 }
 
 .sort-by .multiselect {
   padding-left: 5px;
-  padding-top: 1px;
   margin-right: 5px;
   width: var(--sort-by-select-width);
   height: var(--sort-by-select-height);
   font-size: var(--sort-by-select-text-size);
   color: #757575;
-  border: none;
-  
+
   display: inline;
   overflow: hidden;
 
-  margin-top: 10px;
   margin-left: 0px;
   border-radius: 10px;
 }
@@ -137,6 +150,7 @@ export default {
 .sort-by .multiselect__element {
   display: flex;
   flex-grow: -1;
+  margin-left: 20px;
 }
 
 .sort-by .multiselect__option {
