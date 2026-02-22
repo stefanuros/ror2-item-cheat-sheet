@@ -31,7 +31,7 @@ const clear = {
 const rarities = [clear].concat(
   Object.values(Category).map((category) => {
     return {
-      name: category.description,
+      name: category,
       code: category,
     };
   })

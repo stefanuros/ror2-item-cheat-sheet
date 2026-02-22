@@ -5,19 +5,19 @@
     v-on:mouseup="itemCardClick()"
   >
     <div class="image-div">
-      <img class="dlc-icon" v-if="itemData.dlc" v-bind:src="this.dlcIconUrl" />
       <img class="item-icon" :src="this.itemImageUrl" />
     </div>
     <div class="item-details">
       <h4 class="item-name">
         {{ itemData.name }}
-        <span class="item-id" v-if="itemData.id" unselectable="on">#{{ itemData.id }}</span>
+        <!-- <span class="item-id" v-if="itemData.id" unselectable="on">#{{ itemData.id }}</span> -->
         <span class="item-effective-max" v-if="effectiveMax > 0" unselectable="on">
           Max: {{ effectiveMax }}
         </span>
       </h4>
       <p class="item-short-description">{{ itemData.shortDescription }}</p>
     </div>
+    <img class="dlc-icon" v-if="itemData.dlc" v-bind:src="this.dlcIconUrl" />
   </div>
 </template>
 
@@ -150,6 +150,7 @@ export default {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+  position: relative;
 }
 
 .item-card:hover {
@@ -234,7 +235,8 @@ export default {
 .dlc-icon {
   height: var(--dlc-icon-size);
   width: auto;
-  margin: 2px 0px 0px 2px;
+  margin: 2px 2px 0px 0px;
   position: absolute;
+  right: 0;
 }
 </style>

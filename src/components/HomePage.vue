@@ -4,22 +4,22 @@
     <TopBar :fixed="false" />
     <div class="info-section">
       <div class="item-list-section">
-        <ItemList style="flex: 1;" :itemListType="SelectionType.ITEM" />
-        <ItemList style="flex: 1;" :itemListType="SelectionType.EQUIPMENT" />
+        <ItemList style="flex: 1" :itemListType="SelectionType.ITEM" />
+        <ItemList style="flex: 1" :itemListType="SelectionType.EQUIPMENT" />
       </div>
-      <SideBar/>
+      <SideBar />
     </div>
   </div>
 </template>
 
 <script>
-import ItemList from './ItemList.vue';
-import TopBar from './TopBar.vue';
-import SideBar from './SideBar.vue';
-import { SelectionType } from '../data/constants';
+import ItemList from "./ItemList.vue";
+import TopBar from "./TopBar.vue";
+import SideBar from "./SideBar.vue";
+import { SelectionType } from "../data/constants";
 
 export default {
-  name: 'HomePage',
+  name: "HomePage",
   components: {
     ItemList,
     TopBar,

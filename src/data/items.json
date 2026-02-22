@@ -1043,9 +1043,10 @@
     "image": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
     "dlc": "Seekers of the Storm",
     "name": "Luminous Shot",
+    "shortDescription": "Activating your Secondary skill charges your Primary skill with powerful lightning strikes. Requires 3 charges.",
     "description": "Using the secondary skill charges the next primary attack, dealing +150% damage (+25% per item stack) per charge to 5 times (+1 per item stack)",
     "itemRarity": "Uncommon",
-    "category": [],
+    "category": ["Damage", "Utility"],
     "stats": [
       {
         "stat": "Damage",
@@ -3123,6 +3124,7 @@
     "shortDescription": "Seems to do nothing... but...",
     "description": "Seems to do nothing... but...",
     "itemRarity": "Lunar",
+    "category": [],
     "id": "98"
   },
   "Strides of Heresy": {
@@ -3279,6 +3281,7 @@
     "shortDescription": "Burn everything nearby... including you and allies.",
     "description": "Ignite ALL characters within 15m for 12s. Deal 5% of your maximum health/second as burning as damage. The burn is 0.5x stronger on yourself, 0.25x stronger on allies, and 24x stronger on enemies.",
     "itemRarity": "Lunar Equipment",
+    "category": ["Damage"],
     "cooldown": "45s",
     "unlock": {
       "name": "Multikill!",
@@ -3293,6 +3296,7 @@
     "shortDescription": "Drop a permanent effigy that cripples ALL characters inside. Can place up to 5.",
     "description": "ALL characters within are slowed by 50% and have their armor reduced by 20. Can place up to 5.",
     "itemRarity": "Lunar Equipment",
+    "category": ["Utility"],
     "cooldown": "15s"
   },
   "Glowing Meteorite": {
@@ -3302,6 +3306,7 @@
     "shortDescription": "Rain meteors from the sky, hurting both enemies and allies.",
     "description": "Rain meteors from the sky, damaging ALL characters for 600% damage per blast. Lasts 20 seconds.",
     "itemRarity": "Lunar Equipment",
+    "category": ["Damage", "AOE"],
     "cooldown": "140s",
     "unlock": {
       "name": "Moon Worshipper",
@@ -3316,6 +3321,7 @@
     "shortDescription": "Gain a massive boost to ALL stats. Chance to gain an affliction that reduces ALL stats.",
     "description": "Drink the Tonic, gaining a boost for 20 seconds. Increases damage by +100%. Increases attack speed by +70%. Increases armor by +20. Increases maximum health by +50%. Increases passive health regeneration by +300%. Increases movespeed by +30%.When the Tonic wears off, you have a 20% chance to gain a Tonic Affliction, reducing all of your stats by -5% (-5% per stack).",
     "itemRarity": "Lunar Equipment",
+    "category": ["Utility"],
     "cooldown": "60s",
     "unlock": {
       "name": "Cosmic Explorer",
@@ -3330,6 +3336,7 @@
     "shortDescription": "Fire a ball of energy that electrocutes nearby enemies before detonating.",
     "description": "Fires preon tendrils, zapping enemies within 35m for up to 600% damage/second. On contact, detonate in an enormous 20m explosion for 4000% damage.",
     "itemRarity": "Equipment",
+    "category": ["Damage"],
     "cooldown": "140s",
     "unlock": {
       "name": "[REDACTED]",
@@ -3344,6 +3351,7 @@
     "shortDescription": "Fire a black hole that draws enemies in.",
     "description": "Fire a black hole that draws enemies within 30m into its center. Lasts 10 seconds",
     "itemRarity": "Equipment",
+    "category": ["Misc"],
     "cooldown": "60s"
   },
   "Trophy Hunter's Tricorn": {
@@ -3354,6 +3362,7 @@
     "shortDescription": "Execute a large monster and claim its trophy. Consumed on use.",
     "description": "Execute any enemy capable of spawning a unique reward, and it will drop that item. Equipment is consumed on use.",
     "itemRarity": "Equipment",
+    "category": ["Misc"],
     "cooldown": "0s"
   },
   "Blast Shower": {
@@ -3363,6 +3372,7 @@
     "shortDescription": "Cleanse all negative effects.",
     "description": "Cleanse all negative effects. Includes debuffs, damage over time, and nearby projectiles.",
     "itemRarity": "Equipment",
+    "category": ["Survivability", "Utility"],
     "cooldown": "20s",
     "unlock": {
       "name": "Warm For Life",
@@ -3377,6 +3387,7 @@
     "shortDescription": "Fire a swarm of missiles.",
     "description": "Fire a swarm of 12 missiles that deal 12x300% damage.",
     "itemRarity": "Equipment",
+    "category": ["Damage", "Tracking Projectile"],
     "cooldown": "45s"
   },
   "Ocular HUD": {
@@ -3386,6 +3397,7 @@
     "shortDescription": "Gain 100% Critical Strike Chance for 8 seconds.",
     "description": "Gain +100% Critical Strike Chance for 8 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Attack Speed"],
     "cooldown": "60s"
   },
   "Forgive Me Please": {
@@ -3395,6 +3407,7 @@
     "shortDescription": "Throw a cursed doll that repeatedly triggers your 'On Kill' effects.",
     "description": "Throw a cursed doll out that triggers any On-Kill effects you have every 1 second for 8 seconds.",
     "itemRarity": "Equipment",
+    "category": ["On Kill Effect"],
     "cooldown": "45s",
     "unlock": {
       "name": "I Love Dying!",
@@ -3409,6 +3422,7 @@
     "shortDescription": "Call drones for back up. Lasts 25 seconds.",
     "description": "Call 4 Strike Drones to fight for you. Lasts 25 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Damage"],
     "cooldown": "100s",
     "unlock": {
       "name": "Mechanic",
@@ -3423,6 +3437,7 @@
     "shortDescription": "Transform into a speeding draconic fireball, dealing damage as you pass through enemies.",
     "description": "Turn into a draconic fireball for 5 seconds. Deal 500% damage on impact. Detonates at the end for 800% damage.",
     "itemRarity": "Equipment",
+    "category": ["Damage", "Mobility"],
     "cooldown": "30s"
   },
   "Foreign Fruit": {
@@ -3432,6 +3447,7 @@
     "shortDescription": "Heal on use.",
     "description": "Instantly heal for 50% of your maximum health.",
     "itemRarity": "Equipment",
+    "category": ["Healing", "Survivability"],
     "cooldown": "45s",
     "id": "2"
   },
@@ -3442,6 +3458,7 @@
     "shortDescription": "Gain massive armor for 5 seconds.",
     "description": "Gain 500 armor for 5 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Survivability"],
     "cooldown": "45s"
   },
   "Eccentric Vase": {
@@ -3451,6 +3468,7 @@
     "shortDescription": "Create a quantum tunnel between two locations.",
     "description": "Create a quantum tunnel of up to 1000m in length. Lasts 30 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Mobility", "Utility"],
     "cooldown": "45s",
     "unlock": {
       "name": "Blackout",
@@ -3465,6 +3483,7 @@
     "shortDescription": "Toggle to fire. Costs gold per bullet.",
     "description": "Fires a continuous barrage that deals 100% damage per bullet. Costs $1 per bullet. Cost increases over time.",
     "itemRarity": "Equipment",
+    "category": ["Damage"],
     "unlock": {
       "name": "Funded!",
       "link": "https://riskofrain2.fandom.com/wiki/Funded!",
@@ -3479,6 +3498,7 @@
     "shortDescription": "Create a clone of you for 30 seconds.",
     "description": "Spawn a gummy clone that has 300% damage and 300% health. Expires in 30 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Damage", "Minion"],
     "cooldown": "100s"
   },
   "Seed of Life": {
@@ -3489,6 +3509,7 @@
     "shortDescription": "Revives the user when killed or dead allies on activation. Consumed on use.",
     "description": "Revives the user when killed or dead allies on activation. Consumed on use.",
     "itemRarity": "Equipment",
+    "category": ["Utility", "Misc"],
     "cooldown": "0s"
   },
   "Milky Chrysalis": {
@@ -3498,6 +3519,7 @@
     "shortDescription": "Gain temporary flight.",
     "description": "Sprout wings and fly for 15 seconds. Gain +20% movement speed for the duration.",
     "itemRarity": "Equipment",
+    "category": ["Mobility"],
     "cooldown": "60s"
   },
   "Super Massive Leech": {
@@ -3507,6 +3529,7 @@
     "shortDescription": "Heal for a percentage of the damage you deal for 8 seconds.",
     "description": "Heal for 20% of the damage you deal. Lasts 8 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Healing"],
     "cooldown": "60s"
   },
   "Royal Capacitor": {
@@ -3516,6 +3539,7 @@
     "shortDescription": "Call down a lightning strike on a targeted monster.",
     "description": "Call down a lightning strike on a targeted monster, dealing 3000% damage and stunning nearby monsters.",
     "itemRarity": "Equipment",
+    "category": ["Damage"],
     "cooldown": "20s",
     "unlock": {
       "name": "Ascendant",
@@ -3531,6 +3555,7 @@
     "shortDescription": "Throw 6 flaming molotovs that ignite enemies upon shattering.",
     "description": "Throw 6 molotov cocktails that ignites enemies for 500% base damage. Each molotov leaves a burning area for 200% damage per second.",
     "itemRarity": "Equipment",
+    "category": ["Damage", "AOE"],
     "cooldown": "45s"
   },
   "Executive Card": {
@@ -3541,6 +3566,7 @@
     "shortDescription": "Gain 10% cash back on all purchases. Multishops remain open.",
     "description": "Whenever you make a gold purchase, get 10% of the spent gold back. If the purchase is a multishop terminal, the other terminals will remain open.",
     "itemRarity": "Equipment",
+    "category": ["Utility", "Misc"],
     "cooldown": "0.1s"
   },
   "Gnarled Woodsprite": {
@@ -3550,6 +3576,7 @@
     "shortDescription": "Heal over time. Activate to send to an ally.",
     "description": "Gain a Woodsprite follower that heals for 1.5% of your maximum health/second. Can be sent to an ally to heal them for 10% of their maximum health.",
     "itemRarity": "Equipment",
+    "category": ["Healing"],
     "cooldown": "15s",
     "unlock": {
       "name": "One with the Woods",
@@ -3564,6 +3591,7 @@
     "shortDescription": "Transform an Item or Equipment into a different one. Can only recycle once.",
     "description": "Transform an Item or Equipment into a different one. Can only be converted into the same tier one time.",
     "itemRarity": "Equipment",
+    "category": ["Misc"],
     "cooldown": "45s",
     "unlock": {
       "name": "Cleanup Duty",
@@ -3578,6 +3606,7 @@
     "shortDescription": "Throw a fan of buzzing saws that come back to you.",
     "description": "Throw three large saw blades that slice through enemies for 3x400% damage. Also deals an additional 3x100% damage per second while bleeding enemies. Can strike enemies again on the way back.",
     "itemRarity": "Equipment",
+    "category": ["Damage"],
     "cooldown": "45s"
   },
   "Radar Scanner": {
@@ -3587,6 +3616,7 @@
     "shortDescription": "Reveal all nearby interactables.",
     "description": "Reveal all interactables within 500m for 10 seconds.",
     "itemRarity": "Equipment",
+    "category": ["Utility"],
     "cooldown": "45s",
     "unlock": {
       "name": "Bookworm",
@@ -3601,6 +3631,7 @@
     "shortDescription": "You and all your allies enter a frenzy.",
     "description": "All allies enter a frenzy for 7 seconds. Increases movement speed by 50% and attack speed by 100%.",
     "itemRarity": "Equipment",
+    "category": ["Attack Speed", "Mobility"],
     "cooldown": "45s"
   },
   "Remote Caffeinator": {
@@ -3611,6 +3642,7 @@
     "shortDescription": "Request a healing soda machine.",
     "description": "Request an Eclipse Zero Vending Machine from the UES Safe Travels. Delivery guaranteed in 5 seconds, dealing 2000% damage. Heal up to 3 targets for 25% of their maximum health.",
     "itemRarity": "Equipment",
+    "category": ["Misc"],
     "cooldown": "60s"
   },
   "Ifrit's Distinction": {
@@ -3619,7 +3651,8 @@
     "name": "Ifrit's Distinction",
     "shortDescription": "Become an aspect of fire.",
     "description": "Become an aspect of fire.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "His Reassurance": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/His_Reassurance",
@@ -3628,7 +3661,8 @@
     "name": "His Reassurance",
     "shortDescription": "Become an aspect of earth.",
     "description": "Become an aspect of earth.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "Silence Between Two Strikes": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/Silence_Between_Two_Strikes",
@@ -3637,6 +3671,7 @@
     "shortDescription": "Become an aspect of lightning.",
     "description": "Become an aspect of lightning.",
     "itemRarity": "Elite Equipment",
+    "category": [],
     "id": "6"
   },
   "Her Biting Embrace": {
@@ -3645,7 +3680,8 @@
     "name": "Her Biting Embrace",
     "shortDescription": "Become an aspect of ice.",
     "description": "Become an aspect of ice.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "N'kuhana's Retort": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/N%27kuhana%27s_Retort",
@@ -3653,7 +3689,8 @@
     "name": "N'kuhana's Retort",
     "shortDescription": "Become an aspect of corruption.",
     "description": "Become an aspect of corruption.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "Spectral Circlet": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/Spectral_Circlet",
@@ -3661,7 +3698,8 @@
     "name": "Spectral Circlet",
     "shortDescription": "Become an aspect of incorporeality.",
     "description": "Become an aspect of incorporeality.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "Shared Design": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/Shared_Design",
@@ -3669,7 +3707,8 @@
     "name": "Shared Design",
     "shortDescription": "Become an aspect of perfection.",
     "description": "Become an aspect of perfection.",
-    "itemRarity": "Elite Equipment"
+    "itemRarity": "Elite Equipment",
+    "category": []
   },
   "Fuel Array": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/Fuel_Array",
@@ -3677,7 +3716,8 @@
     "name": "Fuel Array",
     "shortDescription": "Looks like it could power something. EXTREMELY unstable...",
     "description": "Looks like it could power something. EXTREMELY unstable...",
-    "itemRarity": "Equipment"
+    "itemRarity": "Equipment",
+    "category": []
   },
   "Eclipse Lite": {
     "wikiLink": "https://riskofrain2.fandom.com/wiki/Eclipse_Lite",
