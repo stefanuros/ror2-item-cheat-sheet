@@ -103,7 +103,7 @@ export const SelectionTypePluralization = {
 };
 
 export const SortType = {
-  ID: "Id",
+  // ID: "Id",
   NAME: "Name",
   RARITY: "Rarity",
 };

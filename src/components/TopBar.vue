@@ -3,7 +3,7 @@
     <div class="top-bar" :class="{ 'top-bar-fixed': fixed }">
       <div class="nav-bar">
         <SearchBar />
-        <SortBySelector v-show="false" />
+        <SortBySelector />
         <CategoryFilter v-show="false" />
         <RarityFilter v-show="false" />
       </div>

@@ -10,7 +10,7 @@
     <div class="item-details">
       <h4 class="item-name">
         {{ itemData.name }}
-        <span class="item-id" v-if="itemData.id" unselectable="on">#{{ itemData.id }}</span>
+        <!-- <span class="item-id" v-if="itemData.id" unselectable="on">#{{ itemData.id }}</span> -->
         <span class="item-effective-max" v-if="effectiveMax > 0" unselectable="on">
           Max: {{ effectiveMax }}
         </span>
