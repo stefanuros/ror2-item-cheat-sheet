@@ -4,8 +4,8 @@
       <div class="nav-bar">
         <SearchBar />
         <SortBySelector />
-        <CategoryFilter v-show="false" />
-        <RarityFilter v-show="false" />
+        <CategoryFilter />
+        <RarityFilter />
       </div>
     </div>
   </div>
